@@ -73,13 +73,14 @@ tailwind.config = {
   </a>
 
   <!-- Hero imagen -->
-  <div class="relative h-64 md:h-96 rounded-lg overflow-hidden mb-10">
-    <img src="../assets/img/articles/periquitos.jpg" alt="Periquitos" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-    <div class="absolute bottom-0 left-0 p-6 md:p-10">
-      <span class="text-xs font-bold text-white uppercase tracking-widest bg-primary px-3 py-1 rounded-full mb-3 inline-block">Aves</span>
-      <h1 class="font-display text-4xl md:text-6xl text-white leading-tight">Guía completa de cuidado del periquito</h1>
-      <p class="text-white/70 text-sm mt-2">Junio 2026</p>
+  <div class="flex flex-col md:flex-row gap-6 mb-10 items-start">
+    <div class="w-full md:w-80 flex-shrink-0 rounded-lg overflow-hidden shadow-md bg-surface-container-low flex items-center justify-center" style="min-height:16rem">
+      <img src="../assets/img/articles/periquitos.jpg" alt="Periquitos" class="w-full h-auto object-contain" style="display:block">
+    </div>
+    <div class="flex-1 pt-2">
+      <span class="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full mb-4 inline-block">Aves</span>
+      <h1 class="font-display text-4xl md:text-6xl text-on-surface leading-tight mb-3">Guía completa de cuidado del periquito</h1>
+      <p class="text-on-surface-variant text-sm mt-2">Junio 2026</p>
     </div>
   </div>
 
