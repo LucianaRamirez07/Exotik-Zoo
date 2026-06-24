@@ -55,15 +55,27 @@ Clases de fuente:
 ## Estructura de páginas
 
 ```
-index.html              ← YA REDISEÑADO (no tocar)
-tienda.html             ← branch feature/miguel
-tienda/*.html           ← branch feature/miguel
-nosotros.html           ← branch feature/miguel
-contacto.html           ← branch feature/miguel
-cuidados.html           ← branch feature/luciana  ← TÚ
-cuidados/*.html         ← branch feature/luciana  ← TÚ
-mundo-exotico.html      ← branch feature/luciana  ← TÚ
-mundo-exotico/*.html    ← branch feature/luciana  ← TÚ
+index.html                  ← YA REDISEÑADO (no tocar)
+nosotros.html               ← branch feature/miguel
+contacto.html               ← branch feature/miguel
+tienda/
+  index.html                ← branch feature/miguel (hub de tienda)
+  alimento-aves-*.html      ← branch feature/miguel
+  *.html                    ← branch feature/miguel
+cuidados/
+  index.html                ← branch feature/luciana (hub cuidados) ← TÚ
+  hamster.html, *.html      ← branch feature/luciana ← TÚ
+mundo-exotico/
+  index.html                ← branch feature/luciana (hub blog) ← TÚ
+  *.html                    ← branch feature/luciana ← TÚ
+assets/
+  img/
+    logo.png
+    hero.jpg / hero2.jpg / hero3-wide.jpg
+    pets/
+    products/
+    articles/
+    cuidados/
 ```
 
 ## Nav y footer — copiar exactamente de index.html
@@ -71,8 +83,21 @@ mundo-exotico/*.html    ← branch feature/luciana  ← TÚ
 El `<header>` y `<footer>` deben ser **idénticos** en todas las páginas. Cópialos de `index.html` sin modificar. Si necesitas cambiar algo del nav, coordina con Miguel primero.
 
 Ajusta las rutas relativas según la profundidad del archivo:
-- Desde raíz (`cuidados.html`): `href="index.html"`, `href="tienda.html"`
-- Desde subcarpeta (`cuidados/hamster.html`): `href="../index.html"`, `href="../tienda.html"`
+- Desde `cuidados/index.html` o `cuidados/hamster.html`: `href="../index.html"`, `href="../tienda/"`, `href="../cuidados/"`, `href="../mundo-exotico/"`
+- Imágenes desde subcarpeta: `src="../assets/img/logo.png"`
+
+## Imágenes locales
+
+Todas las imágenes están en `assets/img/`:
+```
+assets/img/logo.png
+assets/img/hero.jpg
+assets/img/pets/aves.jpg  ...
+assets/img/products/veggie-espirulina-micro-rounds.png  ...
+assets/img/articles/hamster.jpg  ...
+assets/img/cuidados/hamster.jpg  ...
+```
+Desde una subcarpeta usa `../assets/img/cuidados/hamster.jpg`
 
 ## Tailwind config — incluir en CADA página
 
