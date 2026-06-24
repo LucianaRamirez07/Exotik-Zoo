@@ -1,457 +1,413 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Inicio | Exotik Zoo</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Exotik Zoo | Elegance Meets the Wild</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#00210c",
+                        "primary-fixed": "#99f7ae",
+                        "tertiary-fixed-dim": "#fbbc00",
+                        "on-tertiary-container": "#fffbff",
+                        "inverse-surface": "#2f312f",
+                        "surface-tint": "#006d35",
+                        "on-background": "#1a1c1a",
+                        "on-secondary-container": "#732010",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "on-tertiary-fixed": "#261a00",
+                        "outline-variant": "#becabd",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#7eda94",
+                        "surface-bright": "#faf9f6",
+                        "background": "#faf9f6",
+                        "surface": "#faf9f6",
+                        "surface-container-low": "#f4f4f0",
+                        "on-primary-container": "#f6fff3",
+                        "inverse-primary": "#7eda94",
+                        "inverse-on-surface": "#f1f1ed",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdad3",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#fd876f",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#ffb4a5",
+                        "on-surface": "#1a1c1a",
+                        "surface-container": "#eeeeea",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#258549",
+                        "primary": "#006b34",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#9f402d",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e2e3df",
+                        "tertiary-fixed": "#ffdfa0",
+                        "on-surface-variant": "#3f493f",
+                        "tertiary": "#765700",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#6f7a6f",
+                        "surface-container-high": "#e8e8e5",
+                        "on-secondary-fixed": "#3e0500",
+                        "surface-dim": "#dadad7",
+                        "on-primary-fixed-variant": "#005226",
+                        "on-secondary-fixed-variant": "#802918",
+                        "surface-variant": "#e2e3df",
+                        "tertiary-container": "#956e00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "12px",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-desktop": "48px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "base-unit": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Bebas Neue"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "headline-md": ["Bebas Neue"],
+                        "display-lg-mobile": ["Bebas Neue"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", {"lineHeight": "60px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "32px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "44px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
 <style>
-:root {
-  --accent: #2D8B4E;
-  --bg: #0C0A09;
-  --fg: #FAFAF9;
-  --primary: #1C1917;
-  --muted: #A8A29E;
-  --border: rgba(255,255,255,0.10);
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--fg);font-family:'Montserrat',system-ui,sans-serif;-webkit-font-smoothing:antialiased;margin:0}
-h1,h2,h3,h4,h5,h6{font-family:'Bebas Neue',sans-serif;margin:0}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;height:auto}
-button{border:none;background:none;cursor:pointer;font-family:inherit}
-
-.glass{background:rgba(255,255,255,0.05);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:1rem}
-.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;background:var(--accent);color:#fff;border-radius:9999px;padding:0.625rem 1.5rem;font-weight:600;font-size:0.9375rem;cursor:pointer;transition:opacity 150ms;text-decoration:none;border:none;font-family:'Montserrat',sans-serif}
-.btn-primary:hover{opacity:0.85}
-.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;border:1px solid rgba(255,255,255,0.20);border-radius:9999px;padding:0.625rem 1.5rem;font-weight:500;font-size:0.9375rem;color:var(--fg);cursor:pointer;transition:background 150ms;background:transparent;text-decoration:none;font-family:'Montserrat',sans-serif}
-.btn-ghost:hover{background:rgba(255,255,255,0.10)}
-.wrap{padding-left:1rem;padding-right:1rem;max-width:80rem;margin:0 auto}
-@media(min-width:640px){.wrap{padding-left:1.5rem;padding-right:1.5rem}}
-@media(min-width:1024px){.wrap{padding-left:2rem;padding-right:2rem}}
-.gradient-text{background:linear-gradient(135deg,#2D8B4E,#52C97A,#1A6B38);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.eyebrow{font-size:0.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem}
-.clamp2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-
-/* Nav */
-nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(12,10,9,0.80);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:6rem}
-.nav-links{display:none;align-items:center;gap:2rem}
-@media(min-width:768px){.nav-links{display:flex}}
-.nav-links a{font-size:0.875rem;color:var(--muted);transition:color 150ms}
-.nav-links a:hover{color:var(--fg)}
-.hamburger{display:flex;color:var(--fg)}
-@media(min-width:768px){.hamburger{display:none}}
-.mobile-menu{display:none;background:rgba(12,10,9,0.95);border-bottom:1px solid var(--border);padding:0.5rem 1rem 1.5rem}
-.mobile-menu.open{display:block}
-.mobile-menu a{display:block;padding:0.75rem 0;font-size:0.875rem;color:var(--muted)}
-
-/* Footer */
-footer.site-footer{background:var(--primary);border-top:1px solid var(--border)}
-.footer-grid{display:grid;grid-template-columns:1fr;gap:2rem;padding:3rem 0}
-@media(min-width:768px){.footer-grid{grid-template-columns:repeat(3,1fr)}}
-.footer-label{font-family:'Bebas Neue',sans-serif;font-size:0.875rem;color:var(--fg);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem}
-.footer-link{font-size:0.875rem;color:var(--muted);display:block;margin-bottom:0.5rem;transition:color 150ms}
-.footer-link:hover{color:var(--accent)}
-.footer-bottom{border-top:1px solid var(--border);padding:1.5rem 0;display:flex;flex-direction:column;gap:1rem;align-items:center}
-@media(min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between}}
-
-/* WhatsApp float */
-.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:50;background:#22c55e;color:#fff;border-radius:9999px;width:3.5rem;height:3.5rem;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(34,197,94,0.4);transition:transform 150ms,background 150ms}
-.wa-float:hover{background:#16a34a;transform:scale(1.1)}
-
-/* Cards */
-.product-card{overflow:hidden;transition:border-color 150ms}
-.product-card:hover{border-color:rgba(45,139,78,0.3)}
-.product-img{position:relative;height:16rem;overflow:hidden;background:rgba(68,64,60,0.3)}
-.product-img img{width:100%;height:100%;object-fit:contain;transition:transform 500ms}
-.product-card:hover .product-img img{transform:scale(1.05)}
-.article-img{position:relative;height:12rem;overflow:hidden;background:rgba(68,64,60,0.3)}
-.article-img img{width:100%;height:100%;object-fit:cover;transition:transform 500ms}
-.article-card:hover .article-img img{transform:scale(1.05)}
-
-/* Tabs / filter */
-.tab-btn{font-size:0.875rem;padding:0.5rem 1.25rem;border-radius:9999px;transition:all 200ms;cursor:pointer;font-family:'Montserrat',sans-serif;font-weight:500}
-.tab-btn.active{background:var(--accent);color:#fff}
-.tab-btn:not(.active){background:rgba(255,255,255,0.05);color:var(--muted)}
-.tab-btn:not(.active):hover{background:rgba(255,255,255,0.10)}
-
-/* Grid */
-.grid-2{display:grid;grid-template-columns:1fr;gap:1.5rem}
-@media(min-width:640px){.grid-2{grid-template-columns:repeat(2,1fr)}}
-.grid-3{display:grid;grid-template-columns:1fr;gap:1.5rem}
-@media(min-width:768px){.grid-3{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.grid-3{grid-template-columns:repeat(3,1fr)}}
-.grid-4{display:grid;grid-template-columns:1fr;gap:1.5rem}
-@media(min-width:768px){.grid-4{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1280px){.grid-4{grid-template-columns:repeat(4,1fr)}}
-
-@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.slide-up{animation:slideUp 0.5s ease-out}
-</style>
-
+        body { background-color: #faf9f6; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 240px;
+            gap: 24px;
+        }
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: auto;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="font-body-lg text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
 
-<nav class="site-nav">
-  <div class="wrap nav-inner">
-    <a href="./index.html"><img src="./logo.png" alt="Exotik Zoo" style="height:5rem;width:auto"></a>
-    <div class="nav-links">
-      <a href="./index.html">Inicio</a>
-      <a href="./tienda.html">Tienda</a>
-      <a href="./mundo-exotico.html">El Mundo Exótico</a>
-      <a href="./cuidados.html">Cuidados</a>
-      <a href="./nosotros.html">Nosotros</a>
-      <a href="./contacto.html">Contacto</a>
-      <a href="./tienda.html" class="btn-primary" style="font-size:0.875rem;padding:0.5rem 1.25rem">Ver Catálogo</a>
-    </div>
-    <button class="hamburger" onclick="document.getElementById('mob-menu').classList.toggle('open')" aria-label="Menú">
-      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-  </div>
-  <div id="mob-menu" class="mobile-menu">
-    <a href="./index.html">Inicio</a>
-    <a href="./tienda.html">Tienda</a>
-    <a href="./mundo-exotico.html">El Mundo Exótico</a>
-    <a href="./cuidados.html">Cuidados</a>
-    <a href="./nosotros.html">Nosotros</a>
-    <a href="./contacto.html">Contacto</a>
-    <a href="./tienda.html" class="btn-primary" style="display:block;text-align:center;margin-top:1rem">Ver Catálogo</a>
-  </div>
-</nav>
-<main style="padding-top:6rem;min-height:100vh">
-
-<section style="position:relative;width:100%;height:100vh;overflow:hidden">
-  <div id="hero-slides">
-    
-    <div class="hero-slide" style="position:absolute;inset:0;transition:opacity 1s;opacity:1">
-      <img src="./hero.jpg" alt="Exotik Zoo" style="width:100%;height:100%;object-fit:cover">
-    </div>
-    <div class="hero-slide" style="position:absolute;inset:0;transition:opacity 1s;opacity:0">
-      <img src="./hero2.jpg" alt="Exotik Zoo" style="width:100%;height:100%;object-fit:cover">
-    </div>
-    <div class="hero-slide" style="position:absolute;inset:0;transition:opacity 1s;opacity:0">
-      <img src="./hero3-wide.jpg" alt="Exotik Zoo" style="width:100%;height:100%;object-fit:cover">
-    </div>
-  </div>
-  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.50)"></div>
-  <div style="position:absolute;inset:0;display:flex;align-items:flex-start;z-index:10">
-    <div class="wrap slide-up" style="padding-top:7rem;padding-bottom:3rem;width:100%">
-      <div style="max-width:48rem">
-        <h1 style="font-size:clamp(3rem,8vw,5rem);color:var(--fg);line-height:1.1;margin-bottom:1.5rem">
-          El mundo <span class="gradient-text">exótico</span> a tu alcance
-        </h1>
-        <p style="font-size:1.125rem;color:var(--muted);line-height:1.7;margin-bottom:2.5rem;max-width:36rem">
-          Empresa colombiana dedicada al suministro de esenciales para animales exóticos y nuevos animales de compañía.
-        </p>
-        <div style="display:flex;flex-wrap:wrap;gap:1rem">
-          <a href="./tienda.html" class="btn-primary" style="font-size:1rem">Ver Catálogo →</a>
-          <a href="https://wa.me/573015561095?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" target="_blank" class="btn-ghost" style="font-size:1rem">Hablar con Nosotros</a>
-        </div>
+<!-- TopNavBar -->
+<header class="top-0 left-0 right-0 z-50 bg-transparent border-none absolute">
+  <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+    <nav class="flex items-center justify-center w-full gap-12">
+      <a class="text-white font-bold font-body-lg text-body-lg" href="#">Shop</a>
+      <a class="text-white hover:text-white/80 transition-colors font-body-lg text-body-lg" href="#">Pets</a>
+      <div class="flex-shrink-0 px-0">
+        <a class="font-display-lg text-display-lg text-white tracking-tight" href="#">Exotik Zoo</a>
+      </div>
+      <a class="text-white hover:text-white/80 transition-colors font-body-lg text-body-lg" href="#">Flowers</a>
+      <a class="text-white hover:text-white/80 transition-colors font-body-lg text-body-lg" href="#">Supplies</a>
+    </nav>
+    <div class="absolute right-margin-desktop flex items-center gap-6">
+      <div class="flex gap-4">
+        <button class="hover:opacity-80 transition-opacity text-white flex items-center gap-1 font-body-sm text-body-sm">
+          <span class="material-symbols-outlined" style="font-size: 20px;">language</span><span>EN</span>
+        </button>
+        <button class="hover:opacity-80 transition-opacity text-white"><span class="material-symbols-outlined">shopping_cart</span></button>
+        <button class="hover:opacity-80 transition-opacity text-white"><span class="material-symbols-outlined">person</span></button>
       </div>
     </div>
   </div>
-  <div style="position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:10;display:flex;gap:0.5rem" id="hero-dots">
-    <button onclick="goSlide(0)" style="height:0.5rem;border-radius:9999px;transition:all 300ms;background:#fff;width:1.5rem;border:none;cursor:pointer"></button><button onclick="goSlide(1)" style="height:0.5rem;border-radius:9999px;transition:all 300ms;background:rgba(255,255,255,0.4);width:0.5rem;border:none;cursor:pointer"></button><button onclick="goSlide(2)" style="height:0.5rem;border-radius:9999px;transition:all 300ms;background:rgba(255,255,255,0.4);width:0.5rem;border:none;cursor:pointer"></button>
-  </div>
-</section>
+</header>
 
-<section style="padding:5rem 0;background:rgba(28,25,23,0.3)">
-  <div class="wrap">
-    <div style="margin-bottom:3rem">
-      <p class="eyebrow">Explora</p>
-      <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);color:var(--fg);margin-bottom:1rem">Comprar por tipo</h2>
-      <p style="color:var(--muted);font-size:1.125rem">Encuentra exactamente lo que tu compañero necesita</p>
+<main>
+  <!-- Hero Section -->
+  <section class="relative h-[85vh] flex items-center overflow-hidden mt-0">
+    <div class="absolute inset-0 z-0">
+      <img alt="Hero" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqt3LGnduwIJBhjYq_qU7wNSYgSiBYH8g5CU8o0BVYcyM4uYm5NMqQ0sAQezDsRMx3sO39osD8Eag-z8_Qg6wrMog9eOi6ppzqBqtsZy4Qsp48z5cxbHNbqb7sGjQ2Qmte6j7ANu7ju8WvXgyjT0SoI9h-bydggzozmOKaNJBek94JJFpT0FpnAeXotRk5ZsZIWSqsIyr5FK0f_ok_W_wcSFnTLmXHOLdrx9DVCVNxgha17WvXfseKU1UcnDhLvCBy58_V9QsBkZE">
+      <div class="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
     </div>
-    <div class="grid-3" style="grid-template-columns:repeat(2,1fr)">
-      
-      <a href="./tienda.html" class="glass" style="padding:1.5rem;display:flex;flex-direction:column;gap:0.75rem;transition:border-color 200ms;border-color:var(--border)">
-        <div style="font-size:1.5rem">🌿</div>
-        <div>
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:0.875rem;font-weight:600;color:var(--fg)">Henos Vitaheno</p>
-          <p style="font-size:0.75rem;color:var(--muted);margin-top:0.125rem">Mezclas nutritivas</p>
+    <div class="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto text-white">
+      <div class="max-w-2xl">
+        <h1 class="font-display-lg text-display-lg md:text-[96px] md:leading-[1] mb-4 drop-shadow-lg">ELEGANCE MEETS THE WILD</h1>
+        <p class="font-body-lg text-body-lg md:text-xl mb-8 max-w-lg">Precision care for extraordinary companions. Discover our curated collection of exotic pets, rare botanical life, and scientific-grade supplies.</p>
+        <div class="flex flex-wrap gap-4">
+          <button class="bg-primary hover:bg-primary-container text-white px-8 py-4 rounded-lg font-bold transition-all transform hover:scale-105">Explore The Shop</button>
+          <button class="border-2 border-white/50 backdrop-blur-md hover:bg-white/20 text-white px-8 py-4 rounded-lg font-bold transition-all">View Gallery</button>
         </div>
-      </a>
-      <a href="./tienda.html" class="glass" style="padding:1.5rem;display:flex;flex-direction:column;gap:0.75rem;transition:border-color 200ms;border-color:var(--border)">
-        <div style="font-size:1.5rem">🐦</div>
-        <div>
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:0.875rem;font-weight:600;color:var(--fg)">Alimento Aves</p>
-          <p style="font-size:0.75rem;color:var(--muted);margin-top:0.125rem">Pico pequeño y grande</p>
-        </div>
-      </a>
-      <a href="./tienda.html" class="glass" style="padding:1.5rem;display:flex;flex-direction:column;gap:0.75rem;transition:border-color 200ms;border-color:var(--border)">
-        <div style="font-size:1.5rem">🐾</div>
-        <div>
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:0.875rem;font-weight:600;color:var(--fg)">Alimento Roedores</p>
-          <p style="font-size:0.75rem;color:var(--muted);margin-top:0.125rem">Mixtura orgánica</p>
-        </div>
-      </a>
-      <a href="./tienda.html" class="glass" style="padding:1.5rem;display:flex;flex-direction:column;gap:0.75rem;transition:border-color 200ms;border-color:var(--border)">
-        <div style="font-size:1.5rem">💚</div>
-        <div>
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:0.875rem;font-weight:600;color:var(--fg)">Cuidos Exóticos</p>
-          <p style="font-size:0.75rem;color:var(--muted);margin-top:0.125rem">Larvas y suplementos</p>
-        </div>
-      </a>
-      <a href="./tienda.html" class="glass" style="padding:1.5rem;display:flex;flex-direction:column;gap:0.75rem;transition:border-color 200ms;border-color:var(--border)">
-        <div style="font-size:1.5rem">🌸</div>
-        <div>
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:0.875rem;font-weight:600;color:var(--fg)">Plantas</p>
-          <p style="font-size:0.75rem;color:var(--muted);margin-top:0.125rem">Exóticas y nativas</p>
-        </div>
-      </a>
-      <a href="./tienda.html" class="glass" style="padding:1.5rem;display:flex;flex-direction:column;gap:0.75rem;transition:border-color 200ms;border-color:var(--border)">
-        <div style="font-size:1.5rem">🐾</div>
-        <div>
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:0.875rem;font-weight:600;color:var(--fg)">Animales</p>
-          <p style="font-size:0.75rem;color:var(--muted);margin-top:0.125rem">No convencionales</p>
-        </div>
-      </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section style="padding:5rem 0">
-  <div class="wrap">
-    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.5rem;margin-bottom:3rem">
+  <!-- Featured Categories -->
+  <section class="py-24 px-margin-desktop max-w-container-max mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
       <div>
-        <p class="eyebrow">Nuestros productos</p>
-        <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);color:var(--fg);margin-bottom:0.75rem">Los más pedidos</h2>
-        <p style="color:var(--muted);font-size:1.125rem">Fórmulas naturales diseñadas para la salud de tu animal</p>
+        <span class="text-primary font-bold tracking-widest text-label-caps uppercase">Our Specializations</span>
+        <h2 class="font-headline-md text-headline-md text-on-surface mt-2">Curated Collections</h2>
       </div>
-      <a href="./tienda.html" style="font-size:0.875rem;color:var(--accent);display:flex;align-items:center;gap:0.5rem">Ver todos →</a>
+      <div class="h-[2px] flex-grow bg-outline-variant/30 mx-8 hidden md:block mb-4"></div>
+      <a class="text-primary font-bold hover:underline" href="#">View All Categories →</a>
     </div>
-    <div class="grid-4">
-      
-<div class="glass product-card">
-  <a href="./tienda/vitaheno-manzanilla.html">
-    <div class="product-img">
-      <img src="./images/vitaheno-manzanilla.jpg" alt="Vitaheno Manzanilla">
-      <div style="position:absolute;top:0.75rem;left:0.75rem">
-        <span style="font-size:0.75rem;font-weight:500;background:rgba(45,139,78,0.9);color:#fff;padding:0.25rem 0.5rem;border-radius:9999px">Exotik Labs</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+      <!-- Category Card 1 -->
+      <div class="group relative overflow-hidden rounded-lg bg-surface shadow-sm hover:shadow-xl transition-all duration-500">
+        <div class="aspect-[4/5] overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1zJfCDjRz5tMblnDYC4up8_n0PiVLERkgV4ZNtHaejGiZeNxTGe0FvsH5MkF1J_-oEqcMRfnivnDOug-Taab4XyOcCvzxQuWU6YzqfixmlESNxedub5QURhgJGqlxUcsymKiC7SIbONTo793u0Fo78LHhnUGhQLdQcHH8LpH0Jt5LaYhHF8GozwKCoMPbXDNfWcWAPH1Tq28tegDmrQmXx-IrAfMljJWCz9pqbDVzyz48xrynCluonCvY5uAnglpTPSyAn1Q8zEM" alt="Exotic Pets">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+          <h3 class="font-headline-md text-headline-md text-white">Exotic Pets</h3>
+          <p class="text-white/80 text-body-sm mt-1">Ethically sourced reptiles &amp; amphibians.</p>
+        </div>
       </div>
-    </div>
-  </a>
-  <div style="padding:1.25rem">
-    <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem;text-transform:capitalize">heno</div>
-    <a href="./tienda/vitaheno-manzanilla.html">
-      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.125rem;color:var(--fg);margin-bottom:0.25rem;transition:color 150ms" onmouseover="this.style.color='#2D8B4E'" onmouseout="this.style.color='var(--fg)'">Vitaheno Manzanilla</h3>
-    </a>
-    <p class="clamp2" style="font-size:0.875rem;color:var(--muted);margin-bottom:1rem">Heno nutritivo con manzanilla</p>
-    <a href="https://wa.me/573015561095?text=Hola%2C%20quiero%20pedir%3A%20Vitaheno%20Manzanilla" target="_blank" class="btn-primary" style="width:100%;font-size:0.875rem;padding:0.625rem 1rem">
-      💬 Pedir por WhatsApp
-    </a>
-  </div>
-</div>
-<div class="glass product-card">
-  <a href="./tienda/vitaheno-romero.html">
-    <div class="product-img">
-      <img src="./images/vitaheno-romero.jpg" alt="Vitaheno Romero">
-      <div style="position:absolute;top:0.75rem;left:0.75rem">
-        <span style="font-size:0.75rem;font-weight:500;background:rgba(45,139,78,0.9);color:#fff;padding:0.25rem 0.5rem;border-radius:9999px">Exotik Labs</span>
+      <!-- Category Card 2 -->
+      <div class="group relative overflow-hidden rounded-lg bg-surface shadow-sm hover:shadow-xl transition-all duration-500">
+        <div class="aspect-[4/5] overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOztPjJoCPadUpD78hjKAiLVETp-tBdIyAkKnTRyZ-dYjpVEm23Ll3XIGaKFxcfW75memeLgqhvSjX3ha_r73a6aL7K7bJ6sTCDKr_SzIJkMA8ciQvz4rmR4FO9-AyCJcV13A27hd2GcLKmAEtd7I9x6-U1kht5-1a3nTpcWoRBnCusgnGcB_-gvAAvy0vnSbnYYyNbUVSUgpm-pYfOVuHCb87N8-I_dgYTT7eHIKyJgSuuSBY-lcUO1yUpqNNe3tPlKBfoairL5A" alt="Scientific Supplements">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+          <h3 class="font-headline-md text-headline-md text-white">Scientific Supplements</h3>
+          <p class="text-white/80 text-body-sm mt-1">Advanced nutrition for peak health.</p>
+        </div>
       </div>
-    </div>
-  </a>
-  <div style="padding:1.25rem">
-    <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem;text-transform:capitalize">heno</div>
-    <a href="./tienda/vitaheno-romero.html">
-      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.125rem;color:var(--fg);margin-bottom:0.25rem;transition:color 150ms" onmouseover="this.style.color='#2D8B4E'" onmouseout="this.style.color='var(--fg)'">Vitaheno Romero</h3>
-    </a>
-    <p class="clamp2" style="font-size:0.875rem;color:var(--muted);margin-bottom:1rem">Heno nutritivo con romero</p>
-    <a href="https://wa.me/573015561095?text=Hola%2C%20quiero%20pedir%3A%20Vitaheno%20Romero" target="_blank" class="btn-primary" style="width:100%;font-size:0.875rem;padding:0.625rem 1rem">
-      💬 Pedir por WhatsApp
-    </a>
-  </div>
-</div>
-<div class="glass product-card">
-  <a href="./tienda/vitaheno-calendula.html">
-    <div class="product-img">
-      <img src="./images/vitaheno-calendula.jpg" alt="Vitaheno Caléndula">
-      <div style="position:absolute;top:0.75rem;left:0.75rem">
-        <span style="font-size:0.75rem;font-weight:500;background:rgba(45,139,78,0.9);color:#fff;padding:0.25rem 0.5rem;border-radius:9999px">Exotik Labs</span>
+      <!-- Category Card 3 -->
+      <div class="group relative overflow-hidden rounded-lg bg-surface shadow-sm hover:shadow-xl transition-all duration-500">
+        <div class="aspect-[4/5] overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMU0JkBoPRhq3-K0NrYBjeG_HprAtHfKZ0SIgsdiowf3b672Y_yjw-41AL6tUZ2zG1Ky3k-Q0o2Tj71c5gPXxC8e2McIu18_v7u3R0OELW-bSC5QJpoWlMO4CFlXANZAeS3qbyHu9ipefexfmiGMyu1B0cy6NVKSJBCSFiOsru69WTci3pfCL77tnMMrKvuU4jJxoZtDVyk2HDF1xGlcwC_t9Tt-seEyEhzVx0Bwvi0Z5Sc0k0_6lurmT689YKm5jxBf0JCd1zZC0" alt="Specialty Supplies">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+          <h3 class="font-headline-md text-headline-md text-white">Specialty Supplies</h3>
+          <p class="text-white/80 text-body-sm mt-1">Design-forward habitat components.</p>
+        </div>
+      </div>
+      <!-- Category Card 4 -->
+      <div class="group relative overflow-hidden rounded-lg bg-surface shadow-sm hover:shadow-xl transition-all duration-500">
+        <div class="aspect-[4/5] overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBud-pO6xgYvu4DCqr2_aF9s6HGmyMJJ9qhp9D7sqe659ipPPf7pkIDKbLFPzhMEwkTPxrnbuNLkeqCr4tstnUQW0-HKGB7VTiXmQ3xJsk0M-lq01RuT5q07OSZvG0FC3HXq-8TFv3-BEdjsjGY5CnfdSSvO4q0AxsqaUPSx47S3T0X0bBOyLo2s7Bpe-TT6i0EeRlb6Ed5JOopUGoDmd6g2buPoFralNFWyQ-WmFGPrOdhzI6ex6t-qsDowLzl6BgqjyBtaq5-XkU" alt="Exotic Flowers">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+          <h3 class="font-headline-md text-headline-md text-white">Exotic Flowers</h3>
+          <p class="text-white/80 text-body-sm mt-1">Lush botanical statements from the wild.</p>
+        </div>
       </div>
     </div>
-  </a>
-  <div style="padding:1.25rem">
-    <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem;text-transform:capitalize">heno</div>
-    <a href="./tienda/vitaheno-calendula.html">
-      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.125rem;color:var(--fg);margin-bottom:0.25rem;transition:color 150ms" onmouseover="this.style.color='#2D8B4E'" onmouseout="this.style.color='var(--fg)'">Vitaheno Caléndula</h3>
-    </a>
-    <p class="clamp2" style="font-size:0.875rem;color:var(--muted);margin-bottom:1rem">Heno nutritivo con caléndula</p>
-    <a href="https://wa.me/573015561095?text=Hola%2C%20quiero%20pedir%3A%20Vitaheno%20Cal%C3%A9ndula" target="_blank" class="btn-primary" style="width:100%;font-size:0.875rem;padding:0.625rem 1rem">
-      💬 Pedir por WhatsApp
-    </a>
-  </div>
-</div>
-<div class="glass product-card">
-  <a href="./tienda/alimento-roedores.html">
-    <div class="product-img">
-      <img src="./images/alimento-roedores.jpg" alt="Alimento Roedores">
-      <div style="position:absolute;top:0.75rem;left:0.75rem">
-        <span style="font-size:0.75rem;font-weight:500;background:rgba(45,139,78,0.9);color:#fff;padding:0.25rem 0.5rem;border-radius:9999px">Exotik Food</span>
-      </div>
-    </div>
-  </a>
-  <div style="padding:1.25rem">
-    <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem;text-transform:capitalize">roedores</div>
-    <a href="./tienda/alimento-roedores.html">
-      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.125rem;color:var(--fg);margin-bottom:0.25rem;transition:color 150ms" onmouseover="this.style.color='#2D8B4E'" onmouseout="this.style.color='var(--fg)'">Alimento Roedores</h3>
-    </a>
-    <p class="clamp2" style="font-size:0.875rem;color:var(--muted);margin-bottom:1rem">Mixtura nutritiva para roedores</p>
-    <a href="https://wa.me/573015561095?text=Hola%2C%20quiero%20pedir%3A%20Alimento%20Roedores" target="_blank" class="btn-primary" style="width:100%;font-size:0.875rem;padding:0.625rem 1rem">
-      💬 Pedir por WhatsApp
-    </a>
-  </div>
-</div>
-<div class="glass product-card">
-  <a href="./tienda/veggies-espirulina-rounds.html">
-    <div class="product-img">
-      <img src="./images/products/veggies-espirulina-rounds-2.png" alt="Veggies Espirulina Rounds">
-      <div style="position:absolute;top:0.75rem;left:0.75rem">
-        <span style="font-size:0.75rem;font-weight:500;background:rgba(45,139,78,0.9);color:#fff;padding:0.25rem 0.5rem;border-radius:9999px">Exotik Food</span>
-      </div>
-    </div>
-  </a>
-  <div style="padding:1.25rem">
-    <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem;text-transform:capitalize">peces</div>
-    <a href="./tienda/veggies-espirulina-rounds.html">
-      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.125rem;color:var(--fg);margin-bottom:0.25rem;transition:color 150ms" onmouseover="this.style.color='#2D8B4E'" onmouseout="this.style.color='var(--fg)'">Veggies Espirulina Rounds</h3>
-    </a>
-    <p class="clamp2" style="font-size:0.875rem;color:var(--muted);margin-bottom:1rem">Alimento vegetal con espirulina para peces</p>
-    <a href="https://wa.me/573015561095?text=Hola%2C%20quiero%20pedir%3A%20Veggies%20Espirulina%20Rounds" target="_blank" class="btn-primary" style="width:100%;font-size:0.875rem;padding:0.625rem 1rem">
-      💬 Pedir por WhatsApp
-    </a>
-  </div>
-</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section style="padding:5rem 0;background:rgba(28,25,23,0.2)">
-  <div class="wrap">
-    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.5rem;margin-bottom:3rem">
-      <div>
-        <p class="eyebrow">Conocimiento</p>
-        <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);color:var(--fg);margin-bottom:0.75rem">El mundo exótico</h2>
-        <p style="color:var(--muted);font-size:1.125rem">Aprende sobre los animales más fascinantes del planeta</p>
+  <!-- Bestsellers Grid -->
+  <section class="bg-surface-container-low py-24">
+    <div class="px-margin-desktop max-w-container-max mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="font-display-lg text-display-lg text-primary">Boutique Bestsellers</h2>
+        <p class="text-on-surface-variant max-w-xl mx-auto">Our most sought-after specimens and curated care products, chosen by experts for their exceptional quality and beauty.</p>
       </div>
-      <a href="./mundo-exotico.html" style="font-size:0.875rem;color:var(--accent)">Ver todos los artículos →</a>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+        <!-- Product 1 -->
+        <div class="group bg-surface rounded-lg overflow-hidden border border-outline-variant/30 hover:border-primary transition-all">
+          <div class="aspect-square relative overflow-hidden">
+            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7WNY__NLtrvgYVdB8-bgkhCCbffzbbTYl-qqzW-EMRzBnPlAnsr6-dE-rooPo5iTfJAZ2qVM8styrdp0h1KaJttFYm4HQL3PIm5sHl4e6q1yysAsejj8etzaOgqhfA6VJf6fQDp8lV2P0exeA3MkTYaswlt5sBPGBZ8Crb5TC-FGn6cCIhlIUezsRpgrid9msnpeqtx7r4roAZNGRH455XTZNEYPspmAncQKcH3gPXJ-bNpbIaXiFEq2jbPrMf05WMOW_9IlrOm4" alt="Deep Indigo Phalaenopsis">
+            <span class="absolute top-4 right-4 bg-primary text-white font-label-caps px-3 py-1 rounded-full text-[10px]">FLOWER</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-title-lg text-title-lg mb-1">Deep Indigo Phalaenopsis</h4>
+            <p class="text-on-surface-variant text-body-sm mb-4">Scientific Name: Orchidaceae</p>
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-lg text-secondary">$124.00</span>
+              <button class="bg-primary text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
+                <span class="material-symbols-outlined">add_shopping_cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="group bg-surface rounded-lg overflow-hidden border border-outline-variant/30 hover:border-primary transition-all">
+          <div class="aspect-square relative overflow-hidden">
+            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANuf9_QANGCb_pV2RodSVytHaDlaNt1r1S_ALwI1yWRA36p8wueQREnvNvhLhBXBVhR4pHwKTuHIO9gwt0NX1ZdHrO0CJnxw5fWJTh0N9Gk08MYVlJby6WH2SsB5btOKwYfLIOf9c8CrkyG65YVYQ7P0lmM0OngdU6kK-Ykl4xZE0lJukjdY9SKh49ROTYUgUCJte75hAPXVQyMLrb4c9sH360pMNI6g0V5_eHGtpbPjJwficVDcBpnyn7ckuu-9NorLXscJEgOTA" alt="Curated Glass Ecosystem">
+            <span class="absolute top-4 right-4 bg-primary text-white font-label-caps px-3 py-1 rounded-full text-[10px]">SUPPLIES</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-title-lg text-title-lg mb-1">Curated Glass Ecosystem</h4>
+            <p class="text-on-surface-variant text-body-sm mb-4">20L High-Clarity Glass</p>
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-lg text-secondary">$89.00</span>
+              <button class="bg-primary text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
+                <span class="material-symbols-outlined">add_shopping_cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="group bg-surface rounded-lg overflow-hidden border border-outline-variant/30 hover:border-primary transition-all">
+          <div class="aspect-square relative overflow-hidden">
+            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE3n1LwfrI3-m9_CD9Da2RO24wkrqKm7sqwztQfsLkkISSGGV6WtB8Ayah6gFwDGzgO2UcccVSkax2MQ8QZVAvLJ5VjlMjYlwQ1_G1unJdltnLK_EZ91Vybm1LXG9XWrdD9u-tXqy2LiNuATf7jer85LBlTvEUFyNAcYHDGmLWP2orlRya6W8eeBpQ-oOyZpwzL5LWKZ6oOdnO7roxEriKraOzOh5nh9Lw3JXDX-qUxjfO6hIpFqZxMBInacUZE6_NqlPAOFsaSCE" alt="Arboreal Nutrient Blend">
+            <span class="absolute top-4 right-4 bg-primary text-white font-label-caps px-3 py-1 rounded-full text-[10px]">ORGANIC</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-title-lg text-title-lg mb-1">Arboreal Nutrient Blend</h4>
+            <p class="text-on-surface-variant text-body-sm mb-4">Calcium Fortified, 500g</p>
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-lg text-secondary">$34.50</span>
+              <button class="bg-primary text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
+                <span class="material-symbols-outlined">add_shopping_cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 4 -->
+        <div class="group bg-surface rounded-lg overflow-hidden border border-outline-variant/30 hover:border-primary transition-all">
+          <div class="aspect-square relative overflow-hidden">
+            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5-e6Ulwsfu8e0xJh2JvK_ku3fCkeMI3-5h1YDBMKs-k1DqNBpZ9yXjl98zSx8U0dkgWhX7GQPiotpzImNMFvbFDj4TZKTO0Pf8h2u6dvDSzXC-OBV9LZlV0ZPGmIrKJrhJdCsmi3EHcYaIJKcefIlfhu7Tt44ylaN2UsGfp0EHEX-YPiPp5tIVJjodG6W1XQ7Tzie_UfbEH3PcK-NW22dHygb9Uqnf2RKCDmXqcM6_QSAv9zhLV1CLX7V5Nt6BBhTV5_72oHt4y8" alt="Designer Crested Gecko">
+            <span class="absolute top-4 right-4 bg-primary text-white font-label-caps px-3 py-1 rounded-full text-[10px]">LIVE ANIMAL</span>
+          </div>
+          <div class="p-6">
+            <h4 class="font-title-lg text-title-lg mb-1">Designer Crested Gecko</h4>
+            <p class="text-on-surface-variant text-body-sm mb-4">Juvenile, Red Pinstripe</p>
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-lg text-secondary">$325.00</span>
+              <button class="bg-primary text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
+                <span class="material-symbols-outlined">add_shopping_cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="grid-3">
-      
-<a href="./mundo-exotico/guia-cuidado-periquitos.html" class="glass article-card" style="overflow:hidden;display:block;transition:border-color 150ms" onmouseover="this.style.borderColor='rgba(45,139,78,0.2)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.10)'">
-  <div class="article-img">
-    <img src="./images/articles/periquitos.jpg" alt="Guía completa para cuidar periquitos">
-    <div style="position:absolute;top:0.75rem;left:0.75rem">
-      <span style="font-size:0.75rem;font-weight:500;background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);color:#fff;padding:0.25rem 0.5rem;border-radius:9999px">Aves</span>
-    </div>
-  </div>
-  <div style="padding:1.25rem">
-    <h3 class="clamp2" style="font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--fg);margin-bottom:0.5rem">Guía completa para cuidar periquitos</h3>
-    <p class="clamp2" style="font-size:0.875rem;color:var(--muted);margin-bottom:0.75rem">Todo lo que necesitas saber para que tu periquito viva feliz: alimentación, jaula, socialización y salud.</p>
-    <div style="font-size:0.75rem;color:var(--muted);display:flex;align-items:center;gap:0.375rem">⏱ 6 min de lectura</div>
-  </div>
-</a>
-<a href="./mundo-exotico/pinzones-alimentacion-perfecta.html" class="glass article-card" style="overflow:hidden;display:block;transition:border-color 150ms" onmouseover="this.style.borderColor='rgba(45,139,78,0.2)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.10)'">
-  <div class="article-img">
-    <img src="./images/articles/pinzones.jpg" alt="Pinzones: la alimentación perfecta">
-    <div style="position:absolute;top:0.75rem;left:0.75rem">
-      <span style="font-size:0.75rem;font-weight:500;background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);color:#fff;padding:0.25rem 0.5rem;border-radius:9999px">Aves</span>
-    </div>
-  </div>
-  <div style="padding:1.25rem">
-    <h3 class="clamp2" style="font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--fg);margin-bottom:0.5rem">Pinzones: la alimentación perfecta</h3>
-    <p class="clamp2" style="font-size:0.875rem;color:var(--muted);margin-bottom:0.75rem">Descubre qué comen los pinzones en su hábitat natural y cómo replicar esa dieta en casa para mantenerlos sanos.</p>
-    <div style="font-size:0.75rem;color:var(--muted);display:flex;align-items:center;gap:0.375rem">⏱ 4 min de lectura</div>
-  </div>
-</a>
-<a href="./mundo-exotico/canarios-canto-salud.html" class="glass article-card" style="overflow:hidden;display:block;transition:border-color 150ms" onmouseover="this.style.borderColor='rgba(45,139,78,0.2)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.10)'">
-  <div class="article-img">
-    <img src="./images/articles/canarios.jpg" alt="Canarios: canto, salud y alimentación">
-    <div style="position:absolute;top:0.75rem;left:0.75rem">
-      <span style="font-size:0.75rem;font-weight:500;background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);color:#fff;padding:0.25rem 0.5rem;border-radius:9999px">Aves</span>
-    </div>
-  </div>
-  <div style="padding:1.25rem">
-    <h3 class="clamp2" style="font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--fg);margin-bottom:0.5rem">Canarios: canto, salud y alimentación</h3>
-    <p class="clamp2" style="font-size:0.875rem;color:var(--muted);margin-bottom:0.75rem">El canario es mucho más que su melodía. Aprende cómo cuidarlo para que cante fuerte y viva muchos años.</p>
-    <div style="font-size:0.75rem;color:var(--muted);display:flex;align-items:center;gap:0.375rem">⏱ 5 min de lectura</div>
-  </div>
-</a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section style="padding:6rem 0;position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(45,139,78,0.2),transparent,rgba(45,139,78,0.1))"></div>
-  <div class="wrap" style="position:relative;z-index:1;text-align:center">
-    <p class="eyebrow">¿Listo para empezar?</p>
-    <h2 style="font-size:clamp(2rem,5vw,3.5rem);color:var(--fg);margin-bottom:1.5rem">Hablemos sobre tu compañero</h2>
-    <p style="font-size:1.125rem;color:var(--muted);margin-bottom:2.5rem;max-width:36rem;margin-left:auto;margin-right:auto">Escríbenos por WhatsApp y te ayudamos a encontrar el producto perfecto para tu animal exótico.</p>
-    <a href="https://wa.me/573015561095?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" target="_blank" class="btn-primary" style="font-size:1rem;padding:1rem 2rem">
-      💬 Escribir por WhatsApp
-    </a>
-  </div>
-</section>
+  <!-- Scientific Care Section -->
+  <section class="py-24 px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+    <div class="flex flex-col lg:flex-row items-center gap-16">
+      <div class="w-full lg:w-1/2 relative">
+        <div class="absolute -top-8 -left-8 w-32 h-32 bg-primary-fixed rounded-full blur-3xl opacity-30"></div>
+        <div class="relative z-10 rounded-lg overflow-hidden shadow-2xl">
+          <img class="w-full h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIYKuXfeUO9zllJwp5egWl6wOvJzNdockGl191gMiocfwFyyfdkgH_TRi89lq6Wc6FYgJHiDul6oV00X4HCN78czVI9kB8qT7sO9R7GjUXecyWFvnCjWWcmYnHKHfWjUhmaG304EL5rduxra7PehYDHT7C7l1nhx5sfFKwBkxh-biPNdtY_hlhkrVUi52ElUsuUMJpTOH8PtmFS19PfcLuP1-ZPGQ9VYcNQajqdIl5zc0PszTh-Qz2u2HaNVO3Mk6WlKI1u7wEvyM" alt="Scientific Care">
+        </div>
+        <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-secondary-fixed rounded-full blur-3xl opacity-20"></div>
+      </div>
+      <div class="w-full lg:w-1/2">
+        <span class="text-primary font-bold tracking-widest text-label-caps uppercase">Our Philosophy</span>
+        <h2 class="font-display-lg text-display-lg text-on-surface mt-4 mb-8">Where Science Meets Stewardship</h2>
+        <div class="space-y-8">
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined">health_metrics</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">Ethical Acquisition</h3>
+              <p class="text-on-surface-variant">Every creature and plant is ethically sourced or captive-bred in-house to ensure the highest standard of animal welfare and ecological sustainability.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined">science</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">Biophilic Design</h3>
+              <p class="text-on-surface-variant">We bridge the gap between scientific husbandry and interior design, providing habitats that are as healthy for your pets as they are beautiful for your home.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined">verified_user</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">Lifetime Expert Support</h3>
+              <p class="text-on-surface-variant">Purchasing from us is the start of a journey. Access our deep library of scientific care guides and direct access to our staff biologists.</p>
+            </div>
+          </div>
+        </div>
+        <button class="mt-12 inline-flex items-center gap-2 font-bold text-primary hover:text-secondary transition-colors group">
+          Read Our Care Manifestos <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+  </section>
 
-<script>
-let cur = 0
-const slides = document.querySelectorAll('.hero-slide')
-const dots = document.querySelectorAll('#hero-dots button')
-function goSlide(n) {
-  slides[cur].style.opacity = 0
-  dots[cur].style.background = 'rgba(255,255,255,0.4)'
-  dots[cur].style.width = '0.5rem'
-  cur = n
-  slides[cur].style.opacity = 1
-  dots[cur].style.background = '#fff'
-  dots[cur].style.width = '1.5rem'
-}
-setInterval(() => goSlide((cur + 1) % 3), 5000)
-</script>
-
+  <!-- Newsletter / CTA -->
+  <section class="mb-24 px-margin-desktop max-w-container-max mx-auto">
+    <div class="bg-primary rounded-lg p-12 text-center text-white relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -mr-48 -mt-48 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-fixed rounded-full -ml-48 -mb-48 blur-3xl"></div>
+      </div>
+      <div class="relative z-10">
+        <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-4">Join the Inner Circle</h2>
+        <p class="max-w-2xl mx-auto mb-8 opacity-90">Receive weekly scientific insights, exclusive botanical releases, and early access to our rarest arrivals.</p>
+        <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto" onsubmit="event.preventDefault(); alert('Welcome to the wild!');">
+          <input class="flex-grow rounded-lg border-none text-on-surface px-6 py-4 focus:ring-4 focus:ring-secondary/50" placeholder="Your scientific email..." type="email">
+          <button class="bg-secondary hover:bg-on-secondary-fixed-variant text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <div style="display:flex;align-items:center;gap:0.5rem;font-family:'Bebas Neue',sans-serif;font-size:1.125rem;margin-bottom:0.75rem">
-          <svg width="20" height="20" fill="none" stroke="#2D8B4E" stroke-width="2" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 3.5-2.5 7-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-          Exotik Zoo
-        </div>
-        <p style="font-size:0.875rem;color:var(--muted);line-height:1.6">Tu puerta al mundo de los animales exóticos. Productos de calidad y conocimiento para tu compañero no convencional.</p>
-      </div>
-      <div>
-        <div class="footer-label">Navegación</div>
-        <a href="./tienda.html" class="footer-link">Tienda</a>
-        <a href="./mundo-exotico.html" class="footer-link">El Mundo Exótico</a>
-        <a href="./nosotros.html" class="footer-link">Nosotros</a>
-        <a href="./contacto.html" class="footer-link">Contacto</a>
-      </div>
-      <div>
-        <div class="footer-label">Contacto</div>
-        <a href="https://wa.me/573015561095?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" target="_blank" class="footer-link" style="display:flex;align-items:center;gap:0.5rem">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          301 556 10 95
-        </a>
-        <a href="https://www.instagram.com/exotikzoo.colombia" target="_blank" class="footer-link" style="display:flex;align-items:center;gap:0.5rem">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          @exotikzoo.colombia
-        </a>
-      </div>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+  <div class="w-full px-margin-desktop py-12 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter">
+    <div class="text-center md:text-left">
+      <div class="font-headline-md text-headline-md text-primary mb-2">Exotik Zoo</div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">Precision Care for Extraordinary Companions. Established 2024.</p>
     </div>
-    <div class="footer-bottom">
-      <p style="font-size:0.75rem;color:var(--muted)">© 2026 Exotik Zoo. Todos los derechos reservados.</p>
-      <div style="display:flex;gap:0.75rem;font-size:0.75rem;color:var(--muted)"><span>Exotik Labs</span><span>·</span><span>Exotik Food</span></div>
+    <div class="flex flex-wrap justify-center gap-8 font-body-sm text-body-sm">
+      <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+      <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+      <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Shipping Info</a>
+      <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Scientific Care Guides</a>
+    </div>
+    <div class="flex gap-4">
+      <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+        <span class="material-symbols-outlined text-sm">public</span>
+      </a>
+      <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+        <span class="material-symbols-outlined text-sm">mail</span>
+      </a>
     </div>
   </div>
+  <div class="w-full py-6 border-t border-outline-variant/20 text-center text-[10px] uppercase tracking-widest text-on-surface-variant opacity-50">
+    © 2024 Exotik Zoo. Precision Care for Extraordinary Companions.
+  </div>
 </footer>
-<a href="https://wa.me/573015561095?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" target="_blank" class="wa-float" aria-label="WhatsApp">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-</body>
-</html>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-8');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-8');
+      observer.observe(section);
+    });
+
+    setTimeout(() => {
+      const first = document.querySelector('main section');
+      if (first) { first.classList.add('opacity-100', 'translate-y-0'); first.classList.remove('opacity-0', 'translate-y-8'); }
+    }, 100);
+  });
+</script>
+</body></html>
