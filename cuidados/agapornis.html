@@ -1,352 +1,264 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Guía: Agapornis | Exotik Zoo</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --accent: #2D8B4E;
-  --bg: #0C0A09;
-  --fg: #FAFAF9;
-  --primary: #1C1917;
-  --muted: #A8A29E;
-  --border: rgba(255,255,255,0.10);
+<meta name="description" content="Guía completa de cuidado del agapornis. Alimentación, hábitat, salud y comportamiento.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#006b34",
+        "primary-container": "#258549",
+        "on-primary": "#ffffff",
+        "secondary": "#9f402d",
+        "surface": "#faf9f6",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-low": "#f4f4f0",
+        "surface-container": "#eeeeea",
+        "on-surface": "#1a1c1a",
+        "on-surface-variant": "#3f493f",
+        "outline-variant": "#becabd",
+      },
+      borderRadius: { "lg": "12px" },
+      fontFamily: {
+        "display": ["Bebas Neue","sans-serif"],
+        "body": ["Inter","sans-serif"],
+      },
+      maxWidth: { "container-max": "1280px" },
+    }
+  }
 }
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--fg);font-family:'Montserrat',system-ui,sans-serif;-webkit-font-smoothing:antialiased;margin:0}
-h1,h2,h3,h4,h5,h6{font-family:'Bebas Neue',sans-serif;margin:0}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;height:auto}
-button{border:none;background:none;cursor:pointer;font-family:inherit}
-
-.glass{background:rgba(255,255,255,0.05);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:1rem}
-.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;background:var(--accent);color:#fff;border-radius:9999px;padding:0.625rem 1.5rem;font-weight:600;font-size:0.9375rem;cursor:pointer;transition:opacity 150ms;text-decoration:none;border:none;font-family:'Montserrat',sans-serif}
-.btn-primary:hover{opacity:0.85}
-.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;border:1px solid rgba(255,255,255,0.20);border-radius:9999px;padding:0.625rem 1.5rem;font-weight:500;font-size:0.9375rem;color:var(--fg);cursor:pointer;transition:background 150ms;background:transparent;text-decoration:none;font-family:'Montserrat',sans-serif}
-.btn-ghost:hover{background:rgba(255,255,255,0.10)}
-.wrap{padding-left:1rem;padding-right:1rem;max-width:80rem;margin:0 auto}
-@media(min-width:640px){.wrap{padding-left:1.5rem;padding-right:1.5rem}}
-@media(min-width:1024px){.wrap{padding-left:2rem;padding-right:2rem}}
-.gradient-text{background:linear-gradient(135deg,#2D8B4E,#52C97A,#1A6B38);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.eyebrow{font-size:0.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem}
-.clamp2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-
-/* Nav */
-nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(12,10,9,0.80);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:6rem}
-.nav-links{display:none;align-items:center;gap:2rem}
-@media(min-width:768px){.nav-links{display:flex}}
-.nav-links a{font-size:0.875rem;color:var(--muted);transition:color 150ms}
-.nav-links a:hover{color:var(--fg)}
-.hamburger{display:flex;color:var(--fg)}
-@media(min-width:768px){.hamburger{display:none}}
-.mobile-menu{display:none;background:rgba(12,10,9,0.95);border-bottom:1px solid var(--border);padding:0.5rem 1rem 1.5rem}
-.mobile-menu.open{display:block}
-.mobile-menu a{display:block;padding:0.75rem 0;font-size:0.875rem;color:var(--muted)}
-
-/* Footer */
-footer.site-footer{background:var(--primary);border-top:1px solid var(--border)}
-.footer-grid{display:grid;grid-template-columns:1fr;gap:2rem;padding:3rem 0}
-@media(min-width:768px){.footer-grid{grid-template-columns:repeat(3,1fr)}}
-.footer-label{font-family:'Bebas Neue',sans-serif;font-size:0.875rem;color:var(--fg);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem}
-.footer-link{font-size:0.875rem;color:var(--muted);display:block;margin-bottom:0.5rem;transition:color 150ms}
-.footer-link:hover{color:var(--accent)}
-.footer-bottom{border-top:1px solid var(--border);padding:1.5rem 0;display:flex;flex-direction:column;gap:1rem;align-items:center}
-@media(min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between}}
-
-/* WhatsApp float */
-.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:50;background:#22c55e;color:#fff;border-radius:9999px;width:3.5rem;height:3.5rem;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(34,197,94,0.4);transition:transform 150ms,background 150ms}
-.wa-float:hover{background:#16a34a;transform:scale(1.1)}
-
-/* Cards */
-.product-card{overflow:hidden;transition:border-color 150ms}
-.product-card:hover{border-color:rgba(45,139,78,0.3)}
-.product-img{position:relative;height:16rem;overflow:hidden;background:rgba(68,64,60,0.3)}
-.product-img img{width:100%;height:100%;object-fit:contain;transition:transform 500ms}
-.product-card:hover .product-img img{transform:scale(1.05)}
-.article-img{position:relative;height:12rem;overflow:hidden;background:rgba(68,64,60,0.3)}
-.article-img img{width:100%;height:100%;object-fit:cover;transition:transform 500ms}
-.article-card:hover .article-img img{transform:scale(1.05)}
-
-/* Tabs / filter */
-.tab-btn{font-size:0.875rem;padding:0.5rem 1.25rem;border-radius:9999px;transition:all 200ms;cursor:pointer;font-family:'Montserrat',sans-serif;font-weight:500}
-.tab-btn.active{background:var(--accent);color:#fff}
-.tab-btn:not(.active){background:rgba(255,255,255,0.05);color:var(--muted)}
-.tab-btn:not(.active):hover{background:rgba(255,255,255,0.10)}
-
-/* Grid */
-.grid-2{display:grid;grid-template-columns:1fr;gap:1.5rem}
-@media(min-width:640px){.grid-2{grid-template-columns:repeat(2,1fr)}}
-.grid-3{display:grid;grid-template-columns:1fr;gap:1.5rem}
-@media(min-width:768px){.grid-3{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.grid-3{grid-template-columns:repeat(3,1fr)}}
-.grid-4{display:grid;grid-template-columns:1fr;gap:1.5rem}
-@media(min-width:768px){.grid-4{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1280px){.grid-4{grid-template-columns:repeat(4,1fr)}}
-
-@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.slide-up{animation:slideUp 0.5s ease-out}
-</style>
-
+</script>
+<style>body{font-family:'Inter',sans-serif;background:#faf9f6;color:#1a1c1a}</style>
 </head>
 <body>
 
-<nav class="site-nav">
-  <div class="wrap nav-inner">
-    <a href="./index.html"><img src="./logo.png" alt="Exotik Zoo" style="height:5rem;width:auto"></a>
-    <div class="nav-links">
-      <a href="./index.html">Inicio</a>
-      <a href="./tienda.html">Tienda</a>
-      <a href="./mundo-exotico.html">El Mundo Exótico</a>
-      <a href="./cuidados.html">Cuidados</a>
-      <a href="./nosotros.html">Nosotros</a>
-      <a href="./contacto.html">Contacto</a>
-      <a href="./tienda.html" class="btn-primary" style="font-size:0.875rem;padding:0.5rem 1.25rem">Ver Catálogo</a>
-    </div>
-    <button class="hamburger" onclick="document.getElementById('mob-menu').classList.toggle('open')" aria-label="Menú">
-      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+<!-- Nav -->
+<header class="sticky top-0 z-50 bg-surface-container-lowest border-b border-outline-variant/40 shadow-sm">
+  <div class="flex justify-between items-center w-full px-4 md:px-12 py-4 max-w-container-max mx-auto">
+    <a href="../index.html" class="font-display text-2xl text-primary tracking-wide">Exotik Zoo</a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+      <a href="../tienda/" class="text-on-surface-variant hover:text-primary transition-colors">Tienda</a>
+      <a href="../cuidados/" class="text-primary border-b-2 border-primary pb-0.5">Cuidados</a>
+      <a href="../mundo-exotico/" class="text-on-surface-variant hover:text-primary transition-colors">El Mundo Exótico</a>
+      <a href="../nosotros.html" class="text-on-surface-variant hover:text-primary transition-colors">Nosotros</a>
+      <a href="../contacto.html" class="text-on-surface-variant hover:text-primary transition-colors">Contacto</a>
+    </nav>
+    <a href="../tienda/" class="hidden md:inline-flex bg-primary text-white px-5 py-2 rounded-lg font-semibold text-sm hover:bg-primary-container transition-colors">Ver Catálogo</a>
+    <button onclick="document.getElementById('mob-nav').classList.toggle('hidden')" class="md:hidden text-on-surface p-1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
   </div>
-  <div id="mob-menu" class="mobile-menu">
-    <a href="./index.html">Inicio</a>
-    <a href="./tienda.html">Tienda</a>
-    <a href="./mundo-exotico.html">El Mundo Exótico</a>
-    <a href="./cuidados.html">Cuidados</a>
-    <a href="./nosotros.html">Nosotros</a>
-    <a href="./contacto.html">Contacto</a>
-    <a href="./tienda.html" class="btn-primary" style="display:block;text-align:center;margin-top:1rem">Ver Catálogo</a>
+  <div id="mob-nav" class="hidden md:hidden bg-surface-container-lowest border-t border-outline-variant/40 px-4 py-4 space-y-3 text-sm font-semibold">
+    <a href="../tienda/" class="block text-on-surface-variant hover:text-primary transition-colors">Tienda</a>
+    <a href="../cuidados/" class="block text-primary">Cuidados</a>
+    <a href="../mundo-exotico/" class="block text-on-surface-variant hover:text-primary transition-colors">El Mundo Exótico</a>
+    <a href="../nosotros.html" class="block text-on-surface-variant hover:text-primary transition-colors">Nosotros</a>
+    <a href="../contacto.html" class="block text-on-surface-variant hover:text-primary transition-colors">Contacto</a>
+    <a href="../tienda/" class="block bg-primary text-white px-5 py-2 rounded-lg text-center hover:bg-primary-container transition-colors">Ver Catálogo</a>
   </div>
-</nav>
-<main style="padding-top:6rem;min-height:100vh">
+</header>
 
-<div style="padding:4rem 0">
-  <div class="wrap" style="max-width:56rem;margin-left:auto;margin-right:auto">
-    <a href="../cuidados.html" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.875rem;color:var(--muted);margin-bottom:2rem;transition:color 150ms" onmouseover="this.style.color='var(--fg)'" onmouseout="this.style.color='var(--muted)'">← Todas las fichas</a>
-    <div style="position:relative;width:100%;height:clamp(16rem,40vw,24rem);border-radius:1rem;overflow:hidden;margin-bottom:2rem">
-      <img src="../images/cuidados/agapornis.jpg" alt="Agapornis" style="width:100%;height:100%;object-fit:cover">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.8),rgba(0,0,0,0.2),transparent)"></div>
-      <div style="position:absolute;bottom:0;left:0;padding:2rem">
-        <span style="font-size:0.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:0.5rem">aves</span>
-        <h1 style="font-size:clamp(2.5rem,6vw,4rem);color:#fff;margin-bottom:0.5rem">Agapornis</h1>
-        <p style="color:rgba(255,255,255,0.7);font-size:0.875rem">El inseparable — amor y lealtad en miniatura</p>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:3rem">
-      <div class="glass" style="padding:1rem;text-align:center;border-color:rgba(234,179,8,0.3)">
-        <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:#facc15;margin-bottom:0.25rem">Dificultad</p>
-        <p style="font-family:'Bebas Neue',sans-serif;font-size:1.125rem;color:#facc15">Intermedio</p>
-      </div>
-      <div class="glass" style="padding:1rem;text-align:center">
-        <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);margin-bottom:0.25rem">Esperanza</p>
-        <p style="font-family:'Bebas Neue',sans-serif;font-size:1.125rem;color:var(--fg)">10–15 años</p>
-      </div>
-      <div class="glass" style="padding:1rem;text-align:center">
-        <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);margin-bottom:0.25rem">Tamaño</p>
-        <p style="font-family:'Bebas Neue',sans-serif;font-size:1.125rem;color:var(--fg)">13–17 cm</p>
-      </div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:2rem;margin-bottom:4rem">
-      
-      <div class="glass" style="padding:2rem">
-        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem">
-          <div style="width:2.5rem;height:2.5rem;border-radius:9999px;background:rgba(45,139,78,0.2);display:flex;align-items:center;justify-content:center;font-size:1.25rem">🍽️</div>
-          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--fg)">Alimentación</h2>
-        </div>
-        <p style="font-size:0.9375rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem">Los agapornis tienen mayor necesidad de frutas frescas y vegetales variados.</p>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem">
-          
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Mezcla de semillas para agapornis o loros pequeños</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Frutas frescas diariamente (mango, papaya, manzana)</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Verduras de hoja verde varias veces por semana</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Pellets pueden complementar hasta el 30% de la dieta</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Calcio extra con cuttlebone (sepia)</span>
-          </li>
-        </ul>
-      </div>
-      <div class="glass" style="padding:2rem">
-        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem">
-          <div style="width:2.5rem;height:2.5rem;border-radius:9999px;background:rgba(45,139,78,0.2);display:flex;align-items:center;justify-content:center;font-size:1.25rem">🏠</div>
-          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--fg)">Hábitat</h2>
-        </div>
-        <p style="font-size:0.9375rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem">Los agapornis son activos y necesitan espacio para volar. Son animales de pareja.</p>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem">
-          
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Jaula mínima para pareja: 80x50x60 cm</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Temperatura: 20–28°C</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Múltiples perchas y juguetes de madera para roer</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Baño disponible 3 veces por semana</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Tiempo libre fuera de la jaula diariamente</span>
-          </li>
-        </ul>
-      </div>
-      <div class="glass" style="padding:2rem">
-        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem">
-          <div style="width:2.5rem;height:2.5rem;border-radius:9999px;background:rgba(45,139,78,0.2);display:flex;align-items:center;justify-content:center;font-size:1.25rem">💚</div>
-          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--fg)">Salud</h2>
-        </div>
-        <p style="font-size:0.9375rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem">Los agapornis son robustos pero susceptibles a enfermedades por virus y bacterias.</p>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem">
-          
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Revisión veterinaria anual con especialista en aves exóticas</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Limpieza diaria de comederos y bebederos</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Señales de alerta: plumas erizadas, ojos cerrados, deposiciones anormales</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">No expongas a aerosoles, perfumes o humo</span>
-          </li>
-        </ul>
-      </div>
-      <div class="glass" style="padding:2rem">
-        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem">
-          <div style="width:2.5rem;height:2.5rem;border-radius:9999px;background:rgba(45,139,78,0.2);display:flex;align-items:center;justify-content:center;font-size:1.25rem">🧠</div>
-          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--fg)">Comportamiento</h2>
-        </div>
-        <p style="font-size:0.9375rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem">Su nombre significa "pájaro amor" en griego. Forman vínculos de pareja de por vida.</p>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem">
-          
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Mejor en parejas del mismo sexo o macho-hembra</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Son ruidosos — normal en horas de actividad</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Pueden morder si se asustan — manejo suave y constante</span>
-          </li>
-          <li style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="min-width:1.25rem;height:1.25rem;border-radius:9999px;background:rgba(45,139,78,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.125rem">✓</span>
-            <span style="font-size:0.875rem;color:rgba(250,250,249,0.8)">Aprenden trucos simples con refuerzo positivo</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--fg);margin-bottom:1.5rem">Otras fichas de cuidado</h3>
-    <div class="grid-4">
-      
-      <a href="../cuidados/periquito.html" class="glass" style="overflow:hidden;display:block;transition:border-color 150ms" onmouseover="this.style.borderColor='rgba(45,139,78,0.2)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.10)'">
-        <div style="height:7rem;overflow:hidden">
-          <img src="../images/cuidados/periquito.jpg" alt="Periquito" style="width:100%;height:100%;object-fit:cover;transition:transform 500ms" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        </div>
-        <div style="padding:0.75rem">
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:0.875rem;color:var(--fg)">Periquito</p>
-          <p style="font-size:0.75rem;color:var(--muted)">Fácil</p>
-        </div>
-      </a>
-      <a href="../cuidados/canario.html" class="glass" style="overflow:hidden;display:block;transition:border-color 150ms" onmouseover="this.style.borderColor='rgba(45,139,78,0.2)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.10)'">
-        <div style="height:7rem;overflow:hidden">
-          <img src="../images/cuidados/canario.jpg" alt="Canario" style="width:100%;height:100%;object-fit:cover;transition:transform 500ms" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        </div>
-        <div style="padding:0.75rem">
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:0.875rem;color:var(--fg)">Canario</p>
-          <p style="font-size:0.75rem;color:var(--muted)">Fácil</p>
-        </div>
-      </a>
-      <a href="../cuidados/betta.html" class="glass" style="overflow:hidden;display:block;transition:border-color 150ms" onmouseover="this.style.borderColor='rgba(45,139,78,0.2)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.10)'">
-        <div style="height:7rem;overflow:hidden">
-          <img src="../images/cuidados/betta.jpg" alt="Pez Betta" style="width:100%;height:100%;object-fit:cover;transition:transform 500ms" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        </div>
-        <div style="padding:0.75rem">
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:0.875rem;color:var(--fg)">Pez Betta</p>
-          <p style="font-size:0.75rem;color:var(--muted)">Fácil</p>
-        </div>
-      </a>
-      <a href="../cuidados/pez-dorado.html" class="glass" style="overflow:hidden;display:block;transition:border-color 150ms" onmouseover="this.style.borderColor='rgba(45,139,78,0.2)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.10)'">
-        <div style="height:7rem;overflow:hidden">
-          <img src="../images/cuidados/pez-dorado.jpg" alt="Pez Dorado" style="width:100%;height:100%;object-fit:cover;transition:transform 500ms" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        </div>
-        <div style="padding:0.75rem">
-          <p style="font-family:'Bebas Neue',sans-serif;font-size:0.875rem;color:var(--fg)">Pez Dorado</p>
-          <p style="font-size:0.75rem;color:var(--muted)">Intermedio</p>
-        </div>
-      </a>
+<main class="max-w-3xl mx-auto px-4 md:px-8 py-10">
+
+  <!-- Breadcrumb -->
+  <a href="./index.html" class="inline-flex items-center gap-1 text-sm text-on-surface-variant hover:text-primary transition-colors mb-8">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+    Todas las fichas
+  </a>
+
+  <!-- Hero imagen -->
+  <div class="relative h-72 md:h-96 rounded-lg overflow-hidden mb-8">
+    <img src="../assets/img/cuidados/agapornis.jpg" alt="Agapornis" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 p-6">
+      <span class="text-xs font-bold text-secondary uppercase tracking-widest bg-white/90 px-3 py-1 rounded-full mb-3 inline-block">Aves</span>
+      <h1 class="font-display text-5xl md:text-6xl text-white">Agapornis</h1>
+      <p class="text-white/80 text-sm mt-1">El inseparable — amor y lealtad en miniatura</p>
     </div>
   </div>
-</div>
+
+  <!-- Stats -->
+  <div class="grid grid-cols-3 gap-3 mb-10">
+    <div class="bg-secondary/10 border border-secondary/20 rounded-lg p-4 text-center">
+      <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-1">Dificultad</p>
+      <p class="font-display text-xl text-secondary">Intermedio</p>
+    </div>
+    <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 text-center">
+      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Vida</p>
+      <p class="font-display text-xl text-on-surface">10–15 años</p>
+    </div>
+    <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 text-center">
+      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Tamaño</p>
+      <p class="font-display text-xl text-on-surface">13–17 cm</p>
+    </div>
+  </div>
+
+  <!-- Secciones de contenido -->
+  <div class="space-y-6 mb-12">
+
+    <!-- Alimentación -->
+    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🍽️</div>
+        <h2 class="font-display text-3xl text-on-surface">Alimentación</h2>
+      </div>
+      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Los agapornis necesitan una dieta variada y equilibrada. Los pellets deben ser la base y las semillas solo un premio ocasional para evitar deficiencias nutricionales.</p>
+      <ul class="space-y-3">
+        <li class="flex items-start gap-3">
+          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="text-sm text-on-surface-variant">Pellets para loros como base de la dieta</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="text-sm text-on-surface-variant">Frutas frescas: manzana, pera, mango</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="text-sm text-on-surface-variant">Verduras: zanahoria, espinaca, pimiento</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="text-sm text-on-surface-variant">Semillas como premio ocasional y agua fresca diaria</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✗</span>
+          <span class="text-sm text-on-surface-variant">Evita aguacate, chocolate, cebolla y semillas de fruta</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Hábitat -->
+    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🏠</div>
+        <h2 class="font-display text-3xl text-on-surface">Hábitat</h2>
+      </div>
+      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">El agapornis es un ave activa y curiosa que necesita espacio para volar y explorar. La interacción diaria fuera de la jaula es fundamental para su bienestar mental.</p>
+      <ul class="space-y-3">
+        <li class="flex items-start gap-3">
+          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="text-sm text-on-surface-variant">Jaula mínima 60×45×90 cm con barrotes horizontales para trepar</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="text-sm text-on-surface-variant">Temperatura 18–28°C, sin corrientes de aire directas</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="text-sm text-on-surface-variant">Mínimo 4 horas fuera de la jaula al día para socializar y volar</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="text-sm text-on-surface-variant">Juguetes de madera para morder y estimulación mental</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Salud -->
+    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">💚</div>
+        <h2 class="font-display text-3xl text-on-surface">Salud</h2>
+      </div>
+      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Los agapornis son aves que esconden sus síntomas de enfermedad. La observación diaria del plumaje y el comportamiento es tu mejor herramienta preventiva.</p>
+      <ul class="space-y-3">
+        <li class="flex items-start gap-3">
+          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="text-sm text-on-surface-variant">Observa plumaje y ojos diariamente</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="text-sm text-on-surface-variant">Plumas hinchadas son señal de enfermedad — acude al veterinario</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="text-sm text-on-surface-variant">Necesita veterinario especializado en aves y desparasitación anual</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="text-sm text-on-surface-variant">No los bañes con jabón — solo agua tibia o spray suave</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Dato curioso -->
+    <div class="bg-primary/5 border border-primary/20 rounded-lg p-6">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🧠</div>
+        <h2 class="font-display text-3xl text-primary">Dato curioso</h2>
+      </div>
+      <p class="text-on-surface-variant text-sm leading-relaxed">El agapornis forma parejas de por vida. Si pierde a su compañero puede entrar en depresión. Su nombre significa "amor de pájaro" en griego.</p>
+    </div>
+
+  </div>
+
+  <!-- CTA Tienda -->
+  <div class="bg-primary rounded-lg p-8 text-center text-white mb-12">
+    <h3 class="font-display text-4xl mb-2">¿Tienes un agapornis?</h3>
+    <p class="text-white/80 text-sm mb-6">Encuentra alimentos y accesorios especializados en nuestra tienda.</p>
+    <a href="../tienda/" class="inline-flex bg-white text-primary font-bold px-6 py-3 rounded-lg hover:bg-surface-container-low transition-colors">Ver productos →</a>
+  </div>
+
+  <!-- Otras fichas -->
+  <h3 class="font-display text-3xl text-on-surface mb-6">Otras fichas de cuidado</h3>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+    <a href="./periquito.html" class="group bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/30 hover:border-primary transition-all block">
+      <div class="h-24 overflow-hidden"><img src="../assets/img/cuidados/periquito.jpg" alt="Periquito" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div>
+      <div class="p-3"><p class="font-display text-lg text-on-surface">Periquito</p><p class="text-xs text-on-surface-variant">Fácil</p></div>
+    </a>
+    <a href="./canario.html" class="group bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/30 hover:border-primary transition-all block">
+      <div class="h-24 overflow-hidden"><img src="../assets/img/cuidados/canario.jpg" alt="Canario" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div>
+      <div class="p-3"><p class="font-display text-lg text-on-surface">Canario</p><p class="text-xs text-on-surface-variant">Fácil</p></div>
+    </a>
+    <a href="./betta.html" class="group bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/30 hover:border-primary transition-all block">
+      <div class="h-24 overflow-hidden"><img src="../assets/img/cuidados/betta.jpg" alt="Pez Betta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div>
+      <div class="p-3"><p class="font-display text-lg text-on-surface">Pez Betta</p><p class="text-xs text-on-surface-variant">Fácil</p></div>
+    </a>
+    <a href="./hamster.html" class="group bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/30 hover:border-primary transition-all block">
+      <div class="h-24 overflow-hidden"><img src="../assets/img/cuidados/hamster.jpg" alt="Hámster" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div>
+      <div class="p-3"><p class="font-display text-lg text-on-surface">Hámster</p><p class="text-xs text-on-surface-variant">Fácil</p></div>
+    </a>
+  </div>
 
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <div style="display:flex;align-items:center;gap:0.5rem;font-family:'Bebas Neue',sans-serif;font-size:1.125rem;margin-bottom:0.75rem">
-          <svg width="20" height="20" fill="none" stroke="#2D8B4E" stroke-width="2" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 3.5-2.5 7-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-          Exotik Zoo
-        </div>
-        <p style="font-size:0.875rem;color:var(--muted);line-height:1.6">Tu puerta al mundo de los animales exóticos. Productos de calidad y conocimiento para tu compañero no convencional.</p>
-      </div>
-      <div>
-        <div class="footer-label">Navegación</div>
-        <a href="./tienda.html" class="footer-link">Tienda</a>
-        <a href="./mundo-exotico.html" class="footer-link">El Mundo Exótico</a>
-        <a href="./nosotros.html" class="footer-link">Nosotros</a>
-        <a href="./contacto.html" class="footer-link">Contacto</a>
-      </div>
-      <div>
-        <div class="footer-label">Contacto</div>
-        <a href="https://wa.me/573015561095?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" target="_blank" class="footer-link" style="display:flex;align-items:center;gap:0.5rem">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          301 556 10 95
-        </a>
-        <a href="https://www.instagram.com/exotikzoo.colombia" target="_blank" class="footer-link" style="display:flex;align-items:center;gap:0.5rem">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          @exotikzoo.colombia
-        </a>
-      </div>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant mt-16">
+  <div class="w-full px-4 md:px-12 py-12 max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div>
+      <div class="font-display text-2xl text-primary mb-2">Exotik Zoo</div>
+      <p class="text-sm text-on-surface-variant max-w-xs leading-relaxed">Tu puerta al mundo de los animales exóticos. Productos de calidad y conocimiento para tu compañero no convencional.</p>
     </div>
-    <div class="footer-bottom">
-      <p style="font-size:0.75rem;color:var(--muted)">© 2026 Exotik Zoo. Todos los derechos reservados.</p>
-      <div style="display:flex;gap:0.75rem;font-size:0.75rem;color:var(--muted)"><span>Exotik Labs</span><span>·</span><span>Exotik Food</span></div>
+    <div>
+      <p class="text-xs font-bold text-on-surface uppercase tracking-widest mb-4">Navegación</p>
+      <a href="../tienda/" class="block text-sm text-on-surface-variant hover:text-primary transition-colors mb-2">Tienda</a>
+      <a href="../cuidados/" class="block text-sm text-on-surface-variant hover:text-primary transition-colors mb-2">Cuidados</a>
+      <a href="../mundo-exotico/" class="block text-sm text-on-surface-variant hover:text-primary transition-colors mb-2">El Mundo Exótico</a>
+      <a href="../nosotros.html" class="block text-sm text-on-surface-variant hover:text-primary transition-colors mb-2">Nosotros</a>
+      <a href="../contacto.html" class="block text-sm text-on-surface-variant hover:text-primary transition-colors mb-2">Contacto</a>
+    </div>
+    <div>
+      <p class="text-xs font-bold text-on-surface uppercase tracking-widest mb-4">Contacto</p>
+      <a href="https://wa.me/573245478625" target="_blank" class="block text-sm text-on-surface-variant hover:text-primary transition-colors mb-2">WhatsApp</a>
+      <a href="https://www.instagram.com/exotikzoo.colombia" target="_blank" class="block text-sm text-on-surface-variant hover:text-primary transition-colors mb-2">@exotikzoo.colombia</a>
     </div>
   </div>
+  <div class="border-t border-outline-variant px-4 md:px-12 py-4 max-w-container-max mx-auto">
+    <p class="text-xs text-on-surface-variant text-center">© 2026 Exotik Zoo. Todos los derechos reservados.</p>
+  </div>
 </footer>
-<a href="https://wa.me/573015561095?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" target="_blank" class="wa-float" aria-label="WhatsApp">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+
+<a href="https://wa.me/573245478625?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank"
+   class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition-all hover:scale-110"
+   aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" class="w-7 h-7 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
+
 </body>
 </html>
