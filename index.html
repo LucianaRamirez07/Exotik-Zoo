@@ -112,29 +112,41 @@
                 grid-auto-rows: auto;
             }
         }
+        #site-nav { transition: transform 0.3s ease, background-color 0.3s ease; }
+        #site-nav.nav-hidden { transform: translateY(-100%); }
+        #site-nav .nav-link { color: rgba(255,255,255,0.8); transition: color 0.2s; }
+        #site-nav .nav-link:hover { color: #fff; }
+        #site-nav .nav-logo { color: #fff; transition: color 0.2s; }
+        #site-nav .nav-icon { color: #fff; }
+        #site-nav.nav-solid { background-color: #fff; border-bottom: 1px solid rgba(190,202,189,0.4); }
+        #site-nav.nav-solid .nav-link { color: #3f493f; }
+        #site-nav.nav-solid .nav-link:hover { color: #006b34; }
+        #site-nav.nav-solid .nav-logo { color: #1a1c1a; }
+        #site-nav.nav-solid .nav-icon { color: #3f493f; }
     </style>
 </head>
 <body class="font-body-lg text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
 
-<!-- TopNavBar -->
-<header class="top-0 left-0 right-0 z-50 bg-transparent border-none absolute">
-  <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
-    <nav class="flex items-center justify-center w-full gap-12">
-      <a class="text-white font-bold font-body-lg text-body-lg" href="tienda/">Shop</a>
-      <a class="text-white hover:text-white/80 transition-colors font-body-lg text-body-lg" href="cuidados/">Pets</a>
-      <div class="flex-shrink-0 px-0">
-        <a class="font-display-lg text-display-lg text-white tracking-tight" href="index.html">Exotik Zoo</a>
+<!-- Nav -->
+<header id="site-nav" class="fixed top-0 left-0 right-0 z-50 bg-transparent">
+  <div class="flex items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto relative">
+    <nav class="flex items-center justify-center w-full gap-8">
+      <a class="nav-link font-body-lg text-body-lg" href="tienda.html">Tienda</a>
+      <a class="nav-link font-body-lg text-body-lg" href="cuidados/cuidados.html">Cuidados</a>
+      <a class="nav-link font-body-lg text-body-lg" href="mundo-exotico/mundo-exotico.html">El Mundo Exótico</a>
+      <div class="flex-shrink-0 px-8">
+        <a class="nav-logo font-headline-md text-headline-md tracking-tight" href="index.html">Exotik Zoo</a>
       </div>
-      <a class="text-white hover:text-white/80 transition-colors font-body-lg text-body-lg" href="mundo-exotico/">Flowers</a>
-      <a class="text-white hover:text-white/80 transition-colors font-body-lg text-body-lg" href="tienda/">Supplies</a>
+      <a class="nav-link font-body-lg text-body-lg" href="nosotros.html">Nosotros</a>
+      <a class="nav-link font-body-lg text-body-lg" href="contacto.html">Contacto</a>
     </nav>
     <div class="absolute right-margin-desktop flex items-center gap-6">
       <div class="flex gap-4">
-        <button class="hover:opacity-80 transition-opacity text-white flex items-center gap-1 font-body-sm text-body-sm">
-          <span class="material-symbols-outlined" style="font-size: 20px;">language</span><span>EN</span>
+        <button class="nav-icon hover:opacity-80 transition-opacity flex items-center gap-1 font-body-sm text-body-sm">
+          <span class="material-symbols-outlined" style="font-size: 20px;">language</span><span>ES</span>
         </button>
-        <button class="hover:opacity-80 transition-opacity text-white"><span class="material-symbols-outlined">shopping_cart</span></button>
-        <button class="hover:opacity-80 transition-opacity text-white"><span class="material-symbols-outlined">person</span></button>
+        <button class="nav-icon hover:opacity-80 transition-opacity"><span class="material-symbols-outlined">shopping_cart</span></button>
+        <button class="nav-icon hover:opacity-80 transition-opacity"><span class="material-symbols-outlined">person</span></button>
       </div>
     </div>
   </div>
@@ -142,220 +154,180 @@
 
 <main>
   <!-- Hero Section -->
-  <section class="relative h-[85vh] flex items-center overflow-hidden mt-0">
+  <section class="relative h-screen flex items-center overflow-hidden mt-0">
     <div class="absolute inset-0 z-0">
-      <img alt="Hero" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqt3LGnduwIJBhjYq_qU7wNSYgSiBYH8g5CU8o0BVYcyM4uYm5NMqQ0sAQezDsRMx3sO39osD8Eag-z8_Qg6wrMog9eOi6ppzqBqtsZy4Qsp48z5cxbHNbqb7sGjQ2Qmte6j7ANu7ju8WvXgyjT0SoI9h-bydggzozmOKaNJBek94JJFpT0FpnAeXotRk5ZsZIWSqsIyr5FK0f_ok_W_wcSFnTLmXHOLdrx9DVCVNxgha17WvXfseKU1UcnDhLvCBy58_V9QsBkZE">
-      <div class="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
+      <img src="assets/img/hero-selva.jpg" alt="" class="w-full h-full object-cover object-center">
+
     </div>
     <div class="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto text-white">
       <div class="max-w-2xl">
-        <h1 class="font-display-lg text-display-lg md:text-[96px] md:leading-[1] mb-4 drop-shadow-lg">ELEGANCE MEETS THE WILD</h1>
-        <p class="font-body-lg text-body-lg md:text-xl mb-8 max-w-lg">Precision care for extraordinary companions. Discover our curated collection of exotic pets, rare botanical life, and scientific-grade supplies.</p>
+        <span class="font-label-caps text-label-caps text-white/60 block mb-3">Tu tienda de mascotas exóticas</span>
+        <h1 class="font-display-lg text-display-lg mb-6 drop-shadow-lg">El mundo exótico,<br>en un solo lugar</h1>
+        <p class="font-body-lg text-body-lg text-white/80 mb-10 max-w-lg">Alimentos naturales, suministros y guías de cuidado para tus compañeros no convencionales.</p>
         <div class="flex flex-wrap gap-4">
-          <button class="bg-primary hover:bg-primary-container text-white px-8 py-4 rounded-lg font-bold transition-all transform hover:scale-105">Explore The Shop</button>
-          <button class="border-2 border-white/50 backdrop-blur-md hover:bg-white/20 text-white px-8 py-4 rounded-lg font-bold transition-all">View Gallery</button>
+          <a href="tienda.html" class="bg-white text-primary px-5 py-2.5 rounded-lg font-body-lg text-body-lg transition-all hover:bg-white/90 hover:scale-105 transform">Ver productos</a>
+          <a href="cuidados/cuidados.html" class="border border-white/60 hover:bg-white/10 text-white px-5 py-2.5 rounded-lg font-body-lg text-body-lg transition-all">Guías de cuidado</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Featured Categories -->
-  <section class="py-24 px-margin-desktop max-w-container-max mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-      <div>
-        <span class="text-primary font-bold tracking-widest text-label-caps uppercase">Our Specializations</span>
-        <h2 class="font-headline-md text-headline-md text-on-surface mt-2">Curated Collections</h2>
+  <!-- Categorías -->
+  <section class="py-16 px-margin-desktop">
+    <div class="max-w-container-max mx-auto">
+      <div class="mb-10">
+        <span class="font-label-caps text-label-caps text-primary">Lo que cuidamos</span>
+        <h2 class="font-headline-md text-headline-md text-on-surface mt-2">Nuestros animales</h2>
       </div>
-      <div class="h-[2px] flex-grow bg-outline-variant/30 mx-8 hidden md:block mb-4"></div>
-      <a class="text-primary font-bold hover:underline" href="#">View All Categories →</a>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
-      <!-- Category Card 1 -->
-      <div class="group relative overflow-hidden rounded-lg bg-surface shadow-sm hover:shadow-xl transition-all duration-500">
-        <div class="aspect-[4/5] overflow-hidden">
-          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1zJfCDjRz5tMblnDYC4up8_n0PiVLERkgV4ZNtHaejGiZeNxTGe0FvsH5MkF1J_-oEqcMRfnivnDOug-Taab4XyOcCvzxQuWU6YzqfixmlESNxedub5QURhgJGqlxUcsymKiC7SIbONTo793u0Fo78LHhnUGhQLdQcHH8LpH0Jt5LaYhHF8GozwKCoMPbXDNfWcWAPH1Tq28tegDmrQmXx-IrAfMljJWCz9pqbDVzyz48xrynCluonCvY5uAnglpTPSyAn1Q8zEM" alt="Exotic Pets">
-        </div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
-          <h3 class="font-headline-md text-headline-md text-white">Exotic Pets</h3>
-          <p class="text-white/80 text-body-sm mt-1">Ethically sourced reptiles &amp; amphibians.</p>
-        </div>
-      </div>
-      <!-- Category Card 2 -->
-      <div class="group relative overflow-hidden rounded-lg bg-surface shadow-sm hover:shadow-xl transition-all duration-500">
-        <div class="aspect-[4/5] overflow-hidden">
-          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOztPjJoCPadUpD78hjKAiLVETp-tBdIyAkKnTRyZ-dYjpVEm23Ll3XIGaKFxcfW75memeLgqhvSjX3ha_r73a6aL7K7bJ6sTCDKr_SzIJkMA8ciQvz4rmR4FO9-AyCJcV13A27hd2GcLKmAEtd7I9x6-U1kht5-1a3nTpcWoRBnCusgnGcB_-gvAAvy0vnSbnYYyNbUVSUgpm-pYfOVuHCb87N8-I_dgYTT7eHIKyJgSuuSBY-lcUO1yUpqNNe3tPlKBfoairL5A" alt="Scientific Supplements">
-        </div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
-          <h3 class="font-headline-md text-headline-md text-white">Scientific Supplements</h3>
-          <p class="text-white/80 text-body-sm mt-1">Advanced nutrition for peak health.</p>
-        </div>
-      </div>
-      <!-- Category Card 3 -->
-      <div class="group relative overflow-hidden rounded-lg bg-surface shadow-sm hover:shadow-xl transition-all duration-500">
-        <div class="aspect-[4/5] overflow-hidden">
-          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMU0JkBoPRhq3-K0NrYBjeG_HprAtHfKZ0SIgsdiowf3b672Y_yjw-41AL6tUZ2zG1Ky3k-Q0o2Tj71c5gPXxC8e2McIu18_v7u3R0OELW-bSC5QJpoWlMO4CFlXANZAeS3qbyHu9ipefexfmiGMyu1B0cy6NVKSJBCSFiOsru69WTci3pfCL77tnMMrKvuU4jJxoZtDVyk2HDF1xGlcwC_t9Tt-seEyEhzVx0Bwvi0Z5Sc0k0_6lurmT689YKm5jxBf0JCd1zZC0" alt="Specialty Supplies">
-        </div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
-          <h3 class="font-headline-md text-headline-md text-white">Specialty Supplies</h3>
-          <p class="text-white/80 text-body-sm mt-1">Design-forward habitat components.</p>
-        </div>
-      </div>
-      <!-- Category Card 4 -->
-      <div class="group relative overflow-hidden rounded-lg bg-surface shadow-sm hover:shadow-xl transition-all duration-500">
-        <div class="aspect-[4/5] overflow-hidden">
-          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBud-pO6xgYvu4DCqr2_aF9s6HGmyMJJ9qhp9D7sqe659ipPPf7pkIDKbLFPzhMEwkTPxrnbuNLkeqCr4tstnUQW0-HKGB7VTiXmQ3xJsk0M-lq01RuT5q07OSZvG0FC3HXq-8TFv3-BEdjsjGY5CnfdSSvO4q0AxsqaUPSx47S3T0X0bBOyLo2s7Bpe-TT6i0EeRlb6Ed5JOopUGoDmd6g2buPoFralNFWyQ-WmFGPrOdhzI6ex6t-qsDowLzl6BgqjyBtaq5-XkU" alt="Exotic Flowers">
-        </div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
-          <h3 class="font-headline-md text-headline-md text-white">Exotic Flowers</h3>
-          <p class="text-white/80 text-body-sm mt-1">Lush botanical statements from the wild.</p>
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <a href="tienda.html" class="group relative rounded-lg overflow-hidden aspect-[4/3]">
+          <img src="assets/img/pets/aves.jpg" alt="Aves" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6">
+            <h3 class="font-headline-md text-headline-md text-white">Aves</h3>
+            <span class="font-body-sm text-body-sm text-white/70">Ver productos →</span>
+          </div>
+        </a>
+        <a href="tienda.html" class="group relative rounded-lg overflow-hidden aspect-[4/3]">
+          <img src="assets/img/cuidados/hamster.jpg" alt="Roedores" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6">
+            <h3 class="font-headline-md text-headline-md text-white">Roedores</h3>
+            <span class="font-body-sm text-body-sm text-white/70">Ver productos →</span>
+          </div>
+        </a>
+        <a href="tienda.html" class="group relative rounded-lg overflow-hidden aspect-[4/3]">
+          <img src="assets/img/cuidados/betta.jpg" alt="Peces" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6">
+            <h3 class="font-headline-md text-headline-md text-white">Peces</h3>
+            <span class="font-body-sm text-body-sm text-white/70">Ver productos →</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Bestsellers Grid -->
-  <section class="bg-surface-container-low py-24">
-    <div class="px-margin-desktop max-w-container-max mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="font-display-lg text-display-lg text-primary">Boutique Bestsellers</h2>
-        <p class="text-on-surface-variant max-w-xl mx-auto">Our most sought-after specimens and curated care products, chosen by experts for their exceptional quality and beauty.</p>
+  <!-- Productos destacados -->
+  <section class="bg-surface-container-low py-16 px-margin-desktop">
+    <div class="max-w-container-max mx-auto">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <span class="font-label-caps text-label-caps text-primary">Nuestros productos</span>
+          <h2 class="font-headline-md text-headline-md text-on-surface mt-2">Selección natural</h2>
+        </div>
+        <a href="tienda.html" class="font-body-sm text-body-sm text-primary hover:underline flex items-center gap-1">Ver todos <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></a>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
-        <!-- Product 1 -->
-        <div class="group bg-surface rounded-lg overflow-hidden border border-outline-variant/30 hover:border-primary transition-all">
-          <div class="aspect-square relative overflow-hidden">
-            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7WNY__NLtrvgYVdB8-bgkhCCbffzbbTYl-qqzW-EMRzBnPlAnsr6-dE-rooPo5iTfJAZ2qVM8styrdp0h1KaJttFYm4HQL3PIm5sHl4e6q1yysAsejj8etzaOgqhfA6VJf6fQDp8lV2P0exeA3MkTYaswlt5sBPGBZ8Crb5TC-FGn6cCIhlIUezsRpgrid9msnpeqtx7r4roAZNGRH455XTZNEYPspmAncQKcH3gPXJ-bNpbIaXiFEq2jbPrMf05WMOW_9IlrOm4" alt="Deep Indigo Phalaenopsis">
-            <span class="absolute top-4 right-4 bg-primary text-white font-label-caps px-3 py-1 rounded-full text-[10px]">FLOWER</span>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-gutter">
+        <a href="tienda/veggie-espirulina-micro-rounds.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
+          <div class="aspect-square bg-surface-container-low"><img src="assets/img/products/veggie-espirulina-micro-rounds.png" alt="Veggie Espirulina Micro Rounds" class="w-full h-full object-contain p-4"></div>
+          <div class="p-5">
+            <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Veggie Espirulina Micro Rounds</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Micro rounds vegetales con espirulina para peces de boca pequeña.</p>
+            <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
           </div>
-          <div class="p-6">
-            <h4 class="font-title-lg text-title-lg mb-1">Deep Indigo Phalaenopsis</h4>
-            <p class="text-on-surface-variant text-body-sm mb-4">Scientific Name: Orchidaceae</p>
-            <div class="flex justify-between items-center">
-              <span class="font-bold text-lg text-secondary">$124.00</span>
-              <button class="bg-primary text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
-                <span class="material-symbols-outlined">add_shopping_cart</span>
-              </button>
-            </div>
+        </a>
+        <a href="tienda/vitaheno-calendula.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
+          <div class="aspect-square bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:64px">eco</span></div>
+          <div class="p-5">
+            <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Vitaheno Caléndula</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mezcla de gramíneas con caléndula. 100% natural para conejos y cobayas.</p>
+            <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
           </div>
-        </div>
-        <!-- Product 2 -->
-        <div class="group bg-surface rounded-lg overflow-hidden border border-outline-variant/30 hover:border-primary transition-all">
-          <div class="aspect-square relative overflow-hidden">
-            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANuf9_QANGCb_pV2RodSVytHaDlaNt1r1S_ALwI1yWRA36p8wueQREnvNvhLhBXBVhR4pHwKTuHIO9gwt0NX1ZdHrO0CJnxw5fWJTh0N9Gk08MYVlJby6WH2SsB5btOKwYfLIOf9c8CrkyG65YVYQ7P0lmM0OngdU6kK-Ykl4xZE0lJukjdY9SKh49ROTYUgUCJte75hAPXVQyMLrb4c9sH360pMNI6g0V5_eHGtpbPjJwficVDcBpnyn7ckuu-9NorLXscJEgOTA" alt="Curated Glass Ecosystem">
-            <span class="absolute top-4 right-4 bg-primary text-white font-label-caps px-3 py-1 rounded-full text-[10px]">SUPPLIES</span>
+        </a>
+        <a href="tienda/alimento-aves-pico-grande.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
+          <div class="aspect-square bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:64px">flutter_dash</span></div>
+          <div class="p-5">
+            <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Alimento Aves Pico Grande</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mixtura nutritiva orgánica para aves de pico grande.</p>
+            <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
           </div>
-          <div class="p-6">
-            <h4 class="font-title-lg text-title-lg mb-1">Curated Glass Ecosystem</h4>
-            <p class="text-on-surface-variant text-body-sm mb-4">20L High-Clarity Glass</p>
-            <div class="flex justify-between items-center">
-              <span class="font-bold text-lg text-secondary">$89.00</span>
-              <button class="bg-primary text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
-                <span class="material-symbols-outlined">add_shopping_cart</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- Product 3 -->
-        <div class="group bg-surface rounded-lg overflow-hidden border border-outline-variant/30 hover:border-primary transition-all">
-          <div class="aspect-square relative overflow-hidden">
-            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE3n1LwfrI3-m9_CD9Da2RO24wkrqKm7sqwztQfsLkkISSGGV6WtB8Ayah6gFwDGzgO2UcccVSkax2MQ8QZVAvLJ5VjlMjYlwQ1_G1unJdltnLK_EZ91Vybm1LXG9XWrdD9u-tXqy2LiNuATf7jer85LBlTvEUFyNAcYHDGmLWP2orlRya6W8eeBpQ-oOyZpwzL5LWKZ6oOdnO7roxEriKraOzOh5nh9Lw3JXDX-qUxjfO6hIpFqZxMBInacUZE6_NqlPAOFsaSCE" alt="Arboreal Nutrient Blend">
-            <span class="absolute top-4 right-4 bg-primary text-white font-label-caps px-3 py-1 rounded-full text-[10px]">ORGANIC</span>
-          </div>
-          <div class="p-6">
-            <h4 class="font-title-lg text-title-lg mb-1">Arboreal Nutrient Blend</h4>
-            <p class="text-on-surface-variant text-body-sm mb-4">Calcium Fortified, 500g</p>
-            <div class="flex justify-between items-center">
-              <span class="font-bold text-lg text-secondary">$34.50</span>
-              <button class="bg-primary text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
-                <span class="material-symbols-outlined">add_shopping_cart</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- Product 4 -->
-        <div class="group bg-surface rounded-lg overflow-hidden border border-outline-variant/30 hover:border-primary transition-all">
-          <div class="aspect-square relative overflow-hidden">
-            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5-e6Ulwsfu8e0xJh2JvK_ku3fCkeMI3-5h1YDBMKs-k1DqNBpZ9yXjl98zSx8U0dkgWhX7GQPiotpzImNMFvbFDj4TZKTO0Pf8h2u6dvDSzXC-OBV9LZlV0ZPGmIrKJrhJdCsmi3EHcYaIJKcefIlfhu7Tt44ylaN2UsGfp0EHEX-YPiPp5tIVJjodG6W1XQ7Tzie_UfbEH3PcK-NW22dHygb9Uqnf2RKCDmXqcM6_QSAv9zhLV1CLX7V5Nt6BBhTV5_72oHt4y8" alt="Designer Crested Gecko">
-            <span class="absolute top-4 right-4 bg-primary text-white font-label-caps px-3 py-1 rounded-full text-[10px]">LIVE ANIMAL</span>
-          </div>
-          <div class="p-6">
-            <h4 class="font-title-lg text-title-lg mb-1">Designer Crested Gecko</h4>
-            <p class="text-on-surface-variant text-body-sm mb-4">Juvenile, Red Pinstripe</p>
-            <div class="flex justify-between items-center">
-              <span class="font-bold text-lg text-secondary">$325.00</span>
-              <button class="bg-primary text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
-                <span class="material-symbols-outlined">add_shopping_cart</span>
-              </button>
-            </div>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Scientific Care Section -->
-  <section class="py-24 px-margin-desktop max-w-container-max mx-auto overflow-hidden">
-    <div class="flex flex-col lg:flex-row items-center gap-16">
-      <div class="w-full lg:w-1/2 relative">
-        <div class="absolute -top-8 -left-8 w-32 h-32 bg-primary-fixed rounded-full blur-3xl opacity-30"></div>
-        <div class="relative z-10 rounded-lg overflow-hidden shadow-2xl">
-          <img class="w-full h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIYKuXfeUO9zllJwp5egWl6wOvJzNdockGl191gMiocfwFyyfdkgH_TRi89lq6Wc6FYgJHiDul6oV00X4HCN78czVI9kB8qT7sO9R7GjUXecyWFvnCjWWcmYnHKHfWjUhmaG304EL5rduxra7PehYDHT7C7l1nhx5sfFKwBkxh-biPNdtY_hlhkrVUi52ElUsuUMJpTOH8PtmFS19PfcLuP1-ZPGQ9VYcNQajqdIl5zc0PszTh-Qz2u2HaNVO3Mk6WlKI1u7wEvyM" alt="Scientific Care">
-        </div>
-        <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-secondary-fixed rounded-full blur-3xl opacity-20"></div>
+  <!-- Cuidados -->
+  <section class="py-16 px-margin-desktop">
+    <div class="max-w-container-max mx-auto flex flex-col md:flex-row gap-16 items-center">
+      <div class="flex-1">
+        <span class="font-label-caps text-label-caps text-primary">Aprende con nosotros</span>
+        <h2 class="font-headline-md text-headline-md text-on-surface mt-2 mb-4">Guías de cuidado</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-md">Todo lo que necesitas saber para cuidar a tu animal exótico: alimentación, hábitat, salud y más.</p>
+        <a href="cuidados/cuidados.html" class="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-lg font-body-lg text-body-lg hover:bg-primary-container transition-colors">
+          Ver guías <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
       </div>
-      <div class="w-full lg:w-1/2">
-        <span class="text-primary font-bold tracking-widest text-label-caps uppercase">Our Philosophy</span>
-        <h2 class="font-display-lg text-display-lg text-on-surface mt-4 mb-8">Where Science Meets Stewardship</h2>
-        <div class="space-y-8">
-          <div class="flex gap-4">
-            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-              <span class="material-symbols-outlined">health_metrics</span>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg">Ethical Acquisition</h3>
-              <p class="text-on-surface-variant">Every creature and plant is ethically sourced or captive-bred in-house to ensure the highest standard of animal welfare and ecological sustainability.</p>
-            </div>
-          </div>
-          <div class="flex gap-4">
-            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-              <span class="material-symbols-outlined">science</span>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg">Biophilic Design</h3>
-              <p class="text-on-surface-variant">We bridge the gap between scientific husbandry and interior design, providing habitats that are as healthy for your pets as they are beautiful for your home.</p>
-            </div>
-          </div>
-          <div class="flex gap-4">
-            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-              <span class="material-symbols-outlined">verified_user</span>
-            </div>
-            <div>
-              <h3 class="font-bold text-lg">Lifetime Expert Support</h3>
-              <p class="text-on-surface-variant">Purchasing from us is the start of a journey. Access our deep library of scientific care guides and direct access to our staff biologists.</p>
-            </div>
-          </div>
-        </div>
-        <button class="mt-12 inline-flex items-center gap-2 font-bold text-primary hover:text-secondary transition-colors group">
-          Read Our Care Manifestos <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
-        </button>
+      <div class="flex-1 grid grid-cols-2 gap-4">
+        <a href="cuidados/hamster.html" class="group relative rounded-lg overflow-hidden aspect-square">
+          <img src="assets/img/cuidados/hamster.jpg" alt="Hámster" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <p class="absolute bottom-0 left-0 p-3 font-body-sm text-body-sm font-semibold text-white">Hámster</p>
+        </a>
+        <a href="cuidados/agapornis.html" class="group relative rounded-lg overflow-hidden aspect-square">
+          <img src="assets/img/cuidados/agapornis.jpg" alt="Agapornis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <p class="absolute bottom-0 left-0 p-3 font-body-sm text-body-sm font-semibold text-white">Agapornis</p>
+        </a>
+        <a href="cuidados/betta.html" class="group relative rounded-lg overflow-hidden aspect-square">
+          <img src="assets/img/cuidados/betta.jpg" alt="Betta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <p class="absolute bottom-0 left-0 p-3 font-body-sm text-body-sm font-semibold text-white">Betta</p>
+        </a>
+        <a href="cuidados/conejo.html" class="group relative rounded-lg overflow-hidden aspect-square">
+          <img src="assets/img/cuidados/conejo.jpg" alt="Conejo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <p class="absolute bottom-0 left-0 p-3 font-body-sm text-body-sm font-semibold text-white">Conejo</p>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Newsletter / CTA -->
-  <section class="mb-24 px-margin-desktop max-w-container-max mx-auto">
-    <div class="bg-primary rounded-lg p-12 text-center text-white relative overflow-hidden">
-      <div class="absolute inset-0 opacity-10 pointer-events-none">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -mr-48 -mt-48 blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-fixed rounded-full -ml-48 -mb-48 blur-3xl"></div>
+  <!-- Mundo Exótico -->
+  <section class="bg-surface-container-low py-16 px-margin-desktop">
+    <div class="max-w-container-max mx-auto">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <span class="font-label-caps text-label-caps text-primary">Artículos</span>
+          <h2 class="font-headline-md text-headline-md text-on-surface mt-2">El Mundo Exótico</h2>
+        </div>
+        <a href="mundo-exotico/mundo-exotico.html" class="font-body-sm text-body-sm text-primary hover:underline flex items-center gap-1">Ver todos <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></a>
       </div>
-      <div class="relative z-10">
-        <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-4">Join the Inner Circle</h2>
-        <p class="max-w-2xl mx-auto mb-8 opacity-90">Receive weekly scientific insights, exclusive botanical releases, and early access to our rarest arrivals.</p>
-        <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto" onsubmit="event.preventDefault(); alert('Welcome to the wild!');">
-          <input class="flex-grow rounded-lg border-none text-on-surface px-6 py-4 focus:ring-4 focus:ring-secondary/50" placeholder="Your scientific email..." type="email">
-          <button class="bg-secondary hover:bg-on-secondary-fixed-variant text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg" type="submit">Subscribe</button>
-        </form>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <a href="mundo-exotico/hamster-alimentacion-ejercicio.html" class="group bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/40 hover:shadow-md transition-all">
+          <div class="aspect-video overflow-hidden"><img src="assets/img/articles/hamster.jpg" alt="Hámster" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+          <div class="p-5">
+            <h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Alimentación y ejercicio del hámster</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">Todo lo que necesitas saber para mantener a tu hámster activo y bien nutrido.</p>
+          </div>
+        </a>
+        <a href="mundo-exotico/pez-betta-cuidados.html" class="group bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/40 hover:shadow-md transition-all">
+          <div class="aspect-video overflow-hidden"><img src="assets/img/articles/betta.jpg" alt="Betta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+          <div class="p-5">
+            <h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Cuidados del pez betta</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">Guía completa para tener un betta sano y con colores vibrantes.</p>
+          </div>
+        </a>
+        <a href="mundo-exotico/canarios-canto-salud.html" class="group bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/40 hover:shadow-md transition-all">
+          <div class="aspect-video overflow-hidden"><img src="assets/img/articles/canarios.jpg" alt="Canarios" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+          <div class="p-5">
+            <h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Canarios: canto y salud</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-2 line-clamp-2">Aprende cómo mantener el canto fuerte y la salud de tu canario.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA WhatsApp -->
+  <section class="py-20 px-margin-desktop">
+    <div class="max-w-container-max mx-auto">
+      <div class="bg-primary rounded-lg p-12 text-center text-white">
+        <h2 class="font-headline-md text-headline-md mb-4">¿Tienes preguntas?</h2>
+        <p class="font-body-lg text-body-lg text-white/80 mb-8 max-w-md mx-auto">Escríbenos por WhatsApp y te asesoramos sobre el cuidado y alimentación de tu animal.</p>
+        <a href="https://wa.me/573332248448?text=Hola%20Exotik%20Zoo%20%F0%9F%8C%BF" target="_blank" class="inline-flex items-center gap-2 bg-white text-primary px-8 py-3 rounded-lg font-body-lg text-body-lg hover:bg-white/90 transition-colors font-semibold">
+          <span class="material-symbols-outlined">chat</span>Escribir por WhatsApp
+        </a>
       </div>
     </div>
   </section>
@@ -363,29 +335,30 @@
 
 <!-- Footer -->
 <footer class="bg-surface-container-lowest border-t border-outline-variant">
-  <div class="w-full px-margin-desktop py-12 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter">
-    <div class="text-center md:text-left">
-      <div class="font-headline-md text-headline-md text-primary mb-2">Exotik Zoo</div>
-      <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">Precision Care for Extraordinary Companions. Established 2024.</p>
+  <div class="w-full px-margin-desktop py-12 max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-gutter">
+    <div>
+      <div class="font-headline-md text-headline-md text-on-surface mb-2">Exotik Zoo</div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">Tu puerta al mundo de los animales exóticos. Productos de calidad para tu compañero no convencional.</p>
     </div>
-    <div class="flex flex-wrap justify-center gap-8 font-body-sm text-body-sm">
-      <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
-      <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
-      <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Shipping Info</a>
-      <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Scientific Care Guides</a>
+    <div>
+      <p class="font-label-caps text-label-caps text-on-surface-variant mb-4">Navegación</p>
+      <div class="flex flex-col gap-2">
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="tienda.html">Tienda</a>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="cuidados/cuidados.html">Cuidados</a>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="mundo-exotico/mundo-exotico.html">El Mundo Exótico</a>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="contacto.html">Contacto</a>
+      </div>
     </div>
-    <div class="flex gap-4">
-      <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
-        <span class="material-symbols-outlined text-sm">public</span>
-      </a>
-      <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
-        <span class="material-symbols-outlined text-sm">mail</span>
-      </a>
+    <div>
+      <p class="font-label-caps text-label-caps text-on-surface-variant mb-4">Contacto</p>
+      <div class="flex flex-col gap-2">
+        <a href="https://wa.me/573332248448" target="_blank" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2"><span class="material-symbols-outlined" style="font-size:16px">chat</span>+57 333 224 8448</a>
+        <a href="https://www.instagram.com/exotikzoo.colombia" target="_blank" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2"><span class="material-symbols-outlined" style="font-size:16px">photo_camera</span>@exotikzoo.colombia</a>
+      </div>
     </div>
   </div>
-  <div class="w-full py-6 border-t border-outline-variant/20 text-center text-[10px] uppercase tracking-widest text-on-surface-variant opacity-50">
-    © 2024 Exotik Zoo. Precision Care for Extraordinary Companions.
-  </div>
+  <div class="border-t border-outline-variant/40 py-4 text-center font-label-caps text-label-caps text-on-surface-variant opacity-50">© 2026 Exotik Zoo</div>
 </footer>
 
 <script>
@@ -409,5 +382,23 @@
       if (first) { first.classList.add('opacity-100', 'translate-y-0'); first.classList.remove('opacity-0', 'translate-y-8'); }
     }, 100);
   });
+</script>
+<script>
+  (function() {
+    const nav = document.getElementById('site-nav');
+    let lastY = 0;
+    window.addEventListener('scroll', function() {
+      const y = window.scrollY;
+      if (y <= 20) {
+        nav.classList.remove('nav-hidden', 'nav-solid');
+      } else if (y > lastY + 5) {
+        nav.classList.add('nav-hidden');
+      } else if (y < lastY - 5) {
+        nav.classList.remove('nav-hidden');
+        nav.classList.add('nav-solid');
+      }
+      lastY = y;
+    }, { passive: true });
+  })();
 </script>
 </body></html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Tienda | Exotik Zoo</title>
+<meta name="description" content="Descubre los productos naturales de Exotik Zoo para aves, roedores y peces exóticos.">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode:"class",
+  theme:{extend:{
+    colors:{
+      "on-primary-fixed":"#00210c","primary-fixed":"#99f7ae","outline-variant":"#becabd",
+      "surface":"#faf9f6","surface-container-low":"#f4f4f0","surface-container":"#eeeeea",
+      "on-surface":"#1a1c1a","primary-container":"#258549","primary":"#006b34",
+      "surface-container-lowest":"#ffffff","secondary":"#9f402d","on-primary":"#ffffff",
+      "on-surface-variant":"#3f493f","outline":"#6f7a6f","surface-container-high":"#e8e8e5"
+    },
+    borderRadius:{"DEFAULT":"0.25rem","lg":"12px","xl":"0.75rem","full":"9999px"},
+    spacing:{"container-max":"1280px","margin-desktop":"48px","gutter":"24px","margin-mobile":"16px"},
+    fontFamily:{"display-lg":["Bebas Neue"],"body-sm":["Inter"],"label-caps":["Inter"],"title-lg":["Inter"],"headline-md":["Bebas Neue"],"body-lg":["Inter"]},
+    fontSize:{
+      "display-lg":["64px",{"lineHeight":"60px","letterSpacing":"0.02em"}],
+      "body-sm":["14px",{"lineHeight":"20px"}],"label-caps":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"700"}],
+      "title-lg":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-md":["32px",{"lineHeight":"32px","letterSpacing":"0.03em"}],
+      "body-lg":["16px",{"lineHeight":"24px"}]
+    }
+  }}
+}
+</script>
+<style>body{background-color:#faf9f6}.material-symbols-outlined{font-variation-settings:"FILL" 0,"wght" 400,"GRAD" 0,"opsz" 24;vertical-align:middle}</style>
+</head>
+<body class="font-body-lg text-on-surface">
+<!-- Nav -->
+<header class="sticky top-0 left-0 right-0 z-50 bg-surface-container-lowest border-b border-outline-variant/40">
+  <div class="flex items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto relative">
+    <nav class="flex items-center justify-center w-full gap-8">
+      <a class="text-primary font-bold font-body-lg text-body-lg" href="tienda.html">Tienda</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="cuidados/cuidados.html">Cuidados</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="mundo-exotico/mundo-exotico.html">El Mundo Exótico</a>
+      <div class="flex-shrink-0 px-8"><a class="font-headline-md text-headline-md text-on-surface tracking-tight" href="index.html">Exotik Zoo</a></div>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="nosotros.html">Nosotros</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="contacto.html">Contacto</a>
+    </nav>
+    <div class="absolute right-margin-desktop flex items-center gap-4">
+      <button class="hover:opacity-80 text-on-surface-variant flex items-center gap-1 font-body-sm text-body-sm"><span class="material-symbols-outlined" style="font-size:20px">language</span><span>ES</span></button>
+      <button class="hover:opacity-80 text-on-surface-variant"><span class="material-symbols-outlined">shopping_cart</span></button>
+      <button class="hover:opacity-80 text-on-surface-variant"><span class="material-symbols-outlined">person</span></button>
+    </div>
+  </div>
+</header>
+<main>
+
+<!-- Hero -->
+<section class="bg-primary px-margin-desktop py-20">
+  <div class="max-w-container-max mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+    <div>
+      <span class="font-label-caps text-label-caps text-white/70">Productos naturales</span>
+      <h1 class="font-headline-md text-headline-md text-white mt-2">Nuestra selección</h1>
+    </div>
+    <p class="font-body-lg text-body-lg text-white/80 max-w-md">Alimentos y suplementos 100% naturales para tus compañeros exóticos.</p>
+  </div>
+</section>
+
+<!-- Productos -->
+<section class="px-margin-desktop py-16">
+  <div class="max-w-container-max mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+      <a href="tienda/alimento-aves-pico-grande.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
+        <div class="aspect-square bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:64px">flutter_dash</span></div>
+        <div class="p-5">
+          <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Alimento Aves Pico Grande</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mixtura nutritiva orgánica especialmente formulada para aves de pico grande. Rica en nutrientes esenciales para plumaje y vitalidad.</p>
+          <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+        </div>
+      </a>
+      <a href="tienda/alimento-aves-pico-pequeno.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
+        <div class="aspect-square bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:64px">flutter_dash</span></div>
+        <div class="p-5">
+          <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Alimento Aves Pico Pequeño</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mixtura nutritiva orgánica para aves de pico pequeño. Combinación perfecta de semillas y cereales para canarios y periquitos.</p>
+          <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+        </div>
+      </a>
+      <a href="tienda/alimento-roedores.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
+        <div class="aspect-square bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:64px">pets</span></div>
+        <div class="p-5">
+          <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Alimento Roedores</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Alimento orgánico formulado para roedores exóticos. Mixtura nutritiva balanceada con ingredientes de alta calidad.</p>
+          <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+        </div>
+      </a>
+      <a href="tienda/larvas-liofilizadas.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
+        <div class="aspect-square bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:64px">bug_report</span></div>
+        <div class="p-5">
+          <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Larvas Liofilizadas</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Larvas liofilizadas de alta calidad, fuente natural de proteína para aves insectívoras, reptiles y animales exóticos.</p>
+          <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+        </div>
+      </a>
+      <a href="tienda/veggie-espirulina-micro-rounds.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
+        <div class="aspect-square bg-surface-container-low"><img src="assets/img/products/veggie-espirulina-micro-rounds.png" alt="Veggie Espirulina Micro Rounds" class="w-full h-full object-contain p-4"></div>
+        <div class="p-5">
+          <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Veggie Espirulina Micro Rounds</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Micro rounds vegetales con espirulina ideales para peces de boca pequeña como tetras, guppies y peces de arrecife.</p>
+          <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+        </div>
+      </a>
+      <a href="tienda/veggies-espirulina-rounds.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
+        <div class="aspect-square bg-surface-container-low"><img src="assets/img/products/veggies-espirulina-rounds.png" alt="Veggies Espirulina Rounds" class="w-full h-full object-contain p-4"></div>
+        <div class="p-5">
+          <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Veggies Espirulina Rounds</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Rounds vegetales enriquecidos con espirulina para peces herbívoros y omnívoros. Promueven colores vibrantes y vitalidad diaria.</p>
+          <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+        </div>
+      </a>
+      <a href="tienda/vitaheno-calendula.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
+        <div class="aspect-square bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:64px">eco</span></div>
+        <div class="p-5">
+          <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Vitaheno Caléndula</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mezcla de gramíneas con enriquecimiento de caléndula. 100% natural, suministro regular recomendado para conejos y cobayas.</p>
+          <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+        </div>
+      </a>
+      <a href="tienda/vitaheno-manzanilla.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
+        <div class="aspect-square bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:64px">eco</span></div>
+        <div class="p-5">
+          <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Vitaheno Manzanilla</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mezcla de gramíneas con enriquecimiento de manzanilla. 100% natural, suministro regular recomendado para conejos y cobayas.</p>
+          <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+        </div>
+      </a>
+      <a href="tienda/vitaheno-romero.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
+        <div class="aspect-square bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:64px">eco</span></div>
+        <div class="p-5">
+          <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Vitaheno Romero</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mezcla de gramíneas con enriquecimiento de romero. 100% natural, suministro regular recomendado para conejos y cobayas.</p>
+          <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA WA -->
+<section class="px-margin-desktop py-16 max-w-container-max mx-auto text-center">
+  <h2 class="font-headline-md text-headline-md text-on-surface mb-4">¿No encuentras lo que buscas?</h2>
+  <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-md mx-auto">Escríbenos y te asesoramos personalmente.</p>
+  <a href="https://wa.me/573332248448?text=Hola%20Exotik%20Zoo%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos." target="_blank" class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-3 rounded-lg font-body-lg text-body-lg hover:bg-primary-container transition-colors">
+    <span class="material-symbols-outlined">chat</span>Pedir por WhatsApp
+  </a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/40 mt-16">
+  <div class="w-full px-margin-desktop py-12 max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-gutter">
+    <div>
+      <div class="font-headline-md text-headline-md text-primary mb-2">Exotik Zoo</div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">Tu puerta al mundo de los animales exóticos. Productos de calidad para tu compañero no convencional.</p>
+    </div>
+    <div>
+      <p class="font-label-caps text-label-caps text-on-surface-variant mb-4">Navegación</p>
+      <div class="flex flex-col gap-2">
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="tienda.html">Tienda</a>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="cuidados/cuidados.html">Cuidados</a>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="mundo-exotico/mundo-exotico.html">El Mundo Exótico</a>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="nosotros.html">Nosotros</a>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="contacto.html">Contacto</a>
+      </div>
+    </div>
+    <div>
+      <p class="font-label-caps text-label-caps text-on-surface-variant mb-4">Contacto</p>
+      <div class="flex flex-col gap-2">
+        <a href="https://wa.me/573332248448" target="_blank" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2"><span class="material-symbols-outlined" style="font-size:16px">chat</span>+57 333 224 8448</a>
+        <a href="https://www.instagram.com/exotikzoo.colombia" target="_blank" class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2"><span class="material-symbols-outlined" style="font-size:16px">photo_camera</span>@exotikzoo.colombia</a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-outline-variant/40 py-4 text-center font-label-caps text-label-caps text-on-surface-variant opacity-50">© 2026 Exotik Zoo</div>
+</footer>
+</body></html>
