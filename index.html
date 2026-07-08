@@ -265,45 +265,6 @@
     </div>
   </section>
 
-  <!-- Productos destacados -->
-  <section class="bg-surface-container-low py-16 px-margin-desktop">
-    <div class="max-w-container-max mx-auto">
-      <div class="flex items-end justify-between mb-10">
-        <div>
-          <span class="font-label-caps text-label-caps text-primary">Nuestros productos</span>
-          <h2 class="font-headline-md text-headline-md text-on-surface mt-2">Selección natural</h2>
-        </div>
-        <a href="tienda.html" class="font-body-sm text-body-sm text-primary hover:underline flex items-center gap-1">Ver todos <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></a>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-gutter">
-        <a href="tienda/veggie-espirulina-micro-rounds.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
-          <div class="aspect-square bg-surface-container-low"><img src="assets/img/products/veggie-espirulina-micro-rounds.png" alt="Veggie Espirulina Micro Rounds" class="w-full h-full object-contain p-4"></div>
-          <div class="p-5">
-            <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Veggie Espirulina Micro Rounds</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Micro rounds vegetales con espirulina para peces de boca pequeña.</p>
-            <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
-          </div>
-        </a>
-        <a href="tienda/vitaheno-calendula.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
-          <div class="aspect-square bg-surface-container-low"><img src="assets/img/products/vitaheno-calendula.png" alt="Vitaheno Caléndula" class="w-full h-full object-contain p-4"></div>
-          <div class="p-5">
-            <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Vitaheno Caléndula</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mezcla de gramíneas con caléndula. 100% natural para conejos y cobayas.</p>
-            <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
-          </div>
-        </a>
-        <a href="tienda/comida-flotante-multi-food.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
-          <div class="aspect-square bg-surface-container-low"><img src="assets/img/products/comida-flotante-multi-food.png" alt="Comida Flotante Multi Food" class="w-full h-full object-contain p-4"></div>
-          <div class="p-5">
-            <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Comida Flotante Multi Food</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Pellets flotantes multiespecie de alta digestibilidad para peces de superficie.</p>
-            <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- Cuidados -->
   <section class="py-16 px-margin-desktop">
     <div class="max-w-container-max mx-auto flex flex-col md:flex-row gap-16 items-center">
@@ -425,6 +386,8 @@
         if (entry.isIntersecting) {
           entry.target.classList.add('opacity-100', 'translate-y-0');
           entry.target.classList.remove('opacity-0', 'translate-y-8');
+          const video = entry.target.querySelector('video[autoplay]');
+          if (video && video.paused) { video.play().catch(() => {}); }
         }
       });
     }, { threshold: 0.1 });
