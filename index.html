@@ -123,6 +123,23 @@
         #site-nav.nav-solid .nav-link:hover { color: #006b34; }
         #site-nav.nav-solid .nav-logo { color: #1a1c1a; }
         #site-nav.nav-solid .nav-icon { color: #3f493f; }
+        @keyframes marquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .carousel-track {
+            display: flex;
+            gap: 24px;
+            width: max-content;
+            animation: marquee 40s linear infinite;
+            will-change: transform;
+        }
+        .carousel-track:hover { animation-play-state: paused; }
+        .carousel-section {
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
+        }
     </style>
 </head>
 <body class="font-body-lg text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
@@ -187,6 +204,37 @@
       <span style="display:block;font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.08em;color:#1a1c1a;margin-bottom:0.8rem">• Pez Betta</span>
       <p style="font-family:'Inter',sans-serif;font-size:14px;color:#3f493f;line-height:1.65;margin:0 0 1.25rem">El guerrero del agua. Majestuoso y solitario, perfecto para quien busca algo verdaderamente extraordinario.</p>
       <a href="cuidados/cuidados.html" style="display:inline-block;border:1.5px solid #1a1c1a;color:#1a1c1a;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;padding:0.6rem 1.4rem;border-radius:4rem;text-decoration:none" onmouseover="this.style.background='#1a1c1a';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#1a1c1a'">Ver guía de cuidado</a>
+    </div>
+  </section>
+
+  <!-- Carousel Productos -->
+  <section class="carousel-section py-16 bg-white border-t border-b border-outline-variant/30">
+    <div class="max-w-container-max mx-auto px-margin-desktop mb-10">
+      <h2 class="font-headline-md text-headline-md text-on-surface">Nuestros Productos</h2>
+    </div>
+    <div class="overflow-hidden">
+      <div class="carousel-track">
+        <!-- Set 1 -->
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/veggie-espirulina-micro-rounds.png" alt="Veggie Espirulina Micro Rounds" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Veggie Espirulina Micro Rounds</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/veggies-espirulina-rounds.png" alt="Veggies Espirulina Rounds" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Veggies Espirulina Rounds</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/fish-flakes.png" alt="Hojuelas para Peces" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Hojuelas para Peces</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/tropical-food.png" alt="Alimento Tropical" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Alimento Tropical</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/carnivorous-shrimp.png" alt="Camarón Carnívoro" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Camarón Carnívoro</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/comida-flotante-multi-food.png" alt="Comida Flotante Multi Food" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Comida Flotante Multi Food</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-calendula.png" alt="Vitaheno Caléndula" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Vitaheno Caléndula</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-manzanilla.png" alt="Vitaheno Manzanilla" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Vitaheno Manzanilla</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-romero.png" alt="Vitaheno Romero" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Vitaheno Romero</p></div>
+        <!-- Set 2 — duplicado para loop seamless -->
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/veggie-espirulina-micro-rounds.png" alt="Veggie Espirulina Micro Rounds" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Veggie Espirulina Micro Rounds</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/veggies-espirulina-rounds.png" alt="Veggies Espirulina Rounds" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Veggies Espirulina Rounds</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/fish-flakes.png" alt="Hojuelas para Peces" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Hojuelas para Peces</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/tropical-food.png" alt="Alimento Tropical" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Alimento Tropical</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/carnivorous-shrimp.png" alt="Camarón Carnívoro" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Camarón Carnívoro</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/comida-flotante-multi-food.png" alt="Comida Flotante Multi Food" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Comida Flotante Multi Food</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-calendula.png" alt="Vitaheno Caléndula" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Vitaheno Caléndula</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-manzanilla.png" alt="Vitaheno Manzanilla" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Vitaheno Manzanilla</p></div>
+        <div class="flex-shrink-0 w-44 text-center"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-romero.png" alt="Vitaheno Romero" class="w-full h-full object-contain p-2"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Vitaheno Romero</p></div>
+      </div>
     </div>
   </section>
 
