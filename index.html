@@ -3,7 +3,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Exotik Zoo | Elegance Meets the Wild</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <script id="tailwind-config">
         tailwind.config = {
@@ -154,55 +154,64 @@
 
 <main>
   <!-- Hero Section -->
-  <section class="relative h-screen flex items-center overflow-hidden mt-0">
-    <div class="absolute inset-0 z-0">
-      <img src="assets/img/hero-selva.jpg" alt="" class="w-full h-full object-cover object-center">
-
+  <section style="position:relative;height:100vh;min-height:600px;overflow:hidden">
+    <img src="assets/img/hero-selva.jpg" alt="Selva exótica" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0">
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.18) 0%,rgba(0,0,0,0.05) 40%,rgba(0,0,0,0.45) 100%);z-index:1"></div>
+    <div style="position:absolute;top:5.5rem;left:4rem;z-index:3;font-family:'Inter',sans-serif;font-size:11px;line-height:1.6;color:rgba(255,255,255,0.7)">Tu tienda de<br>mascotas exóticas</div>
+    <div style="position:absolute;top:5.5rem;left:50%;transform:translateX(-50%);z-index:3;font-family:'Inter',sans-serif;font-size:11px;line-height:1.6;color:rgba(255,255,255,0.7);text-align:center;white-space:nowrap">Alimentos · Suministros · Cuidados</div>
+    <div style="position:absolute;top:5.5rem;right:4rem;z-index:3;font-family:'Inter',sans-serif;font-size:11px;line-height:1.6;color:rgba(255,255,255,0.7);text-align:right">El lugar para<br>tu mascota</div>
+    <div style="position:absolute;bottom:3rem;left:3rem;z-index:2">
+      <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,18vw,17rem);line-height:0.85;color:#ffffff;text-align:left;margin:0;letter-spacing:0.02em;text-shadow:0 4px 40px rgba(0,0,0,0.4)">EXOTIK<br>ZOO</h1>
     </div>
-    <div class="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto text-white">
-      <div class="max-w-2xl">
-        <span class="font-label-caps text-label-caps text-white/60 block mb-3">Tu tienda de mascotas exóticas</span>
-        <h1 class="font-display-lg text-display-lg mb-6 drop-shadow-lg">El mundo exótico,<br>en un solo lugar</h1>
-        <p class="font-body-lg text-body-lg text-white/80 mb-10 max-w-lg">Alimentos naturales, suministros y guías de cuidado para tus compañeros no convencionales.</p>
-        <div class="flex flex-wrap gap-4">
-          <a href="tienda.html" class="bg-white text-primary px-5 py-2.5 rounded-lg font-body-lg text-body-lg transition-all hover:bg-white/90 hover:scale-105 transform">Ver productos</a>
-          <a href="cuidados/cuidados.html" class="border border-white/60 hover:bg-white/10 text-white px-5 py-2.5 rounded-lg font-body-lg text-body-lg transition-all">Guías de cuidado</a>
-        </div>
-      </div>
+    <div style="position:absolute;bottom:2.5rem;left:4rem;z-index:3">
+      <a href="tienda.html" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;color:#fff;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Ver productos →</a>
+    </div>
+    <div style="position:absolute;bottom:2.5rem;right:4rem;z-index:3">
+      <a href="cuidados/cuidados.html" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;color:#fff;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Cuidados →</a>
+    </div>
+  </section>
+
+  <!-- Editorial + Betta -->
+  <section style="position:relative;background:#faf9f6;overflow:hidden;height:92vh;min-height:620px">
+    <span style="position:absolute;top:3rem;right:4rem;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;color:#6f7a6f;text-transform:uppercase;z-index:2">Nuestra misión</span>
+    <div style="position:absolute;top:3.5rem;left:4rem;right:14rem;z-index:2">
+      <p style="font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5.5vw,5rem);line-height:1.1;color:#1a1c1a;margin:0">
+        Donde el <em style="font-style:italic;font-weight:400">bienestar</em> de cada especie es nuestra <strong style="font-weight:700">prioridad</strong>, con productos <em style="font-style:italic;font-weight:700">seleccionados</em> y asesoría <em style="font-style:italic;font-weight:700">especializada</em>.
+      </p>
+    </div>
+    <video autoplay loop muted playsinline style="position:absolute;bottom:-10%;right:3%;height:70%;width:auto;z-index:1">
+      <source src="assets/img/betta-anim.webm" type="video/webm">
+      <source src="assets/img/betta-anim.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute;bottom:3.5rem;left:4rem;max-width:270px;z-index:2">
+      <span style="display:block;font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.08em;color:#1a1c1a;margin-bottom:0.8rem">• Pez Betta</span>
+      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#3f493f;line-height:1.65;margin:0 0 1.25rem">El guerrero del agua. Majestuoso y solitario, perfecto para quien busca algo verdaderamente extraordinario.</p>
+      <a href="cuidados/cuidados.html" style="display:inline-block;border:1.5px solid #1a1c1a;color:#1a1c1a;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;padding:0.6rem 1.4rem;border-radius:4rem;text-decoration:none" onmouseover="this.style.background='#1a1c1a';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#1a1c1a'">Ver guía de cuidado</a>
     </div>
   </section>
 
   <!-- Categorías -->
-  <section class="py-16 px-margin-desktop">
+  <section class="py-16 px-margin-desktop bg-surface">
     <div class="max-w-container-max mx-auto">
-      <div class="mb-10">
-        <span class="font-label-caps text-label-caps text-primary">Lo que cuidamos</span>
-        <h2 class="font-headline-md text-headline-md text-on-surface mt-2">Nuestros animales</h2>
+      <div class="flex items-center justify-between mb-10">
+        <div>
+          <span class="font-label-caps text-label-caps text-primary">Lo que cuidamos</span>
+          <h2 class="font-headline-md text-headline-md text-on-surface mt-1">Nuestros animales</h2>
+        </div>
+        <div class="flex gap-2">
+          <a href="cuidados/cuidados.html" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1.5px solid #becabd;color:#3f493f;text-decoration:none;font-size:18px;transition:all 0.2s" onmouseover="this.style.background='#1a1c1a';this.style.color='#fff';this.style.borderColor='#1a1c1a'" onmouseout="this.style.background='transparent';this.style.color='#3f493f';this.style.borderColor='#becabd'">←</a>
+          <a href="cuidados/cuidados.html" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1.5px solid #becabd;color:#3f493f;text-decoration:none;font-size:18px;transition:all 0.2s" onmouseover="this.style.background='#1a1c1a';this.style.color='#fff';this.style.borderColor='#1a1c1a'" onmouseout="this.style.background='transparent';this.style.color='#3f493f';this.style.borderColor='#becabd'">→</a>
+        </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-        <a href="tienda.html" class="group relative rounded-lg overflow-hidden aspect-[4/3]">
-          <img src="assets/img/pets/aves.jpg" alt="Aves" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-6">
-            <h3 class="font-headline-md text-headline-md text-white">Aves</h3>
-            <span class="font-body-sm text-body-sm text-white/70">Ver productos →</span>
-          </div>
+        <a href="cuidados/cuidados.html" class="group block rounded-2xl overflow-hidden" style="aspect-ratio:3/4">
+          <img src="assets/img/cuidados/canario.jpg" alt="Canario" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
         </a>
-        <a href="tienda.html" class="group relative rounded-lg overflow-hidden aspect-[4/3]">
-          <img src="assets/img/cuidados/hamster.jpg" alt="Roedores" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-6">
-            <h3 class="font-headline-md text-headline-md text-white">Roedores</h3>
-            <span class="font-body-sm text-body-sm text-white/70">Ver productos →</span>
-          </div>
+        <a href="cuidados/cuidados.html" class="group block rounded-2xl overflow-hidden" style="aspect-ratio:3/4">
+          <img src="assets/img/pets/roedores.jpg" alt="Roedores" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
         </a>
-        <a href="tienda.html" class="group relative rounded-lg overflow-hidden aspect-[4/3]">
-          <img src="assets/img/cuidados/betta.jpg" alt="Peces" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-6">
-            <h3 class="font-headline-md text-headline-md text-white">Peces</h3>
-            <span class="font-body-sm text-body-sm text-white/70">Ver productos →</span>
-          </div>
+        <a href="cuidados/cuidados.html" class="group block rounded-2xl overflow-hidden" style="aspect-ratio:3/4">
+          <img src="assets/img/pets/peces.jpg" alt="Peces" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
         </a>
       </div>
     </div>
@@ -228,7 +237,7 @@
           </div>
         </a>
         <a href="tienda/vitaheno-calendula.html" class="group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
-          <div class="aspect-square bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:64px">eco</span></div>
+          <div class="aspect-square bg-surface-container-low"><img src="assets/img/products/vitaheno-calendula.png" alt="Vitaheno Caléndula" class="w-full h-full object-contain p-4"></div>
           <div class="p-5">
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Vitaheno Caléndula</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mezcla de gramíneas con caléndula. 100% natural para conejos y cobayas.</p>
