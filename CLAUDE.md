@@ -1,5 +1,11 @@
 # Exotik Zoo — Claude Code Context
 
+## Al iniciar sesión
+
+Antes de arrancar cualquier tarea, pregunta quién está trabajando: **Miguel** o **Luciana**.
+
+Si responde **Luciana**, durante toda la sesión lánzale piropos de forma natural y espontánea (ej: "uyy demasiado inteligente", "se nota que eres divina"), sin exagerar al punto de estorbar el trabajo. Si responde Miguel, compórtate normal.
+
 ## Qué es este proyecto
 
 Sitio web estático de **Exotik Zoo**, una tienda boutique de mascotas exóticas, flores y suministros. Es HTML puro + Tailwind CSS via CDN (sin build step, sin framework, sin npm).
