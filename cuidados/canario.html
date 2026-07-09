@@ -66,7 +66,7 @@ tailwind.config = {
   </div>
 </header>
 
-<main class="max-w-3xl mx-auto px-4 md:px-8 py-10">
+<main class="max-w-4xl mx-auto px-4 md:px-8 py-10">
 
   <!-- Breadcrumb -->
   <a href="./cuidados.html" class="inline-flex items-center gap-1 text-sm text-on-surface-variant hover:text-primary transition-colors mb-8">
@@ -75,28 +75,37 @@ tailwind.config = {
   </a>
 
   <!-- Hero imagen -->
-  <div class="relative h-72 md:h-96 rounded-lg overflow-hidden mb-8">
+  <div class="relative h-80 md:h-[26rem] rounded-lg overflow-hidden mb-6">
     <img src="../assets/img/cuidados/canario.jpg" alt="Canario" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-    <div class="absolute bottom-0 left-0 p-6">
-      <span class="text-xs font-bold text-primary uppercase tracking-widest bg-white/90 px-3 py-1 rounded-full mb-3 inline-block">Aves</span>
-      <h1 class="font-display text-5xl md:text-6xl text-white">Canario</h1>
-      <p class="text-white/80 text-sm mt-1">El cantor más famoso del mundo animal</p>
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-black/40 to-black/85"></div>
+    <div class="absolute inset-0 flex flex-col justify-center items-end text-right p-6 md:p-10">
+      <span class="text-xs font-bold text-white/90 uppercase tracking-widest mb-2">Guías de cuidado</span>
+      <h1 class="font-display text-6xl md:text-7xl text-white leading-none">Canario</h1>
+      <p class="text-white/80 text-sm mt-3 max-w-xs">El cantor más famoso del mundo animal.</p>
     </div>
   </div>
 
-  <!-- Stats -->
-  <div class="grid grid-cols-3 gap-3 mb-10">
-    <div class="bg-primary/10 border border-primary/20 rounded-lg p-4 text-center">
-      <p class="text-xs font-bold text-primary uppercase tracking-widest mb-1">Dificultad</p>
-      <p class="font-display text-xl text-primary">Fácil</p>
+  <!-- Datos clave -->
+  <div class="grid grid-cols-3 gap-3 mb-12">
+    <div class="flex flex-col items-center text-center gap-2 py-2">
+      <div class="w-11 h-11 rounded-full bg-surface-container-low flex items-center justify-center">
+        <span class="material-symbols-outlined text-on-surface-variant">bolt</span>
+      </div>
+      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Dificultad</p>
+      <p class="font-display text-xl text-on-surface">Fácil</p>
     </div>
-    <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 text-center">
-      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Vida</p>
+    <div class="flex flex-col items-center text-center gap-2 py-2">
+      <div class="w-11 h-11 rounded-full bg-surface-container-low flex items-center justify-center">
+        <span class="material-symbols-outlined text-on-surface-variant">schedule</span>
+      </div>
+      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Vida</p>
       <p class="font-display text-xl text-on-surface">10–15 años</p>
     </div>
-    <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 text-center">
-      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Tamaño</p>
+    <div class="flex flex-col items-center text-center gap-2 py-2">
+      <div class="w-11 h-11 rounded-full bg-surface-container-low flex items-center justify-center">
+        <span class="material-symbols-outlined text-on-surface-variant">straighten</span>
+      </div>
+      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Tamaño</p>
       <p class="font-display text-xl text-on-surface">12–14 cm</p>
     </div>
   </div>
@@ -104,98 +113,100 @@ tailwind.config = {
   <!-- Secciones de contenido -->
   <div class="space-y-6 mb-12">
 
-    <!-- Alimentación -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🍽️</div>
-        <h2 class="font-display text-3xl text-on-surface">Alimentación</h2>
+    <!-- Alimentación (imagen + texto) -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
+      <div class="md:col-span-2 rounded-lg overflow-hidden h-56 md:h-64">
+        <img src="../assets/img/cuidados/canario.jpg" alt="Canario" class="w-full h-full object-cover">
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">La dieta del canario se basa en semillas, complementada con frutas, verduras y ocasionalmente huevo duro para aportar proteína y calcio.</p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Mezcla de semillas para canario: mijo, alpiste, linaza</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Verduras frescas 3 veces por semana: espinaca, zanahoria, brócoli</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Fruta ocasional: manzana, naranja sin semillas</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Huevo duro molido 1 vez por semana para calcio</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Agua fresca diaria, siempre limpia y disponible</span>
-        </li>
-      </ul>
+      <div class="md:col-span-3 bg-surface-container-low rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">restaurant</span>
+          <h2 class="font-display text-3xl text-on-surface">Alimentación</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">La dieta del canario se basa en semillas, complementada con frutas, verduras y ocasionalmente huevo duro para aportar proteína y calcio.</p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Mezcla de semillas para canario: mijo, alpiste, linaza</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Verduras frescas 3 veces por semana: espinaca, zanahoria, brócoli</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Fruta ocasional: manzana, naranja sin semillas</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Huevo duro molido 1 vez por semana para calcio</span>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!-- Hábitat -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
+    <div class="bg-surface-container-low rounded-lg p-6">
       <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🏠</div>
+        <span class="material-symbols-outlined text-primary">cottage</span>
         <h2 class="font-display text-3xl text-on-surface">Hábitat</h2>
       </div>
       <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Los canarios vuelan en horizontal, no en vertical, por eso necesitan jaulas rectangulares alargadas. La luz natural y la temperatura estable son clave para su canto.</p>
-      <ul class="space-y-3">
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Jaula rectangular mínima 60×40×40 cm (vuelan horizontal)</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Temperatura 15–25°C y luz natural 12 horas al día</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Perchas de distintos grosores para ejercitar los pies</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Baño de agua tibia disponible 2–3 veces por semana</span>
         </li>
       </ul>
     </div>
 
-    <!-- Salud -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">💚</div>
-        <h2 class="font-display text-3xl text-on-surface">Salud</h2>
+    <!-- Salud + Dato curioso -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-surface-container-low rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">favorite</span>
+          <h2 class="font-display text-3xl text-on-surface">Salud</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">El canto del macho es el mejor indicador de salud. Si deja de cantar, algo no está bien. La muda anual de plumas es completamente normal.</p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Solo los machos cantan — si deja de cantar es señal de estrés o enfermedad</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Muda de plumas anual (julio–septiembre) es completamente normal</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Uñas largas necesitan recorte con especialista</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Observa el pico y las fosas nasales regularmente</span>
+          </li>
+        </ul>
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">El canto del macho es el mejor indicador de salud. Si deja de cantar, algo no está bien. La muda anual de plumas es completamente normal.</p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Solo los machos cantan — si deja de cantar es señal de estrés o enfermedad</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Muda de plumas anual (julio–septiembre) es completamente normal</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Uñas largas necesitan recorte con especialista</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Observa el pico y las fosas nasales regularmente</span>
-        </li>
-      </ul>
-    </div>
 
-    <!-- Dato curioso -->
-    <div class="bg-primary/5 border border-primary/20 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🧠</div>
-        <h2 class="font-display text-3xl text-primary">Dato curioso</h2>
+      <div class="bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">lightbulb</span>
+          <h2 class="font-display text-3xl text-primary">Dato curioso</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Los canarios fueron los primeros en detectar gas en las minas de carbón. Los mineros los llevaban como "alarmas vivientes" porque son muy sensibles a gases tóxicos.</p>
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed">Los canarios fueron los primeros en detectar gas en las minas de carbón. Los mineros los llevaban como "alarmas vivientes" porque son muy sensibles a gases tóxicos.</p>
     </div>
 
   </div>

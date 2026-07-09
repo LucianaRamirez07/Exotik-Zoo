@@ -66,7 +66,7 @@ tailwind.config = {
   </div>
 </header>
 
-<main class="max-w-3xl mx-auto px-4 md:px-8 py-10">
+<main class="max-w-4xl mx-auto px-4 md:px-8 py-10">
 
   <!-- Breadcrumb -->
   <a href="./cuidados.html" class="inline-flex items-center gap-1 text-sm text-on-surface-variant hover:text-primary transition-colors mb-8">
@@ -75,28 +75,37 @@ tailwind.config = {
   </a>
 
   <!-- Hero imagen -->
-  <div class="relative h-72 md:h-96 rounded-lg overflow-hidden mb-8">
-    <img src="../assets/img/cuidados/hamster.jpg" alt="Hámster" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-    <div class="absolute bottom-0 left-0 p-6">
-      <span class="text-xs font-bold text-primary uppercase tracking-widest bg-white/90 px-3 py-1 rounded-full mb-3 inline-block">Roedores</span>
-      <h1 class="font-display text-5xl md:text-6xl text-white">Hámster</h1>
-      <p class="text-white/80 text-sm mt-1">Nocturno, independiente y maestro de la evasión</p>
+  <div class="relative h-80 md:h-[26rem] rounded-lg overflow-hidden mb-6">
+    <img src="../assets/img/cuidados/hamster-wide.jpg" alt="Hámster" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/80"></div>
+    <div class="absolute inset-0 flex flex-col justify-center items-end text-right p-6 md:p-10">
+      <span class="text-xs font-bold text-white/90 uppercase tracking-widest mb-2">Guías de cuidado</span>
+      <h1 class="font-display text-6xl md:text-7xl text-white leading-none">Hámster</h1>
+      <p class="text-white/80 text-sm mt-3 max-w-xs">Nocturno, independiente y maestro de la evasión.</p>
     </div>
   </div>
 
-  <!-- Stats -->
-  <div class="grid grid-cols-3 gap-3 mb-10">
-    <div class="bg-primary/10 border border-primary/20 rounded-lg p-4 text-center">
-      <p class="text-xs font-bold text-primary uppercase tracking-widest mb-1">Dificultad</p>
-      <p class="font-display text-xl text-primary">Fácil</p>
+  <!-- Datos clave -->
+  <div class="grid grid-cols-3 gap-3 mb-12">
+    <div class="flex flex-col items-center text-center gap-2 py-2">
+      <div class="w-11 h-11 rounded-full bg-surface-container-low flex items-center justify-center">
+        <span class="material-symbols-outlined text-on-surface-variant">bolt</span>
+      </div>
+      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Dificultad</p>
+      <p class="font-display text-xl text-on-surface">Fácil</p>
     </div>
-    <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 text-center">
-      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Vida</p>
+    <div class="flex flex-col items-center text-center gap-2 py-2">
+      <div class="w-11 h-11 rounded-full bg-surface-container-low flex items-center justify-center">
+        <span class="material-symbols-outlined text-on-surface-variant">schedule</span>
+      </div>
+      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Vida</p>
       <p class="font-display text-xl text-on-surface">2–3 años</p>
     </div>
-    <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 text-center">
-      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Tamaño</p>
+    <div class="flex flex-col items-center text-center gap-2 py-2">
+      <div class="w-11 h-11 rounded-full bg-surface-container-low flex items-center justify-center">
+        <span class="material-symbols-outlined text-on-surface-variant">straighten</span>
+      </div>
+      <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Tamaño</p>
       <p class="font-display text-xl text-on-surface">5–18 cm</p>
     </div>
   </div>
@@ -104,100 +113,107 @@ tailwind.config = {
   <!-- Secciones de contenido -->
   <div class="space-y-6 mb-12">
 
-    <!-- Alimentación -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🍽️</div>
-        <h2 class="font-display text-3xl text-on-surface">Alimentación</h2>
+    <!-- Alimentación (imagen + texto) -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
+      <div class="md:col-span-2 flex justify-center md:justify-start">
+        <img src="../assets/img/cuidados/hamster-cutout.png" alt="Hámster" class="w-56 h-auto object-contain">
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Los hámsters son omnívoros que en la naturaleza almacenan comida en sus abazones. Aliméntalos con variedad pero en porciones pequeñas.</p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Mezcla de semillas específica para hámster</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Proteína 2–3 veces por semana: huevo cocido, grillo, pollo sin sal</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Verduras frescas: zanahoria, pepino, brócoli en pequeñas cantidades</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✗</span>
-          <span class="text-sm text-on-surface-variant">Evita cítricos, cebolla, ajo y papas crudas</span>
-        </li>
-      </ul>
+      <div class="md:col-span-3 bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">restaurant</span>
+          <h2 class="font-display text-3xl text-on-surface">Alimentación</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Los hámsters son omnívoros que en la naturaleza almacenan comida en sus abazones. Aliméntalos con variedad pero en porciones pequeñas.</p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Mezcla de semillas específica para hámster</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Proteína 2–3 veces por semana: huevo cocido, grillo, pollo sin sal</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Verduras frescas: zanahoria, pepino, brócoli en pequeñas cantidades</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-lg flex-shrink-0">close</span>
+            <span class="text-sm text-on-surface-variant">Evita cítricos, cebolla, ajo y papas crudas</span>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!-- Hábitat -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
+    <div class="bg-surface-container-low rounded-lg p-6">
       <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🏠</div>
+        <span class="material-symbols-outlined text-primary">cottage</span>
         <h2 class="font-display text-3xl text-on-surface">Hábitat</h2>
       </div>
       <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Los hámsters necesitan más espacio del que se cree. Una jaula grande con sustrato profundo es indispensable para su bienestar.</p>
-      <ul class="space-y-3">
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Jaula mínima: 80×50 cm (más grande = mejor)</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Capa de sustrato de 15–20 cm para cavar</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Rueda sólida (sin rejilla) de mínimo 20 cm de diámetro</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Temperatura: 18–24°C — el frío los hace entrar en letargo</span>
         </li>
       </ul>
     </div>
 
-    <!-- Salud -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">💚</div>
-        <h2 class="font-display text-3xl text-on-surface">Salud</h2>
+    <!-- Salud + Dato curioso -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">favorite</span>
+          <h2 class="font-display text-3xl text-on-surface">Salud</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Su vida corta hace que la detección temprana de problemas sea clave. Observa su comportamiento diariamente.</p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Revisión diaria de comportamiento y deposiciones</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Señales de alerta: diarrea, pelaje mojado, inactividad total</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Dientes incisivos crecen continuamente — provee madera para roer</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Limpieza de jaula semanal — guarda una parte del sustrato usado</span>
+          </li>
+        </ul>
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Su vida corta hace que la detección temprana de problemas sea clave. Observa su comportamiento diariamente.</p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Revisión diaria de comportamiento y deposiciones</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Señales de alerta: diarrea, pelaje mojado, inactividad total</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Dientes incisivos crecen continuamente — provee madera para roer</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Limpieza de jaula semanal — guarda una parte del sustrato usado</span>
-        </li>
-      </ul>
-    </div>
 
-    <!-- Dato curioso -->
-    <div class="bg-primary/5 border border-primary/20 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🧠</div>
-        <h2 class="font-display text-3xl text-primary">Dato curioso</h2>
+      <div class="bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">lightbulb</span>
+          <h2 class="font-display text-3xl text-primary">Dato curioso</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Un hámster puede almacenar en sus abazones hasta el doble de su propio peso en comida. Son nocturnos por naturaleza — su pico de actividad es de noche y pueden correr hasta 10 km en una sola noche en su rueda.</p>
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed">Un hámster puede almacenar en sus abazones hasta el doble de su propio peso en comida. Son nocturnos por naturaleza — su pico de actividad es de noche y pueden correr hasta 10 km en una sola noche en su rueda.</p>
     </div>
 
   </div>
 
   <!-- CTA Tienda -->
-  <div class="bg-primary rounded-lg p-8 text-center text-white mb-12">
+  <div class="relative bg-primary rounded-lg p-8 text-center text-white mb-12 overflow-hidden">
+    <span class="material-symbols-outlined absolute -left-4 -bottom-4 text-white/10" style="font-size: 8rem;">forest</span>
     <h3 class="font-display text-4xl mb-2">¿Tienes un hámster?</h3>
     <p class="text-white/80 text-sm mb-6">Encuentra alimentos y accesorios especializados en nuestra tienda.</p>
     <a href="../tienda/" class="inline-flex bg-white text-primary font-bold px-6 py-3 rounded-lg hover:bg-surface-container-low transition-colors">Ver productos →</a>
