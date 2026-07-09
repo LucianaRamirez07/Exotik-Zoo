@@ -66,7 +66,7 @@ tailwind.config = {
   </div>
 </header>
 
-<main class="max-w-3xl mx-auto px-4 md:px-8 py-10">
+<main class="max-w-4xl mx-auto px-4 md:px-8 py-10">
 
   <!-- Breadcrumb -->
   <a href="./cuidados.html" class="inline-flex items-center gap-1 text-sm text-on-surface-variant hover:text-primary transition-colors mb-8">
@@ -74,20 +74,18 @@ tailwind.config = {
     Todas las fichas
   </a>
 
-  <!-- Hero -->
-  <div class="flex flex-col md:flex-row gap-6 mb-8 items-start">
-    <div class="w-full md:w-72 flex-shrink-0 rounded-lg overflow-hidden shadow-md bg-orange-50 flex items-center justify-center" style="min-height:13rem">
-      <img src="../assets/img/cuidados/pez-dorado.jpg" alt="Pez Dorado" class="w-full h-auto object-contain" style="display:block">
-    </div>
-    <div class="flex-1 pt-2">
-      <span class="text-xs font-bold text-secondary uppercase tracking-widest bg-secondary/10 px-3 py-1 rounded-full mb-4 inline-block">Peces</span>
-      <h1 class="font-display text-6xl md:text-7xl text-on-surface leading-none mb-3">Pez Dorado</h1>
-      <p class="text-on-surface-variant text-base mb-6">El clásico del acuario — vive décadas con buen cuidado</p>
-      <a href="../tienda/" class="inline-flex bg-primary text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-primary-container transition-colors">Ver productos →</a>
+  <!-- Hero imagen -->
+  <div class="relative h-80 md:h-[26rem] rounded-lg overflow-hidden mb-6 bg-black">
+    <img src="../assets/img/cuidados/pez-dorado.jpg" alt="Pez Dorado" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-black/30 to-black/85"></div>
+    <div class="absolute inset-0 flex flex-col justify-center items-end text-right p-6 md:p-10">
+      <span class="text-xs font-bold text-white/90 uppercase tracking-widest mb-2">Guías de cuidado</span>
+      <h1 class="font-display text-6xl md:text-7xl text-white leading-none">Pez Dorado</h1>
+      <p class="text-white/80 text-sm mt-3 max-w-xs">El clásico del acuario — vive décadas con buen cuidado.</p>
     </div>
   </div>
 
-  <!-- Stats -->
+  <!-- Datos clave -->
   <div class="grid grid-cols-3 gap-3 mb-10">
     <div class="bg-secondary/10 border border-secondary/20 rounded-lg p-4 text-center">
       <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-1">Dificultad</p>
@@ -106,96 +104,103 @@ tailwind.config = {
   <!-- Secciones de contenido -->
   <div class="space-y-6 mb-12">
 
-    <!-- Alimentación -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🍽️</div>
-        <h2 class="font-display text-3xl text-on-surface">Alimentación</h2>
+    <!-- Alimentación (imagen + texto) -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
+      <div class="md:col-span-2 flex justify-center md:justify-start">
+        <img src="../assets/img/cuidados/pez-dorado-cutout.png" alt="Pez Dorado" class="w-56 h-auto object-contain">
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">El pez dorado tiende a comer en exceso si se le permite. La clave está en porciones controladas y días de ayuno para mantener su sistema digestivo sano.</p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Pellets específicos para pez dorado (flotan o se hunden según la variedad)</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Verduras blanqueadas como complemento: espinaca y guisantes sin cáscara</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Ayuno 1 día por semana; solo la cantidad que consuman en 2 minutos por comida</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✗</span>
-          <span class="text-sm text-on-surface-variant">No sobrealimentes — la cantidad de comida proporcional al tamaño del ojo del pez</span>
-        </li>
-      </ul>
+      <div class="md:col-span-3 bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">restaurant</span>
+          <h2 class="font-display text-3xl text-on-surface">Alimentación</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">El pez dorado tiende a comer en exceso si se le permite. La clave está en porciones controladas y días de ayuno para mantener su sistema digestivo sano.</p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Pellets específicos para pez dorado (flotan o se hunden según la variedad)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Verduras blanqueadas como complemento: espinaca y guisantes sin cáscara</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Ayuno 1 día por semana; solo la cantidad que consuman en 2 minutos por comida</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-lg flex-shrink-0">close</span>
+            <span class="text-sm text-on-surface-variant">No sobrealimentes — la cantidad de comida proporcional al tamaño del ojo del pez</span>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!-- Hábitat -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
+    <div class="bg-surface-container-low rounded-lg p-6">
       <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🏠</div>
+        <span class="material-symbols-outlined text-primary">cottage</span>
         <h2 class="font-display text-3xl text-on-surface">Hábitat</h2>
       </div>
       <p class="text-on-surface-variant text-sm leading-relaxed mb-4">El pez dorado produce grandes cantidades de desechos. Necesita un acuario amplio con buena filtración para mantenerse sano — la pecera redonda pequeña es un mito dañino.</p>
-      <ul class="space-y-3">
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Acuario mínimo 100 L por pez (son grandes y producen mucho desecho)</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Filtro potente con ciclo de nitrógeno establecido; temperatura 18–22°C (agua fría, sin calentador)</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Cambio de agua del 20–25% semanal; sin plantas delicadas (las comen)</span>
         </li>
       </ul>
     </div>
 
-    <!-- Salud -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">💚</div>
-        <h2 class="font-display text-3xl text-on-surface">Salud</h2>
+    <!-- Salud + Dato curioso -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">favorite</span>
+          <h2 class="font-display text-3xl text-on-surface">Salud</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">La calidad del agua es el factor más importante para la salud del pez dorado. Muchas enfermedades son consecuencia directa de un agua mal mantenida.</p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Muy sensibles a la calidad del agua — el amoniaco y los nitritos son mortales</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Vejiga natatoria puede inflamarse por sobrealimentación — el ayuno semanal ayuda a prevenirlo</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Enfermedad de los puntos blancos (ich) frecuente con cambios bruscos de temperatura</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">El acuario debe estar ciclado antes de introducir el pez (proceso de 4–6 semanas)</span>
+          </li>
+        </ul>
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">La calidad del agua es el factor más importante para la salud del pez dorado. Muchas enfermedades son consecuencia directa de un agua mal mantenida.</p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Muy sensibles a la calidad del agua — el amoniaco y los nitritos son mortales</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Vejiga natatoria puede inflamarse por sobrealimentación — el ayuno semanal ayuda a prevenirlo</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Enfermedad de los puntos blancos (ich) frecuente con cambios bruscos de temperatura</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">El acuario debe estar ciclado antes de introducir el pez (proceso de 4–6 semanas)</span>
-        </li>
-      </ul>
-    </div>
 
-    <!-- Dato curioso -->
-    <div class="bg-primary/5 border border-primary/20 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🧠</div>
-        <h2 class="font-display text-3xl text-primary">Dato curioso</h2>
+      <div class="bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">lightbulb</span>
+          <h2 class="font-display text-3xl text-primary">Dato curioso</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Contrario al mito, los peces dorados tienen excelente memoria — pueden recordar rutinas y reconocer a sus cuidadores hasta por meses. Pueden vivir más de 20 años con el cuidado adecuado.</p>
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed">Contrario al mito, los peces dorados tienen excelente memoria — pueden recordar rutinas y reconocer a sus cuidadores hasta por meses. Pueden vivir más de 20 años con el cuidado adecuado.</p>
     </div>
 
   </div>
 
   <!-- CTA Tienda -->
-  <div class="bg-primary rounded-lg p-8 text-center text-white mb-12">
+  <div class="relative bg-primary rounded-lg p-8 text-center text-white mb-12 overflow-hidden">
+    <span class="material-symbols-outlined absolute -left-4 -bottom-4 text-white/10" style="font-size: 8rem;">water</span>
     <h3 class="font-display text-4xl mb-2">¿Tienes un pez dorado?</h3>
     <p class="text-white/80 text-sm mb-6">Encuentra alimentos y accesorios especializados en nuestra tienda.</p>
     <a href="../tienda/" class="inline-flex bg-white text-primary font-bold px-6 py-3 rounded-lg hover:bg-surface-container-low transition-colors">Ver productos →</a>

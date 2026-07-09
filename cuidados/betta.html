@@ -66,7 +66,7 @@ tailwind.config = {
   </div>
 </header>
 
-<main class="max-w-3xl mx-auto px-4 md:px-8 py-10">
+<main class="max-w-4xl mx-auto px-4 md:px-8 py-10">
 
   <!-- Breadcrumb -->
   <a href="./cuidados.html" class="inline-flex items-center gap-1 text-sm text-on-surface-variant hover:text-primary transition-colors mb-8">
@@ -74,20 +74,18 @@ tailwind.config = {
     Todas las fichas
   </a>
 
-  <!-- Hero -->
-  <div class="flex flex-col md:flex-row gap-6 mb-8 items-start">
-    <div class="w-full md:w-72 flex-shrink-0 rounded-lg overflow-hidden shadow-md bg-blue-50 flex items-center justify-center" style="min-height:13rem">
-      <img src="../assets/img/cuidados/betta.jpg" alt="Pez Betta" class="w-full h-auto object-contain" style="display:block">
-    </div>
-    <div class="flex-1 pt-2">
-      <span class="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full mb-4 inline-block">Peces</span>
-      <h1 class="font-display text-6xl md:text-7xl text-on-surface leading-none mb-3">Pez Betta</h1>
-      <p class="text-on-surface-variant text-base mb-6">El rey del acuario — elegante y solitario</p>
-      <a href="../tienda/" class="inline-flex bg-primary text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-primary-container transition-colors">Ver productos →</a>
+  <!-- Hero imagen -->
+  <div class="relative h-80 md:h-[26rem] rounded-lg overflow-hidden mb-6 bg-black">
+    <img src="../assets/img/cuidados/betta.jpg" alt="Pez Betta" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-black/30 to-black/85"></div>
+    <div class="absolute inset-0 flex flex-col justify-center items-end text-right p-6 md:p-10">
+      <span class="text-xs font-bold text-white/90 uppercase tracking-widest mb-2">Guías de cuidado</span>
+      <h1 class="font-display text-6xl md:text-7xl text-white leading-none">Pez Betta</h1>
+      <p class="text-white/80 text-sm mt-3 max-w-xs">El rey del acuario — elegante y solitario.</p>
     </div>
   </div>
 
-  <!-- Stats -->
+  <!-- Datos clave -->
   <div class="grid grid-cols-3 gap-3 mb-10">
     <div class="bg-primary/10 border border-primary/20 rounded-lg p-4 text-center">
       <p class="text-xs font-bold text-primary uppercase tracking-widest mb-1">Dificultad</p>
@@ -106,104 +104,107 @@ tailwind.config = {
   <!-- Secciones de contenido -->
   <div class="space-y-6 mb-12">
 
-    <!-- Alimentación -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🍽️</div>
-        <h2 class="font-display text-3xl text-on-surface">Alimentación</h2>
+    <!-- Alimentación (imagen + texto) -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
+      <div class="md:col-span-2 flex justify-center md:justify-start">
+        <img src="../assets/img/cuidados/betta-cutout.png" alt="Pez Betta" class="w-56 h-auto object-contain">
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">El betta es carnívoro y necesita alimento rico en proteína. No sobrealimentes — el exceso contamina el agua y daña su sistema digestivo.</p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Pellets específicos para betta como base de la dieta</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Gusanos de sangre liofilizados 2 veces por semana</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Artemia como complemento proteico</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Solo 2–3 pellets por comida — no sobrealimentes</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Ayuno 1 día por semana para limpiar el sistema digestivo</span>
-        </li>
-      </ul>
+      <div class="md:col-span-3 bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">restaurant</span>
+          <h2 class="font-display text-3xl text-on-surface">Alimentación</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">El betta es carnívoro y necesita alimento rico en proteína. No sobrealimentes — el exceso contamina el agua y daña su sistema digestivo.</p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Pellets específicos para betta como base de la dieta</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Gusanos de sangre liofilizados 2 veces por semana</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Solo 2–3 pellets por comida — no sobrealimentes</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Ayuno 1 día por semana para limpiar el sistema digestivo</span>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!-- Hábitat -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
+    <div class="bg-surface-container-low rounded-lg p-6">
       <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🏠</div>
+        <span class="material-symbols-outlined text-primary">cottage</span>
         <h2 class="font-display text-3xl text-on-surface">Hábitat</h2>
       </div>
       <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Los bettas respiran aire de la superficie gracias a su órgano laberinto. Necesitan acuario con tapa y filtro de flujo suave para no estresarlos.</p>
-      <ul class="space-y-3">
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Acuario mínimo 20L con tapa (son peces que saltan)</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Filtro de flujo suave y temperatura 24–28°C con calentador</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Plantas naturales o de seda sin bordes afilados</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✗</span>
+          <span class="material-symbols-outlined text-secondary text-lg flex-shrink-0">close</span>
           <span class="text-sm text-on-surface-variant">Nunca juntes dos bettas machos — se atacan hasta la muerte</span>
         </li>
       </ul>
     </div>
 
-    <!-- Salud -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">💚</div>
-        <h2 class="font-display text-3xl text-on-surface">Salud</h2>
+    <!-- Salud + Dato curioso -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">favorite</span>
+          <h2 class="font-display text-3xl text-on-surface">Salud</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">La calidad del agua es el factor más importante para la salud del betta. El agua debe estar siempre libre de cloro y a temperatura estable.</p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Cambio de agua 25–30% semanal con agua sin cloro</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Observa las aletas: manchas oscuras indican podredumbre</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Evita temperaturas bajas que lo inmovilizan y enferman</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Sin decoraciones con bordes cortantes que dañen sus aletas</span>
+          </li>
+        </ul>
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">La calidad del agua es el factor más importante para la salud del betta. El agua debe estar siempre libre de cloro y a temperatura estable.</p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Cambio de agua 25–30% semanal con agua sin cloro</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Observa las aletas: manchas oscuras indican podredumbre</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Evita temperaturas bajas que lo inmovilizan y enferman</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Sin decoraciones con bordes cortantes que dañen sus aletas</span>
-        </li>
-      </ul>
-    </div>
 
-    <!-- Dato curioso -->
-    <div class="bg-primary/5 border border-primary/20 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🧠</div>
-        <h2 class="font-display text-3xl text-primary">Dato curioso</h2>
+      <div class="bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">lightbulb</span>
+          <h2 class="font-display text-3xl text-primary">Dato curioso</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">El betta tiene un órgano especial llamado laberinto que le permite respirar aire directamente de la superficie. Por eso puede sobrevivir en aguas con poco oxígeno.</p>
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed">El betta tiene un órgano especial llamado laberinto que le permite respirar aire directamente de la superficie. Por eso puede sobrevivir en aguas con poco oxígeno.</p>
     </div>
 
   </div>
 
   <!-- CTA Tienda -->
-  <div class="bg-primary rounded-lg p-8 text-center text-white mb-12">
+  <div class="relative bg-primary rounded-lg p-8 text-center text-white mb-12 overflow-hidden">
+    <span class="material-symbols-outlined absolute -left-4 -bottom-4 text-white/10" style="font-size: 8rem;">water</span>
     <h3 class="font-display text-4xl mb-2">¿Tienes un pez betta?</h3>
     <p class="text-white/80 text-sm mb-6">Encuentra alimentos y accesorios especializados en nuestra tienda.</p>
     <a href="../tienda/" class="inline-flex bg-white text-primary font-bold px-6 py-3 rounded-lg hover:bg-surface-container-low transition-colors">Ver productos →</a>

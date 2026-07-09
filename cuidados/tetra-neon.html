@@ -66,7 +66,7 @@ tailwind.config = {
   </div>
 </header>
 
-<main class="max-w-3xl mx-auto px-4 md:px-8 py-10">
+<main class="max-w-4xl mx-auto px-4 md:px-8 py-10">
 
   <!-- Breadcrumb -->
   <a href="./cuidados.html" class="inline-flex items-center gap-1 text-sm text-on-surface-variant hover:text-primary transition-colors mb-8">
@@ -75,17 +75,17 @@ tailwind.config = {
   </a>
 
   <!-- Hero imagen -->
-  <div class="relative h-72 md:h-96 rounded-lg overflow-hidden mb-8">
+  <div class="relative h-80 md:h-[26rem] rounded-lg overflow-hidden mb-6">
     <img src="../assets/img/cuidados/tetra.jpg" alt="Tetra Neón" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-    <div class="absolute bottom-0 left-0 p-6">
-      <span class="text-xs font-bold text-secondary uppercase tracking-widest bg-white/90 px-3 py-1 rounded-full mb-3 inline-block">Peces</span>
-      <h1 class="font-display text-5xl md:text-6xl text-white">Tetra Neón</h1>
-      <p class="text-white/80 text-sm mt-1">Pequeños, brillantes y espectaculares en cardumen</p>
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-black/40 to-black/85"></div>
+    <div class="absolute inset-0 flex flex-col justify-center items-end text-right p-6 md:p-10">
+      <span class="text-xs font-bold text-white/90 uppercase tracking-widest mb-2">Guías de cuidado</span>
+      <h1 class="font-display text-6xl md:text-7xl text-white leading-none">Tetra Neón</h1>
+      <p class="text-white/80 text-sm mt-3 max-w-xs">Pequeños, brillantes y espectaculares en cardumen.</p>
     </div>
   </div>
 
-  <!-- Stats -->
+  <!-- Datos clave -->
   <div class="grid grid-cols-3 gap-3 mb-10">
     <div class="bg-secondary/10 border border-secondary/20 rounded-lg p-4 text-center">
       <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-1">Dificultad</p>
@@ -104,92 +104,99 @@ tailwind.config = {
   <!-- Secciones de contenido -->
   <div class="space-y-6 mb-12">
 
-    <!-- Alimentación -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🍽️</div>
-        <h2 class="font-display text-3xl text-on-surface">Alimentación</h2>
+    <!-- Alimentación (imagen + texto) -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
+      <div class="md:col-span-2 rounded-lg overflow-hidden h-56 md:h-64">
+        <img src="../assets/img/cuidados/tetra.jpg" alt="Tetra Neón" class="w-full h-full object-cover">
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Los tetras neón son peces pequeños con bocas diminutas. Necesitan alimentos en partículas finas y una dieta variada para mantener sus colores vibrantes.</p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Escamas o micro-pellets de alta calidad como base de la dieta</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Artemia viva o congelada 2 veces por semana; tubifex y dafnia como complemento</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Alimenta 2 veces al día en porciones pequeñas (lo que consuman en 2–3 minutos)</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Varía la dieta para mantener colores vibrantes y buena condición física</span>
-        </li>
-      </ul>
+      <div class="md:col-span-3 bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">restaurant</span>
+          <h2 class="font-display text-3xl text-on-surface">Alimentación</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Los tetras neón son peces pequeños con bocas diminutas. Necesitan alimentos en partículas finas y una dieta variada para mantener sus colores vibrantes.</p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Escamas o micro-pellets de alta calidad como base de la dieta</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Artemia viva o congelada 2 veces por semana; tubifex y dafnia como complemento</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Alimenta 2 veces al día en porciones pequeñas (lo que consuman en 2–3 minutos)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Varía la dieta para mantener colores vibrantes y buena condición física</span>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!-- Hábitat -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
+    <div class="bg-surface-container-low rounded-lg p-6">
       <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🏠</div>
+        <span class="material-symbols-outlined text-primary">cottage</span>
         <h2 class="font-display text-3xl text-on-surface">Hábitat</h2>
       </div>
       <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Los tetras neón son peces de cardumen que en la naturaleza viven en ríos amazónicos con agua oscura y vegetación densa. Replicar ese entorno es clave para su bienestar.</p>
-      <ul class="space-y-3">
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Acuario mínimo 60 L para un cardumen de 10+ peces (viven en grupos)</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Temperatura 22–26°C, pH 6.0–7.0 (agua ligeramente ácida), plantas densas y zonas de sombra</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Luz tenue, filtro con flujo moderado; no los mezcles con peces grandes</span>
         </li>
       </ul>
     </div>
 
-    <!-- Salud -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">💚</div>
-        <h2 class="font-display text-3xl text-on-surface">Salud</h2>
+    <!-- Salud + Dato curioso -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">favorite</span>
+          <h2 class="font-display text-3xl text-on-surface">Salud</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Los tetras neón son sensibles a los parámetros del agua. El estrés por condiciones inadecuadas los hace vulnerables a enfermedades, por lo que la estabilidad es fundamental.</p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Muy sensibles a cambios bruscos de temperatura y pH — estabilidad ante todo</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Enfermedad del neón (Pleistophora hyphessobryconis) es incurable — elimina los peces afectados</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Cambio de agua del 25% semanal; el cardumen debe ser de mínimo 6 peces o se estresan</span>
+          </li>
+        </ul>
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Los tetras neón son sensibles a los parámetros del agua. El estrés por condiciones inadecuadas los hace vulnerables a enfermedades, por lo que la estabilidad es fundamental.</p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Muy sensibles a cambios bruscos de temperatura y pH — estabilidad ante todo</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Enfermedad del neón (Pleistophora hyphessobryconis) es incurable — elimina los peces afectados</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Cambio de agua del 25% semanal; el cardumen debe ser de mínimo 6 peces o se estresan</span>
-        </li>
-      </ul>
-    </div>
 
-    <!-- Dato curioso -->
-    <div class="bg-primary/5 border border-primary/20 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🧠</div>
-        <h2 class="font-display text-3xl text-primary">Dato curioso</h2>
+      <div class="bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">lightbulb</span>
+          <h2 class="font-display text-3xl text-primary">Dato curioso</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">La franja azul iridiscente del tetra neón no es un pigmento — es causada por cristales de guanina que refractan la luz. En la oscuridad o cuando duermen, la franja se apaga completamente.</p>
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed">La franja azul iridiscente del tetra neón no es un pigmento — es causada por cristales de guanina que refractan la luz. En la oscuridad o cuando duermen, la franja se apaga completamente.</p>
     </div>
 
   </div>
 
   <!-- CTA Tienda -->
-  <div class="bg-primary rounded-lg p-8 text-center text-white mb-12">
+  <div class="relative bg-primary rounded-lg p-8 text-center text-white mb-12 overflow-hidden">
+    <span class="material-symbols-outlined absolute -left-4 -bottom-4 text-white/10" style="font-size: 8rem;">water</span>
     <h3 class="font-display text-4xl mb-2">¿Tienes tetras neón?</h3>
     <p class="text-white/80 text-sm mb-6">Encuentra alimentos y accesorios especializados en nuestra tienda.</p>
     <a href="../tienda/" class="inline-flex bg-white text-primary font-bold px-6 py-3 rounded-lg hover:bg-surface-container-low transition-colors">Ver productos →</a>
