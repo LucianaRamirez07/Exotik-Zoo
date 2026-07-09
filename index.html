@@ -186,6 +186,12 @@
     <div style="position:absolute;bottom:2.5rem;right:4rem;z-index:3">
       <a href="cuidados/cuidados.html" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;color:#fff;text-decoration:none;letter-spacing:0.1em;text-transform:uppercase">Cuidados →</a>
     </div>
+    <button id="bird-sound-toggle" type="button" aria-label="Activar sonido ambiente de aves" style="position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);z-index:3;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.5);background:transparent;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;transition:background 0.2s" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='transparent'">
+      <span class="material-symbols-outlined" id="bird-sound-icon" style="font-size:20px">volume_off</span>
+    </button>
+    <audio id="bird-sound-audio" loop preload="none">
+      <source src="assets/audio/aves-ambiente.mp3" type="audio/mpeg">
+    </audio>
   </section>
 
   <!-- Editorial + Betta -->
@@ -400,6 +406,44 @@
       }
       lastY = y;
     }, { passive: true });
+  })();
+</script>
+<script>
+  (function() {
+    const audio = document.getElementById('bird-sound-audio');
+    const btn = document.getElementById('bird-sound-toggle');
+    const icon = document.getElementById('bird-sound-icon');
+    const hero = document.querySelector('main > section');
+    let enabled = false;
+
+    function updateIcon() {
+      icon.textContent = (enabled && !audio.paused) ? 'volume_up' : 'volume_off';
+    }
+
+    btn.addEventListener('click', function() {
+      enabled = !enabled;
+      if (enabled) {
+        audio.play().catch(() => {});
+      } else {
+        audio.pause();
+      }
+      updateIcon();
+    });
+
+    audio.addEventListener('play', updateIcon);
+    audio.addEventListener('pause', updateIcon);
+
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!enabled) return;
+        if (entry.isIntersecting) {
+          audio.play().catch(() => {});
+        } else {
+          audio.pause();
+        }
+      });
+    }, { threshold: 0.3 });
+    heroObserver.observe(hero);
   })();
 </script>
 
