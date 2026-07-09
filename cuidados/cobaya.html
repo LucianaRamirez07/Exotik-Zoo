@@ -66,7 +66,7 @@ tailwind.config = {
   </div>
 </header>
 
-<main class="max-w-3xl mx-auto px-4 md:px-8 py-10">
+<main class="max-w-4xl mx-auto px-4 md:px-8 py-10">
 
   <!-- Breadcrumb -->
   <a href="./cuidados.html" class="inline-flex items-center gap-1 text-sm text-on-surface-variant hover:text-primary transition-colors mb-8">
@@ -74,20 +74,18 @@ tailwind.config = {
     Todas las fichas
   </a>
 
-  <!-- Hero -->
-  <div class="flex flex-col md:flex-row gap-6 mb-8 items-start">
-    <div class="w-full md:w-72 flex-shrink-0 rounded-lg overflow-hidden shadow-md bg-amber-50 flex items-center justify-center" style="min-height:13rem">
-      <img src="../assets/img/cuidados/cobaya.jpg" alt="Cobaya" class="w-full h-auto object-contain" style="display:block">
-    </div>
-    <div class="flex-1 pt-2">
-      <span class="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full mb-4 inline-block">Roedores</span>
-      <h1 class="font-display text-6xl md:text-7xl text-on-surface leading-none mb-3">Cobaya</h1>
-      <p class="text-on-surface-variant text-base mb-6">Social, vocaliza y nunca debe estar solo</p>
-      <a href="../tienda/" class="inline-flex bg-primary text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-primary-container transition-colors">Ver productos →</a>
+  <!-- Hero imagen -->
+  <div class="relative h-80 md:h-[26rem] rounded-lg overflow-hidden mb-6">
+    <img src="../assets/img/cuidados/cobaya.jpg" alt="Cobaya" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-black/40 to-black/85"></div>
+    <div class="absolute inset-0 flex flex-col justify-center items-end text-right p-6 md:p-10">
+      <span class="text-xs font-bold text-white/90 uppercase tracking-widest mb-2">Guías de cuidado</span>
+      <h1 class="font-display text-6xl md:text-7xl text-white leading-none">Cobaya</h1>
+      <p class="text-white/80 text-sm mt-3 max-w-xs">Social, vocaliza y nunca debe estar sola.</p>
     </div>
   </div>
 
-  <!-- Stats -->
+  <!-- Datos clave -->
   <div class="grid grid-cols-3 gap-3 mb-10">
     <div class="bg-primary/10 border border-primary/20 rounded-lg p-4 text-center">
       <p class="text-xs font-bold text-primary uppercase tracking-widest mb-1">Dificultad</p>
@@ -106,104 +104,103 @@ tailwind.config = {
   <!-- Secciones de contenido -->
   <div class="space-y-6 mb-12">
 
-    <!-- Alimentación -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🍽️</div>
-        <h2 class="font-display text-3xl text-on-surface">Alimentación</h2>
+    <!-- Alimentación (imagen + texto) -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
+      <div class="md:col-span-2 flex justify-center md:justify-start">
+        <img src="../assets/img/cuidados/cobaya-cutout.png" alt="Cobaya" class="w-56 h-auto object-contain">
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Las cobayos no producen su propia vitamina C y necesitan recibirla diariamente en su dieta. El heno de timothy debe ser la base — el 80% de lo que comen.</p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Heno de timothy ilimitado (80% de la dieta)</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Pellets sin semillas 1/8 taza al día</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Vitamina C diaria: pimiento rojo, perejil, kiwi</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Agua fresca en botellón o plato, siempre disponible</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✗</span>
-          <span class="text-sm text-on-surface-variant">Evita lechuga iceberg, papas y remolacha</span>
-        </li>
-      </ul>
+      <div class="md:col-span-3 bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">restaurant</span>
+          <h2 class="font-display text-3xl text-on-surface">Alimentación</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Las cobayas no producen su propia vitamina C y necesitan recibirla diariamente en su dieta. El heno de timothy debe ser la base — el 80% de lo que comen.</p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Heno de timothy ilimitado (80% de la dieta)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Pellets sin semillas 1/8 taza al día</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Vitamina C diaria: pimiento rojo, perejil, kiwi</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-lg flex-shrink-0">close</span>
+            <span class="text-sm text-on-surface-variant">Evita lechuga iceberg, papas y remolacha</span>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!-- Hábitat -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
+    <div class="bg-surface-container-low rounded-lg p-6">
       <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🏠</div>
+        <span class="material-symbols-outlined text-primary">cottage</span>
         <h2 class="font-display text-3xl text-on-surface">Hábitat</h2>
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Las cobayos son animales de suelo y animales gregarios — necesitan compañía de su especie y espacio amplio sin niveles elevados, ya que no saltan bien.</p>
-      <ul class="space-y-3">
+      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Las cobayas son animales de suelo y gregarios — necesitan compañía de su especie y espacio amplio sin niveles elevados, ya que no saltan bien.</p>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Mínimo 2 cobayos juntas — son animales gregarios</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+          <span class="text-sm text-on-surface-variant">Mínimo 2 cobayas juntas — son animales gregarios</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Espacio mínimo 0.7 m² por animal, sin niveles elevados</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Temperatura 18–24°C y sustrato de papel (no viruta de cedro)</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Zona separada y cómoda para dormir y esconderse</span>
         </li>
       </ul>
     </div>
 
-    <!-- Salud -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">💚</div>
-        <h2 class="font-display text-3xl text-on-surface">Salud</h2>
+    <!-- Salud + Dato curioso -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">favorite</span>
+          <h2 class="font-display text-3xl text-on-surface">Salud</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Sin vitamina C diaria desarrollan escorbuto en pocas semanas. Sus vocalizaciones constantes son señal de salud — el silencio total es la primera alarma.</p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Vitamina C diaria es obligatoria — sin ella desarrollan escorbuto</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Dientes crecen continuamente — el heno los desgasta de forma natural</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Revisión mensual de orejas y pies, veterinario especializado en roedores</span>
+          </li>
+        </ul>
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Sin vitamina C diaria desarrollan escorbuto en pocas semanas. Sus vocalizaciones constantes son señal de salud — el silencio total es la primera alarma.</p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Vitamina C diaria es obligatoria — sin ella desarrollan escorbuto</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Dientes crecen continuamente — el heno los desgasta de forma natural</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Revisión mensual de orejas y pies, veterinario especializado en roedores</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">El silencio total es señal de problema — vocaliza constantemente cuando está bien</span>
-        </li>
-      </ul>
-    </div>
 
-    <!-- Dato curioso -->
-    <div class="bg-primary/5 border border-primary/20 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🧠</div>
-        <h2 class="font-display text-3xl text-primary">Dato curioso</h2>
+      <div class="bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">lightbulb</span>
+          <h2 class="font-display text-3xl text-primary">Dato curioso</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Las cobayas tienen un vocabulario de más de 11 sonidos diferentes. El "purring" (ronroneo) significa que están contentas, mientras que el "chutting" es señal de molestia.</p>
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed">Las cobayos tienen un vocabulario de más de 11 sonidos diferentes. El "purring" (ronroneo) significa que están contentas, mientras que el "chutting" es señal de molestia.</p>
     </div>
 
   </div>
 
   <!-- CTA Tienda -->
-  <div class="bg-primary rounded-lg p-8 text-center text-white mb-12">
+  <div class="relative bg-primary rounded-lg p-8 text-center text-white mb-12 overflow-hidden">
+    <span class="material-symbols-outlined absolute -left-4 -bottom-4 text-white/10" style="font-size: 8rem;">forest</span>
     <h3 class="font-display text-4xl mb-2">¿Tienes una cobaya?</h3>
     <p class="text-white/80 text-sm mb-6">Encuentra alimentos y accesorios especializados en nuestra tienda.</p>
     <a href="../tienda/" class="inline-flex bg-white text-primary font-bold px-6 py-3 rounded-lg hover:bg-surface-container-low transition-colors">Ver productos →</a>

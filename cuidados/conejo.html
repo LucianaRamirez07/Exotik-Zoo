@@ -66,7 +66,7 @@ tailwind.config = {
   </div>
 </header>
 
-<main class="max-w-3xl mx-auto px-4 md:px-8 py-10">
+<main class="max-w-4xl mx-auto px-4 md:px-8 py-10">
 
   <!-- Breadcrumb -->
   <a href="./cuidados.html" class="inline-flex items-center gap-1 text-sm text-on-surface-variant hover:text-primary transition-colors mb-8">
@@ -75,17 +75,17 @@ tailwind.config = {
   </a>
 
   <!-- Hero imagen -->
-  <div class="relative h-72 md:h-96 rounded-lg overflow-hidden mb-8">
+  <div class="relative h-80 md:h-[26rem] rounded-lg overflow-hidden mb-6">
     <img src="../assets/img/cuidados/conejo.jpg" alt="Conejo" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-    <div class="absolute bottom-0 left-0 p-6">
-      <span class="text-xs font-bold text-secondary uppercase tracking-widest bg-white/90 px-3 py-1 rounded-full mb-3 inline-block">Roedores</span>
-      <h1 class="font-display text-5xl md:text-6xl text-white">Conejo</h1>
-      <p class="text-white/80 text-sm mt-1">Inteligente, afectuoso y más complejo de lo que parece</p>
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-black/40 to-black/85"></div>
+    <div class="absolute inset-0 flex flex-col justify-center items-end text-right p-6 md:p-10">
+      <span class="text-xs font-bold text-white/90 uppercase tracking-widest mb-2">Guías de cuidado</span>
+      <h1 class="font-display text-6xl md:text-7xl text-white leading-none">Conejo</h1>
+      <p class="text-white/80 text-sm mt-3 max-w-xs">Inteligente, afectuoso y más complejo de lo que parece.</p>
     </div>
   </div>
 
-  <!-- Stats -->
+  <!-- Datos clave -->
   <div class="grid grid-cols-3 gap-3 mb-10">
     <div class="bg-secondary/10 border border-secondary/20 rounded-lg p-4 text-center">
       <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-1">Dificultad</p>
@@ -97,103 +97,106 @@ tailwind.config = {
     </div>
     <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 text-center">
       <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Peso</p>
-      <p class="font-display text-xl text-on-surface">1–8 kg según raza</p>
+      <p class="font-display text-xl text-on-surface">1–8 kg</p>
     </div>
   </div>
 
   <!-- Secciones de contenido -->
   <div class="space-y-6 mb-12">
 
-    <!-- Alimentación -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🍽️</div>
-        <h2 class="font-display text-3xl text-on-surface">Alimentación</h2>
+    <!-- Alimentación (imagen + texto) -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
+      <div class="md:col-span-2 flex justify-center md:justify-start">
+        <img src="../assets/img/cuidados/conejo-cutout.png" alt="Conejo" class="w-56 h-auto object-contain">
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">La dieta del conejo gira en torno al heno, que debe estar disponible en todo momento. Es esencial tanto para su sistema digestivo como para el desgaste natural de sus dientes.</p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Heno ilimitado (70% de la dieta — esencial para dientes y digestión)</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Verduras frescas de hoja verde diarias: lechuga romana, perejil, cilantro, espinaca</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Pellets de alta fibra: 1/4 taza/día por cada 2 kg de peso, y agua fresca siempre disponible</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✗</span>
-          <span class="text-sm text-on-surface-variant">Evita: zanahoria en exceso, frutas con azúcar y remolacha</span>
-        </li>
-      </ul>
+      <div class="md:col-span-3 bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">restaurant</span>
+          <h2 class="font-display text-3xl text-on-surface">Alimentación</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">La dieta del conejo gira en torno al heno, que debe estar disponible en todo momento. Es esencial tanto para su sistema digestivo como para el desgaste natural de sus dientes.</p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Heno ilimitado (70% de la dieta — esencial para dientes y digestión)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Verduras frescas de hoja verde diarias: lechuga romana, perejil, cilantro, espinaca</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Pellets de alta fibra: 1/4 taza/día por cada 2 kg de peso, y agua fresca siempre disponible</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary text-lg flex-shrink-0">close</span>
+            <span class="text-sm text-on-surface-variant">Evita: zanahoria en exceso, frutas con azúcar y remolacha</span>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!-- Hábitat -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
+    <div class="bg-surface-container-low rounded-lg p-6">
       <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🏠</div>
+        <span class="material-symbols-outlined text-primary">cottage</span>
         <h2 class="font-display text-3xl text-on-surface">Hábitat</h2>
       </div>
       <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Los conejos necesitan mucho más espacio del que se suele pensar. Un entorno seguro y estimulante es clave para su bienestar físico y mental.</p>
-      <ul class="space-y-3">
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Espacio mínimo 3×1.5 m (o libre en habitación asegurada)</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Ejercicio mínimo 3–4 horas fuera de la jaula; no usar jaulas con rejilla metálica en el piso</span>
         </li>
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+          <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
           <span class="text-sm text-on-surface-variant">Temperatura 15–22°C, rincón oscuro para esconderse y juguetes para roer</span>
         </li>
       </ul>
     </div>
 
-    <!-- Salud -->
-    <div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">💚</div>
-        <h2 class="font-display text-3xl text-on-surface">Salud</h2>
+    <!-- Salud + Dato curioso -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">favorite</span>
+          <h2 class="font-display text-3xl text-on-surface">Salud</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">El conejo requiere atención veterinaria preventiva y observación constante. Algunos problemas de salud pueden volverse urgencias en cuestión de horas.</p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Visita veterinaria anual obligatoria con especialista en exóticos</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">GI stasis (parálisis intestinal) es emergencia — si no come en 12 h, ve al veterinario</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
+            <span class="text-sm text-on-surface-variant">Cepillado semanal para evitar tricobezoares (bolas de pelo en el tracto digestivo)</span>
+          </li>
+        </ul>
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed mb-4">El conejo requiere atención veterinaria preventiva y observación constante. Algunos problemas de salud pueden volverse urgencias en cuestión de horas.</p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Visita veterinaria anual obligatoria con especialista en exóticos</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Castración recomendada: reduce agresión y riesgo de cáncer uterino</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">GI stasis (parálisis intestinal) es emergencia — si no come en 12 h, ve al veterinario</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-          <span class="text-sm text-on-surface-variant">Cepillado semanal para evitar tricobezoares (bolas de pelo en el tracto digestivo)</span>
-        </li>
-      </ul>
-    </div>
 
-    <!-- Dato curioso -->
-    <div class="bg-primary/5 border border-primary/20 rounded-lg p-6">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-xl">🧠</div>
-        <h2 class="font-display text-3xl text-primary">Dato curioso</h2>
+      <div class="bg-primary/5 rounded-lg p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-primary">lightbulb</span>
+          <h2 class="font-display text-3xl text-primary">Dato curioso</h2>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Los conejos son animales completamente silenciosos excepto cuando sienten un dolor extremo. Se comunican principalmente con el lenguaje corporal: un "binky" (salto y giro en el aire) significa que están felices.</p>
       </div>
-      <p class="text-on-surface-variant text-sm leading-relaxed">Los conejos son animales completamente silenciosos excepto cuando sienten un dolor extremo. Se comunican principalmente con el lenguaje corporal: un "binky" (salto y giro en el aire) significa que están felices.</p>
     </div>
 
   </div>
 
   <!-- CTA Tienda -->
-  <div class="bg-primary rounded-lg p-8 text-center text-white mb-12">
+  <div class="relative bg-primary rounded-lg p-8 text-center text-white mb-12 overflow-hidden">
+    <span class="material-symbols-outlined absolute -left-4 -bottom-4 text-white/10" style="font-size: 8rem;">forest</span>
     <h3 class="font-display text-4xl mb-2">¿Tienes un conejo?</h3>
     <p class="text-white/80 text-sm mb-6">Encuentra alimentos y accesorios especializados en nuestra tienda.</p>
     <a href="../tienda/" class="inline-flex bg-white text-primary font-bold px-6 py-3 rounded-lg hover:bg-surface-container-low transition-colors">Ver productos →</a>
