@@ -67,17 +67,70 @@ tailwind.config = {
 </header>
 
 <main>
-  <!-- Hero -->
-  <section class="bg-surface-container-low py-16 px-4 md:px-12">
+  <!-- Hero Bento -->
+  <section class="bg-on-surface py-16 px-4 md:px-12">
     <div class="max-w-container-max mx-auto">
-      <span class="text-xs font-bold text-primary uppercase tracking-widest">Guías de cuidado</span>
-      <h1 class="font-display text-5xl md:text-7xl text-on-surface mt-2 mb-4">Fichas de Cuidado</h1>
-      <p class="text-on-surface-variant text-lg max-w-xl">Todo lo que necesitas saber para cuidar a tu animal exótico. Guías elaboradas por expertos.</p>
+      <div class="grid grid-cols-1 md:grid-cols-5 auto-rows-[130px] md:auto-rows-[130px] gap-4">
+
+        <!-- Texto -->
+        <div class="md:col-span-1 flex flex-col justify-center row-span-1">
+          <span class="text-xs font-bold text-primary-container uppercase tracking-widest">Guías de cuidado</span>
+          <h1 class="font-display text-4xl text-white mt-2 mb-3 leading-none">Nuestros Animales</h1>
+          <p class="text-white/60 text-sm mb-4">Todo lo que necesitas saber para cuidar a tu animal exótico.</p>
+          <a href="#guias" class="inline-flex items-center gap-1.5 border border-white/40 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-on-surface transition-all w-fit">Ver todas <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+        </div>
+
+        <!-- Periquito -->
+        <a href="./periquito.html" class="relative rounded-lg overflow-hidden group">
+          <img src="../assets/img/cuidados/periquito.jpg" alt="Periquito" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <p class="absolute bottom-2 left-3 text-white font-display text-lg">Periquito</p>
+        </a>
+
+        <!-- Pez Dorado -->
+        <a href="./pez-dorado.html" class="relative rounded-lg overflow-hidden group">
+          <img src="../assets/img/cuidados/pez-dorado.jpg" alt="Pez Dorado" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <p class="absolute bottom-2 left-3 text-white font-display text-lg">Pez Dorado</p>
+        </a>
+
+        <!-- Agapornis (featured) -->
+        <a href="./agapornis.html" class="relative rounded-lg overflow-hidden group md:col-span-2 md:row-span-2">
+          <img src="../assets/img/cuidados/agapornis.jpg" alt="Agapornis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 left-4">
+            <p class="text-white font-display text-3xl">Agapornis</p>
+            <span class="text-white/80 text-sm font-semibold">Ver guía completa →</span>
+          </div>
+        </a>
+
+        <!-- Betta -->
+        <a href="./betta.html" class="relative rounded-lg overflow-hidden group">
+          <img src="../assets/img/cuidados/betta.jpg" alt="Pez Betta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <p class="absolute bottom-2 left-3 text-white font-display text-lg">Pez Betta</p>
+        </a>
+
+        <!-- Hámster -->
+        <a href="./hamster.html" class="relative rounded-lg overflow-hidden group">
+          <img src="../assets/img/cuidados/hamster.jpg" alt="Hámster" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <p class="absolute bottom-2 left-3 text-white font-display text-lg">Hámster</p>
+        </a>
+
+        <!-- Conejo -->
+        <a href="./conejo.html" class="relative rounded-lg overflow-hidden group">
+          <img src="../assets/img/cuidados/conejo.jpg" alt="Conejo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <p class="absolute bottom-2 left-3 text-white font-display text-lg">Conejo</p>
+        </a>
+
+      </div>
     </div>
   </section>
 
   <!-- Filtros + Grid -->
-  <section class="py-12 px-4 md:px-12 max-w-container-max mx-auto">
+  <section id="guias" class="py-12 px-4 md:px-12 max-w-container-max mx-auto">
     <!-- Filtros -->
     <div class="flex flex-wrap gap-2 mb-10" id="filtros">
       <button onclick="filtrar('todos')" data-cat="todos" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-primary text-white">Todos</button>
