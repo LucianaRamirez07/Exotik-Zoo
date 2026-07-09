@@ -300,10 +300,14 @@
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
           <p class="absolute bottom-0 left-0 p-3 font-body-sm text-body-sm font-semibold text-white">Betta</p>
         </a>
-        <a href="cuidados/conejo.html" class="group relative rounded-lg overflow-hidden aspect-square">
-          <img src="assets/img/cuidados/conejo.jpg" alt="Conejo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <a href="cuidados/conejo.html" class="group relative rounded-full overflow-hidden aspect-square"
+           onmouseenter="this.querySelector('video').play()"
+           onmouseleave="const v=this.querySelector('video'); v.pause(); v.currentTime=0">
+          <video loop muted playsinline preload="auto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <source src="assets/img/cuidados/conejo-anim.mp4" type="video/mp4">
+          </video>
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          <p class="absolute bottom-0 left-0 p-3 font-body-sm text-body-sm font-semibold text-white">Conejo</p>
+          <p class="absolute bottom-0 left-0 right-0 p-3 text-center font-body-sm text-body-sm font-semibold text-white">Conejo</p>
         </a>
       </div>
     </div>
