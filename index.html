@@ -277,8 +277,10 @@
         </a>
       </div>
       <div class="flex-1 grid grid-cols-2 gap-4">
-        <a href="cuidados/hamster.html" class="group relative rounded-full overflow-hidden aspect-square">
-          <video autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <a href="cuidados/hamster.html" class="group relative rounded-full overflow-hidden aspect-square"
+           onmouseenter="this.querySelector('video').play()"
+           onmouseleave="const v=this.querySelector('video'); v.pause(); v.currentTime=0">
+          <video loop muted playsinline preload="auto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <source src="assets/img/cuidados/hamster-anim.mp4" type="video/mp4">
           </video>
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
