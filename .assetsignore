@@ -1,0 +1,7 @@
+.git
+.github
+node_modules
+docs
+tasks
+.DS_Store
+*.md
