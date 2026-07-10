@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth snap-y snap-proximity">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -86,9 +86,9 @@ tailwind.config = {
   </section>
 
   <!-- Todos los artículos -->
-  <section class="pb-24 space-y-6 w-screen relative left-1/2 -translate-x-1/2 px-0">
+  <section class="pb-0 w-screen relative left-1/2 -translate-x-1/2 px-0">
 
-    <a href="./acuario-principiantes.html" class="group relative block h-[420px] md:h-[520px] rounded-lg overflow-hidden">
+    <a href="./acuario-principiantes.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
       <img src="../assets/img/articles/acuario.jpg" alt="Cómo montar tu primer acuario" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
@@ -105,16 +105,16 @@ tailwind.config = {
       </div>
     </a>
 
-    <a href="./agua-acuario-quimica.html" class="group relative block h-[420px] md:h-[520px] rounded-lg overflow-hidden">
+    <a href="./agua-acuario-quimica.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
       <img src="../assets/img/articles/agua-acuario.jpg" alt="La química del agua en tu acuario" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
-      <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
+      <div class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
       </div>
-      <div class="absolute inset-0 flex flex-col justify-center p-8 md:p-12 max-w-xl">
+      <div class="absolute inset-0 flex flex-col justify-center items-end text-right p-8 md:p-12 max-w-xl ml-auto">
         <span class="text-xs font-bold text-white/80 uppercase tracking-[0.2em] mb-3 block">Acuarios</span>
         <h2 class="font-display text-4xl md:text-6xl text-white uppercase leading-none mb-4">La química del agua en tu acuario</h2>
         <p class="text-white/80 mb-6">pH, dureza, amoniaco, nitritos y nitratos: qué son y cómo mantenerlos en niveles seguros.</p>
@@ -122,7 +122,7 @@ tailwind.config = {
       </div>
     </a>
 
-    <a href="./pez-betta-cuidados.html" class="group relative block h-[420px] md:h-[520px] rounded-lg overflow-hidden bg-black">
+    <a href="./pez-betta-cuidados.html" class="group relative block h-screen snap-start rounded-none overflow-hidden bg-black">
       <img src="../assets/img/cuidados/betta.jpg" alt="Pez Betta" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
@@ -139,16 +139,16 @@ tailwind.config = {
       </div>
     </a>
 
-    <a href="./canarios-canto-salud.html" class="group relative block h-[420px] md:h-[520px] rounded-lg overflow-hidden">
+    <a href="./canarios-canto-salud.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
       <img src="../assets/img/cuidados/canario.jpg" alt="Canario" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
-      <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
+      <div class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
       </div>
-      <div class="absolute inset-0 flex flex-col justify-center p-8 md:p-12 max-w-xl">
+      <div class="absolute inset-0 flex flex-col justify-center items-end text-right p-8 md:p-12 max-w-xl ml-auto">
         <span class="text-xs font-bold text-white/80 uppercase tracking-[0.2em] mb-3 block">Aves</span>
         <h2 class="font-display text-4xl md:text-6xl text-white uppercase leading-none mb-4">Canarios: canto, salud y bienestar</h2>
         <p class="text-white/80 mb-6">Por qué canta tu canario, cómo interpretarlo y qué hacer si de repente deja de cantar.</p>
@@ -156,7 +156,7 @@ tailwind.config = {
       </div>
     </a>
 
-    <a href="./cobaya-habitat-ideal.html" class="group relative block h-[420px] md:h-[520px] rounded-lg overflow-hidden">
+    <a href="./cobaya-habitat-ideal.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
       <img src="../assets/img/cuidados/cobaya.jpg" alt="Cobaya" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
@@ -173,16 +173,16 @@ tailwind.config = {
       </div>
     </a>
 
-    <a href="./conejos-exoticos-cuidados-basicos.html" class="group relative block h-[420px] md:h-[520px] rounded-lg overflow-hidden">
+    <a href="./conejos-exoticos-cuidados-basicos.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
       <img src="../assets/img/articles/conejos.jpg" alt="Conejos exóticos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
-      <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
+      <div class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
       </div>
-      <div class="absolute inset-0 flex flex-col justify-center p-8 md:p-12 max-w-xl">
+      <div class="absolute inset-0 flex flex-col justify-center items-end text-right p-8 md:p-12 max-w-xl ml-auto">
         <span class="text-xs font-bold text-white/80 uppercase tracking-[0.2em] mb-3 block">Roedores</span>
         <h2 class="font-display text-4xl md:text-6xl text-white uppercase leading-none mb-4">Conejos exóticos: cuidados básicos</h2>
         <p class="text-white/80 mb-6">Razas, alimentación, espacio y salud. Lo esencial para que tu conejo viva una vida larga y plena.</p>
@@ -190,7 +190,7 @@ tailwind.config = {
       </div>
     </a>
 
-    <a href="./guia-cuidado-periquitos.html" class="group relative block h-[420px] md:h-[520px] rounded-lg overflow-hidden">
+    <a href="./guia-cuidado-periquitos.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
       <img src="../assets/img/cuidados/periquito.jpg" alt="Periquito" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
@@ -207,16 +207,16 @@ tailwind.config = {
       </div>
     </a>
 
-    <a href="./hamster-alimentacion-ejercicio.html" class="group relative block h-[420px] md:h-[520px] rounded-lg overflow-hidden">
+    <a href="./hamster-alimentacion-ejercicio.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
       <img src="../assets/img/cuidados/hamster-wide.jpg" alt="Hámster" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
-      <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
+      <div class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
       </div>
-      <div class="absolute inset-0 flex flex-col justify-center p-8 md:p-12 max-w-xl">
+      <div class="absolute inset-0 flex flex-col justify-center items-end text-right p-8 md:p-12 max-w-xl ml-auto">
         <span class="text-xs font-bold text-white/80 uppercase tracking-[0.2em] mb-3 block">Roedores</span>
         <h2 class="font-display text-4xl md:text-6xl text-white uppercase leading-none mb-4">Hámster: alimentación y ejercicio</h2>
         <p class="text-white/80 mb-6">Qué comer, cuánto ejercicio necesita y por qué la rueda es indispensable para su salud.</p>
@@ -224,7 +224,7 @@ tailwind.config = {
       </div>
     </a>
 
-    <a href="./pinzones-alimentacion-perfecta.html" class="group relative block h-[420px] md:h-[520px] rounded-lg overflow-hidden">
+    <a href="./pinzones-alimentacion-perfecta.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
       <img src="../assets/img/articles/pinzones.jpg" alt="Pinzones" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
@@ -241,16 +241,16 @@ tailwind.config = {
       </div>
     </a>
 
-    <a href="./plantas-nativas-animales-exoticos.html" class="group relative block h-[420px] md:h-[520px] rounded-lg overflow-hidden">
+    <a href="./plantas-nativas-animales-exoticos.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
       <img src="../assets/img/articles/plantas-nativas.jpg" alt="Plantas nativas y animales exóticos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
-      <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
+      <div class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
       </div>
-      <div class="absolute inset-0 flex flex-col justify-center p-8 md:p-12 max-w-xl">
+      <div class="absolute inset-0 flex flex-col justify-center items-end text-right p-8 md:p-12 max-w-xl ml-auto">
         <span class="text-xs font-bold text-white/80 uppercase tracking-[0.2em] mb-3 block">Naturaleza</span>
         <h2 class="font-display text-4xl md:text-6xl text-white uppercase leading-none mb-4">Plantas nativas y animales exóticos</h2>
         <p class="text-white/80 mb-6">Cómo integrar plantas autóctonas en el hábitat de tus mascotas exóticas de forma segura.</p>
@@ -258,7 +258,7 @@ tailwind.config = {
       </div>
     </a>
 
-    <a href="./suculentas-facil-cuidado.html" class="group relative block h-[420px] md:h-[520px] rounded-lg overflow-hidden">
+    <a href="./suculentas-facil-cuidado.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
       <img src="../assets/img/articles/suculentas.jpg" alt="Suculentas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
@@ -275,16 +275,16 @@ tailwind.config = {
       </div>
     </a>
 
-    <a href="./terrario-plantas-reptiles.html" class="group relative block h-[420px] md:h-[520px] rounded-lg overflow-hidden">
+    <a href="./terrario-plantas-reptiles.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
       <img src="../assets/img/articles/terrario-plantas.jpg" alt="Terrarios con plantas para reptiles" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
-      <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
+      <div class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
         <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
       </div>
-      <div class="absolute inset-0 flex flex-col justify-center p-8 md:p-12 max-w-xl">
+      <div class="absolute inset-0 flex flex-col justify-center items-end text-right p-8 md:p-12 max-w-xl ml-auto">
         <span class="text-xs font-bold text-white/80 uppercase tracking-[0.2em] mb-3 block">Terrarios</span>
         <h2 class="font-display text-4xl md:text-6xl text-white uppercase leading-none mb-4">Terrarios con plantas para reptiles</h2>
         <p class="text-white/80 mb-6">Diseña un ecosistema vivo y funcional que sea hermoso para ti y saludable para tus reptiles.</p>
