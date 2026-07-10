@@ -32,7 +32,7 @@ tailwind.config = {
   }}
 }
 </script>
-<style>body{background-color:#faf9f6}.material-symbols-outlined{font-variation-settings:"FILL" 0,"wght" 400,"GRAD" 0,"opsz" 24;vertical-align:middle}</style>
+<style>body{background-color:#faf9f6}.material-symbols-outlined{font-variation-settings:"FILL" 0,"wght" 400,"GRAD" 0,"opsz" 24;vertical-align:middle}.no-scrollbar{scrollbar-width:none;-ms-overflow-style:none}.no-scrollbar::-webkit-scrollbar{display:none}</style>
 </head>
 <body class="font-body-lg text-on-surface">
 <!-- Nav -->
@@ -66,14 +66,57 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- Filtros -->
-<section class="px-margin-desktop pt-10 pb-2">
+<!-- Categorías -->
+<section class="px-margin-desktop pt-14 pb-4">
+  <div class="max-w-container-max mx-auto">
+    <h2 class="font-headline-md text-headline-md text-on-surface text-center mb-10">Compra por tipo de mascota</h2>
+    <div class="flex items-center justify-center gap-4 md:gap-8">
+      <button aria-label="Anterior" class="w-9 h-9 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-colors flex-shrink-0 text-on-surface-variant">
+        <span class="material-symbols-outlined text-xl">chevron_left</span>
+      </button>
+
+      <div class="flex gap-8 md:gap-16 overflow-x-auto no-scrollbar" id="categorias-circulos">
+        <button onclick="filtrar('todos', document.querySelector('.filtro-btn[data-cat=todos]'))" data-cat="todos" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
+          <div class="categoria-circle w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 ring-primary flex items-center justify-center bg-primary/10 transition-all">
+            <span class="material-symbols-outlined text-3xl text-primary">apps</span>
+          </div>
+          <span class="categoria-label font-label-caps text-label-caps text-primary font-bold transition-colors">Todos</span>
+        </button>
+        <button onclick="filtrar('aves', document.querySelector('.filtro-btn[data-cat=aves]'))" data-cat="aves" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
+          <div class="categoria-circle w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 ring-transparent transition-all">
+            <img src="assets/img/cuidados/agapornis.jpg" alt="Aves" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+          </div>
+          <span class="categoria-label font-label-caps text-label-caps text-on-surface-variant transition-colors">Aves</span>
+        </button>
+        <button onclick="filtrar('peces', document.querySelector('.filtro-btn[data-cat=peces]'))" data-cat="peces" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
+          <div class="categoria-circle w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 ring-transparent transition-all">
+            <img src="assets/img/cuidados/pez-dorado.jpg" alt="Peces" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+          </div>
+          <span class="categoria-label font-label-caps text-label-caps text-on-surface-variant transition-colors">Peces</span>
+        </button>
+        <button onclick="filtrar('roedores', document.querySelector('.filtro-btn[data-cat=roedores]'))" data-cat="roedores" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
+          <div class="categoria-circle w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 ring-transparent transition-all">
+            <img src="assets/img/cuidados/hamster-wide.jpg" alt="Roedores" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+          </div>
+          <span class="categoria-label font-label-caps text-label-caps text-on-surface-variant transition-colors">Roedores</span>
+        </button>
+      </div>
+
+      <button aria-label="Siguiente" class="w-9 h-9 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-colors flex-shrink-0 text-on-surface-variant">
+        <span class="material-symbols-outlined text-xl">chevron_right</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Filtros (oculto, mantiene la lógica de filtrado) -->
+<section class="px-margin-desktop pb-2 hidden">
   <div class="max-w-container-max mx-auto">
     <div class="flex gap-2 flex-wrap" id="filtros">
-      <button onclick="filtrar('todos', this)" class="filtro-btn active px-5 py-2 rounded-full font-label-caps text-label-caps border transition-all bg-primary text-white border-primary">Todos</button>
-      <button onclick="filtrar('aves', this)" class="filtro-btn px-5 py-2 rounded-full font-label-caps text-label-caps border transition-all bg-surface-container-lowest text-on-surface-variant border-outline-variant hover:border-primary hover:text-primary">Aves</button>
-      <button onclick="filtrar('peces', this)" class="filtro-btn px-5 py-2 rounded-full font-label-caps text-label-caps border transition-all bg-surface-container-lowest text-on-surface-variant border-outline-variant hover:border-primary hover:text-primary">Peces</button>
-      <button onclick="filtrar('roedores', this)" class="filtro-btn px-5 py-2 rounded-full font-label-caps text-label-caps border transition-all bg-surface-container-lowest text-on-surface-variant border-outline-variant hover:border-primary hover:text-primary">Roedores</button>
+      <button onclick="filtrar('todos', this)" data-cat="todos" class="filtro-btn active px-5 py-2 rounded-full font-label-caps text-label-caps border transition-all bg-primary text-white border-primary">Todos</button>
+      <button onclick="filtrar('aves', this)" data-cat="aves" class="filtro-btn px-5 py-2 rounded-full font-label-caps text-label-caps border transition-all bg-surface-container-lowest text-on-surface-variant border-outline-variant hover:border-primary hover:text-primary">Aves</button>
+      <button onclick="filtrar('peces', this)" data-cat="peces" class="filtro-btn px-5 py-2 rounded-full font-label-caps text-label-caps border transition-all bg-surface-container-lowest text-on-surface-variant border-outline-variant hover:border-primary hover:text-primary">Peces</button>
+      <button onclick="filtrar('roedores', this)" data-cat="roedores" class="filtro-btn px-5 py-2 rounded-full font-label-caps text-label-caps border transition-all bg-surface-container-lowest text-on-surface-variant border-outline-variant hover:border-primary hover:text-primary">Roedores</button>
     </div>
   </div>
 </section>
@@ -226,6 +269,21 @@ function filtrar(cat, btn) {
   document.querySelectorAll('.seccion').forEach(sec => {
     sec.style.display = (cat === 'todos' || sec.dataset.sec === cat) ? '' : 'none';
   });
+  document.querySelectorAll('.categoria-circle').forEach(c => {
+    c.classList.remove('ring-primary');
+    c.classList.add('ring-transparent');
+  });
+  document.querySelectorAll('.categoria-label').forEach(l => {
+    l.classList.remove('text-primary','font-bold');
+    l.classList.add('text-on-surface-variant');
+  });
+  const activeWrap = document.querySelector('.categoria-circle-wrap[data-cat="' + cat + '"]');
+  if (activeWrap) {
+    activeWrap.querySelector('.categoria-circle').classList.remove('ring-transparent');
+    activeWrap.querySelector('.categoria-circle').classList.add('ring-primary');
+    activeWrap.querySelector('.categoria-label').classList.remove('text-on-surface-variant');
+    activeWrap.querySelector('.categoria-label').classList.add('text-primary','font-bold');
+  }
 }
 </script>
 
