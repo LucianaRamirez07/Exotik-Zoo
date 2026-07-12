@@ -76,30 +76,30 @@ tailwind.config = {
   <div class="max-w-container-max mx-auto">
     <h2 class="font-headline-md text-headline-md text-on-surface text-center mb-10">Compra por tipo de mascota</h2>
     <div class="flex items-center justify-center gap-4 md:gap-8">
-      <button aria-label="Anterior" class="w-9 h-9 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-colors flex-shrink-0 text-on-surface-variant">
+      <button aria-label="Anterior" onclick="desplazarCategorias(-1)" class="w-9 h-9 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-colors flex-shrink-0 text-on-surface-variant">
         <span class="material-symbols-outlined text-xl">chevron_left</span>
       </button>
 
-      <div class="flex gap-8 md:gap-16 overflow-x-auto no-scrollbar" id="categorias-circulos">
-        <button onclick="filtrar('todos', document.querySelector('.filtro-btn[data-cat=todos]'))" data-cat="todos" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
+      <div class="flex gap-8 md:gap-16 overflow-x-auto no-scrollbar scroll-smooth" id="categorias-circulos">
+        <button onclick="filtrar('todos')" data-cat="todos" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
           <div class="categoria-circle w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 ring-primary flex items-center justify-center bg-primary/10 transition-all">
             <span class="material-symbols-outlined text-3xl text-primary">apps</span>
           </div>
           <span class="categoria-label font-label-caps text-label-caps text-primary font-bold transition-colors">Todos</span>
         </button>
-        <button onclick="filtrar('aves', document.querySelector('.filtro-btn[data-cat=aves]'))" data-cat="aves" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
+        <button onclick="filtrar('aves')" data-cat="aves" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
           <div class="categoria-circle w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 ring-transparent transition-all">
             <img src="assets/img/categorias/aves.jpg" alt="Aves" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
           </div>
           <span class="categoria-label font-label-caps text-label-caps text-on-surface-variant transition-colors">Aves</span>
         </button>
-        <button onclick="filtrar('peces', document.querySelector('.filtro-btn[data-cat=peces]'))" data-cat="peces" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
+        <button onclick="filtrar('peces')" data-cat="peces" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
           <div class="categoria-circle w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 ring-transparent transition-all">
             <img src="assets/img/categorias/peces.jpg" alt="Peces" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
           </div>
           <span class="categoria-label font-label-caps text-label-caps text-on-surface-variant transition-colors">Peces</span>
         </button>
-        <button onclick="filtrar('roedores', document.querySelector('.filtro-btn[data-cat=roedores]'))" data-cat="roedores" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
+        <button onclick="filtrar('roedores')" data-cat="roedores" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
           <div class="categoria-circle w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 ring-transparent transition-all">
             <img src="assets/img/categorias/roedores.jpg" alt="Roedores" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
           </div>
@@ -107,21 +107,9 @@ tailwind.config = {
         </button>
       </div>
 
-      <button aria-label="Siguiente" class="w-9 h-9 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-colors flex-shrink-0 text-on-surface-variant">
+      <button aria-label="Siguiente" onclick="desplazarCategorias(1)" class="w-9 h-9 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-colors flex-shrink-0 text-on-surface-variant">
         <span class="material-symbols-outlined text-xl">chevron_right</span>
       </button>
-    </div>
-  </div>
-</section>
-
-<!-- Filtros (oculto, mantiene la lógica de filtrado) -->
-<section class="px-margin-desktop pb-2 hidden">
-  <div class="max-w-container-max mx-auto">
-    <div class="flex gap-2 flex-wrap" id="filtros">
-      <button onclick="filtrar('todos', this)" data-cat="todos" class="filtro-btn active px-5 py-2 rounded-full font-label-caps text-label-caps border transition-all bg-primary text-white border-primary">Todos</button>
-      <button onclick="filtrar('aves', this)" data-cat="aves" class="filtro-btn px-5 py-2 rounded-full font-label-caps text-label-caps border transition-all bg-surface-container-lowest text-on-surface-variant border-outline-variant hover:border-primary hover:text-primary">Aves</button>
-      <button onclick="filtrar('peces', this)" data-cat="peces" class="filtro-btn px-5 py-2 rounded-full font-label-caps text-label-caps border transition-all bg-surface-container-lowest text-on-surface-variant border-outline-variant hover:border-primary hover:text-primary">Peces</button>
-      <button onclick="filtrar('roedores', this)" data-cat="roedores" class="filtro-btn px-5 py-2 rounded-full font-label-caps text-label-caps border transition-all bg-surface-container-lowest text-on-surface-variant border-outline-variant hover:border-primary hover:text-primary">Roedores</button>
     </div>
   </div>
 </section>
@@ -137,7 +125,7 @@ tailwind.config = {
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
         <a href="tienda/alimento-aves-pico-grande.html" data-cat="aves" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
-          <div class="aspect-square bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:64px">flutter_dash</span></div>
+          <div class="aspect-square bg-gradient-to-br from-primary/5 to-primary/15 flex items-center justify-center"><div class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:32px">flutter_dash</span></div></div>
           <div class="p-5">
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Alimento Aves Pico Grande</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mixtura nutritiva orgánica especialmente formulada para aves de pico grande. Rica en nutrientes esenciales para plumaje y vitalidad.</p>
@@ -145,7 +133,7 @@ tailwind.config = {
           </div>
         </a>
         <a href="tienda/alimento-aves-pico-pequeno.html" data-cat="aves" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
-          <div class="aspect-square bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:64px">flutter_dash</span></div>
+          <div class="aspect-square bg-gradient-to-br from-primary/5 to-primary/15 flex items-center justify-center"><div class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:32px">flutter_dash</span></div></div>
           <div class="p-5">
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Alimento Aves Pico Pequeño</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mixtura nutritiva orgánica para aves de pico pequeño. Combinación perfecta de semillas y cereales para canarios y periquitos.</p>
@@ -153,7 +141,7 @@ tailwind.config = {
           </div>
         </a>
         <a href="tienda/larvas-liofilizadas.html" data-cat="aves" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
-          <div class="aspect-square bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:64px">bug_report</span></div>
+          <div class="aspect-square bg-gradient-to-br from-primary/5 to-primary/15 flex items-center justify-center"><div class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:32px">bug_report</span></div></div>
           <div class="p-5">
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Larvas Liofilizadas</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Larvas liofilizadas de alta calidad, fuente natural de proteína para aves insectívoras, reptiles y animales exóticos.</p>
@@ -227,7 +215,7 @@ tailwind.config = {
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
         <a href="tienda/alimento-roedores.html" data-cat="roedores" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
-          <div class="aspect-square bg-surface-container-low flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:64px">pets</span></div>
+          <div class="aspect-square bg-gradient-to-br from-primary/5 to-primary/15 flex items-center justify-center"><div class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:32px">pets</span></div></div>
           <div class="p-5">
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Alimento Roedores</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Alimento orgánico formulado para roedores exóticos. Mixtura nutritiva balanceada con ingredientes de alta calidad.</p>
@@ -264,13 +252,7 @@ tailwind.config = {
   </div>
 </section>
 <script>
-function filtrar(cat, btn) {
-  document.querySelectorAll('.filtro-btn').forEach(b => {
-    b.classList.remove('bg-primary','text-white','border-primary');
-    b.classList.add('bg-surface-container-lowest','text-on-surface-variant','border-outline-variant');
-  });
-  btn.classList.add('bg-primary','text-white','border-primary');
-  btn.classList.remove('bg-surface-container-lowest','text-on-surface-variant','border-outline-variant');
+function filtrar(cat) {
   document.querySelectorAll('.seccion').forEach(sec => {
     sec.style.display = (cat === 'todos' || sec.dataset.sec === cat) ? '' : 'none';
   });
@@ -289,6 +271,11 @@ function filtrar(cat, btn) {
     activeWrap.querySelector('.categoria-label').classList.remove('text-on-surface-variant');
     activeWrap.querySelector('.categoria-label').classList.add('text-primary','font-bold');
   }
+}
+
+function desplazarCategorias(direccion) {
+  const contenedor = document.getElementById('categorias-circulos');
+  contenedor.scrollBy({ left: direccion * 200, behavior: 'smooth' });
 }
 </script>
 
