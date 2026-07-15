@@ -78,31 +78,65 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             vertical-align: middle;
         }
+        #site-nav { transition: transform 0.3s ease, background-color 0.3s ease; }
+        #site-nav.nav-hidden { transform: translateY(-100%); }
+        #site-nav .nav-link { color: rgba(255,255,255,0.8); transition: color 0.2s; }
+        #site-nav .nav-link:hover { color: #fff; }
+        #site-nav .nav-logo { color: #fff; transition: color 0.2s; }
+        #site-nav .nav-icon { color: #fff; }
+        #site-nav.nav-solid { background-color: #fff; border-bottom: 1px solid rgba(190,202,189,0.4); }
+        #site-nav.nav-solid .nav-link { color: #3f493f; }
+        #site-nav.nav-solid .nav-link:hover { color: #006b34; }
+        #site-nav.nav-solid .nav-logo { color: #1a1c1a; }
+        #site-nav.nav-solid .nav-icon { color: #3f493f; }
+        #mobile-menu { display: none; background-color: rgba(26,28,26,0.97); }
+        #mobile-menu.open { display: block; }
+        @media (min-width: 1280px) {
+          #mobile-menu { display: none !important; }
+        }
     </style>
 </head>
 <body class="font-body-lg text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
 
 <!-- Nav -->
-<header class="sticky top-0 left-0 right-0 z-50 bg-surface-container-lowest border-b border-outline-variant/40">
-  <div class="flex items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto relative">
-    <nav class="flex items-center justify-center w-full gap-8">
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="tienda.html">Tienda</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="cuidados/cuidados.html">Cuidados</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="mundo-exotico/mundo-exotico.html">El Mundo Exótico</a>
+<header id="site-nav" class="fixed top-0 left-0 right-0 z-50 bg-transparent">
+  <div class="flex items-center justify-between xl:justify-center w-full px-4 xl:px-margin-desktop py-4 max-w-container-max mx-auto relative">
+    <a class="nav-logo xl:hidden font-headline-md text-lg tracking-tight" href="index.html">Exotik Zoo</a>
+    <nav class="hidden xl:flex items-center justify-center w-full gap-8">
+      <a class="nav-link font-body-lg text-body-lg" href="tienda.html">Tienda</a>
+      <a class="nav-link font-body-lg text-body-lg" href="cuidados/cuidados.html">Cuidados</a>
+      <a class="nav-link font-body-lg text-body-lg" href="mundo-exotico/mundo-exotico.html">El Mundo Exótico</a>
       <div class="flex-shrink-0 px-8">
-        <a class="font-headline-md text-headline-md text-on-surface tracking-tight" href="index.html">Exotik Zoo</a>
+        <a class="nav-logo font-headline-md text-headline-md tracking-tight" href="index.html">Exotik Zoo</a>
       </div>
-      <a class="text-primary font-bold font-body-lg text-body-lg" href="nosotros.html">Nosotros</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="contacto.html">Contacto</a>
+      <a class="nav-link font-body-lg text-body-lg" style="color:#7eda94" href="nosotros.html">Nosotros</a>
+      <a class="nav-link font-body-lg text-body-lg" href="contacto.html">Contacto</a>
     </nav>
-    <div class="absolute right-margin-desktop flex items-center gap-6">
+    <div class="hidden xl:flex absolute right-margin-desktop items-center gap-6">
       <div class="flex gap-4">
-        <button class="hover:opacity-80 transition-opacity text-on-surface-variant flex items-center gap-1 font-body-sm text-body-sm">
+        <button class="nav-icon hover:opacity-80 transition-opacity flex items-center gap-1 font-body-sm text-body-sm">
           <span class="material-symbols-outlined" style="font-size: 20px;">language</span><span>ES</span>
         </button>
-        <button class="hover:opacity-80 transition-opacity text-on-surface-variant"><span class="material-symbols-outlined">shopping_cart</span></button>
-        <button class="hover:opacity-80 transition-opacity text-on-surface-variant"><span class="material-symbols-outlined">person</span></button>
+        <button class="nav-icon hover:opacity-80 transition-opacity"><span class="material-symbols-outlined">shopping_cart</span></button>
+        <button class="nav-icon hover:opacity-80 transition-opacity"><span class="material-symbols-outlined">person</span></button>
       </div>
+    </div>
+    <button id="mobile-menu-btn" type="button" class="nav-icon xl:hidden" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="xl:hidden px-4 pb-4">
+    <a class="block py-2 nav-link" style="color:#7eda94" href="nosotros.html">Nosotros</a>
+    <a class="block py-2 nav-link" href="tienda.html">Tienda</a>
+    <a class="block py-2 nav-link" href="cuidados/cuidados.html">Cuidados</a>
+    <a class="block py-2 nav-link" href="mundo-exotico/mundo-exotico.html">El Mundo Exótico</a>
+    <a class="block py-2 nav-link" href="contacto.html">Contacto</a>
+    <div class="flex items-center gap-4 pt-3 mt-2 border-t border-white/10">
+      <button class="nav-icon hover:opacity-80 transition-opacity flex items-center gap-1 font-body-sm text-body-sm">
+        <span class="material-symbols-outlined" style="font-size: 20px;">language</span><span>ES</span>
+      </button>
+      <button class="nav-icon hover:opacity-80 transition-opacity"><span class="material-symbols-outlined">shopping_cart</span></button>
+      <button class="nav-icon hover:opacity-80 transition-opacity"><span class="material-symbols-outlined">person</span></button>
     </div>
   </div>
 </header>
@@ -110,16 +144,20 @@
 <main>
 
 <!-- Hero -->
-<section class="px-margin-desktop py-20 bg-surface">
-  <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
-    <div>
-      <span class="font-label-caps text-label-caps text-primary">Nuestra historia</span>
-      <h1 class="font-display-lg text-display-lg text-on-surface mt-3 mb-6">Nacidos del amor<br>por lo exótico</h1>
-      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-8">Exotik Zoo nació en Colombia de la pasión por los animales no convencionales y el deseo de brindarles la mejor nutrición posible.</p>
-      <a href="#valores" class="inline-flex items-center gap-2 border border-on-surface text-on-surface px-6 py-3 rounded-lg font-body-lg text-body-lg hover:bg-on-surface hover:text-white transition-colors">Nuestros valores <span class="material-symbols-outlined">arrow_downward</span></a>
-    </div>
-    <div class="rounded-lg overflow-hidden aspect-[4/3]">
-      <img src="assets/img/cuidados/canario.jpg" alt="Canario, uno de los animales que nos inspiran" class="w-full h-full object-cover">
+<section class="bg-surface overflow-hidden">
+  <div class="relative w-full min-h-[440px] md:min-h-[600px] flex items-center">
+    <img src="assets/img/nosotros-hero.png" alt="Conejo en un sendero de bosque iluminado por rayos de sol entre los árboles" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent"></div>
+    <h1 class="absolute inset-x-0 top-1/2 -translate-y-1/2 w-full text-center font-display-lg text-white/60 text-[90px] sm:text-[130px] md:text-[170px] lg:text-[210px] leading-none tracking-tight pointer-events-none select-none z-0">Nosotros</h1>
+    <div class="absolute top-0 right-0 bottom-0 z-10 hidden md:flex flex-col items-center justify-between py-24 px-6 border-l border-white/10">
+      <div class="flex flex-col items-center gap-6">
+        <a href="https://wa.me/573332248448" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="text-white/70 hover:text-white transition-colors"><span class="material-symbols-outlined">chat</span></a>
+        <a href="https://www.instagram.com/exotikzoo.colombia" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-white/70 hover:text-white transition-colors"><span class="material-symbols-outlined">photo_camera</span></a>
+      </div>
+      <a href="#valores" aria-label="Ver nuestros valores" class="flex flex-col items-center gap-3 text-white/70 hover:text-white transition-colors">
+        <span aria-hidden="true" class="font-label-caps text-label-caps tracking-widest" style="writing-mode: vertical-rl;">02/05</span>
+        <span class="material-symbols-outlined">arrow_downward</span>
+      </a>
     </div>
   </div>
 </section>
@@ -275,6 +313,37 @@
       if (first) { first.classList.add('opacity-100', 'translate-y-0'); first.classList.remove('opacity-0', 'translate-y-8'); }
     }, 100);
   });
+</script>
+<script>
+  (function() {
+    const nav = document.getElementById('site-nav');
+    let lastY = 0;
+    window.addEventListener('scroll', function() {
+      const y = window.scrollY;
+      if (y <= 20) {
+        nav.classList.remove('nav-hidden', 'nav-solid');
+      } else if (y > lastY + 5) {
+        nav.classList.add('nav-hidden');
+      } else if (y < lastY - 5) {
+        nav.classList.remove('nav-hidden');
+        nav.classList.add('nav-solid');
+      }
+      lastY = y;
+    }, { passive: true });
+  })();
+</script>
+<script>
+  (function() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const icon = btn.querySelector('.material-symbols-outlined');
+    btn.addEventListener('click', function() {
+      const willOpen = !menu.classList.contains('open');
+      menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(willOpen));
+      icon.textContent = willOpen ? 'close' : 'menu';
+    });
+  })();
 </script>
 
 <!-- WhatsApp flotante -->
