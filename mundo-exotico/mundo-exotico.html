@@ -38,19 +38,35 @@ tailwind.config = {
 }
 </script>
 <style>
-  body{font-family:'Inter',sans-serif;background:#faf9f6;color:#1a1c1a}
+  body{font-family:'Inter',sans-serif}
   .line-clamp-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .pill-tag{backdrop-filter:blur(8px)}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <style>.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }</style>
+<style>
+  main a:focus-visible, main button:focus-visible {
+    outline: 2px solid #006b34;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+</style>
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    .group:hover .group-hover\:scale-105,
+    .hover\:scale-110:hover {
+      transform: none !important;
+    }
+  }
+</style>
 </head>
-<body>
+<body class="bg-surface text-on-surface">
 
 <!-- Nav -->
 <header class="sticky top-0 left-0 right-0 z-50 bg-surface-container-lowest border-b border-outline-variant/40">
-  <div class="flex items-center w-full px-12 py-4 max-w-container-max mx-auto relative">
-    <nav class="flex items-center justify-center w-full gap-8">
+  <div class="flex items-center justify-between w-full px-4 md:px-12 py-4 max-w-container-max mx-auto relative">
+    <a class="md:hidden font-display text-2xl text-on-surface tracking-tight" href="../index.html">Exotik Zoo</a>
+    <nav class="hidden md:flex items-center justify-center w-full gap-8">
       <a class="text-on-surface-variant hover:text-primary transition-colors" href="../tienda.html">Tienda</a>
       <a class="text-on-surface-variant hover:text-primary transition-colors" href="../cuidados/cuidados.html">Cuidados</a>
       <a class="text-primary font-semibold transition-colors" href="../mundo-exotico/mundo-exotico.html">El Mundo Exótico</a>
@@ -60,15 +76,52 @@ tailwind.config = {
       <a class="text-on-surface-variant hover:text-primary transition-colors" href="../nosotros.html">Nosotros</a>
       <a class="text-on-surface-variant hover:text-primary transition-colors" href="../contacto.html">Contacto</a>
     </nav>
-    <div class="absolute right-12 flex items-center gap-4">
+    <div class="hidden md:flex absolute right-12 items-center gap-4">
       <button class="hover:opacity-80 transition-opacity text-on-surface-variant flex items-center gap-1 text-sm">
-        <span class="material-symbols-outlined" style="font-size: 20px;">language</span><span>ES</span>
+        <span class="material-symbols-outlined" style="font-size: 20px;" aria-hidden="true">language</span><span>ES</span>
       </button>
-      <button class="hover:opacity-80 transition-opacity text-on-surface-variant"><span class="material-symbols-outlined">shopping_cart</span></button>
-      <button class="hover:opacity-80 transition-opacity text-on-surface-variant"><span class="material-symbols-outlined">person</span></button>
+      <button class="hover:opacity-80 transition-opacity text-on-surface-variant" aria-label="Carrito"><span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span></button>
+      <button class="hover:opacity-80 transition-opacity text-on-surface-variant" aria-label="Mi cuenta"><span class="material-symbols-outlined" aria-hidden="true">person</span></button>
+    </div>
+    <button id="mobile-menu-btn" type="button" class="md:hidden text-on-surface-variant" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="md:hidden px-4 pb-4 border-t border-outline-variant/40 pt-3">
+    <a class="block py-2 text-on-surface-variant hover:text-primary transition-colors" href="../cuidados/cuidados.html">Cuidados</a>
+    <a class="block py-2 text-primary font-semibold transition-colors" href="../mundo-exotico/mundo-exotico.html">El Mundo Exótico</a>
+    <a class="block py-2 text-on-surface-variant hover:text-primary transition-colors" href="../tienda.html">Tienda</a>
+    <a class="block py-2 text-on-surface-variant hover:text-primary transition-colors" href="../nosotros.html">Nosotros</a>
+    <a class="block py-2 text-on-surface-variant hover:text-primary transition-colors" href="../contacto.html">Contacto</a>
+    <div class="flex items-center gap-4 pt-3 mt-2 border-t border-outline-variant/40">
+      <button class="hover:opacity-80 transition-opacity text-on-surface-variant flex items-center gap-1 text-sm">
+        <span class="material-symbols-outlined" style="font-size: 20px;" aria-hidden="true">language</span><span>ES</span>
+      </button>
+      <button class="hover:opacity-80 transition-opacity text-on-surface-variant" aria-label="Carrito"><span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span></button>
+      <button class="hover:opacity-80 transition-opacity text-on-surface-variant" aria-label="Mi cuenta"><span class="material-symbols-outlined" aria-hidden="true">person</span></button>
     </div>
   </div>
 </header>
+<style>
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: block; }
+  @media (min-width: 768px) {
+    #mobile-menu { display: none !important; }
+  }
+</style>
+<script>
+  (function() {
+    var btn = document.getElementById('mobile-menu-btn');
+    var menu = document.getElementById('mobile-menu');
+    var icon = btn.querySelector('.material-symbols-outlined');
+    btn.addEventListener('click', function() {
+      var willOpen = !menu.classList.contains('open');
+      menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(willOpen));
+      icon.textContent = willOpen ? 'close' : 'menu';
+    });
+  })();
+</script>
 
 <main class="max-w-container-max mx-auto px-4 md:px-12">
 
@@ -89,7 +142,7 @@ tailwind.config = {
   <section class="pb-0 w-screen relative left-1/2 -translate-x-1/2 px-0">
 
     <a href="./acuario-principiantes.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
-      <img src="../assets/img/articles/acuario.jpg" alt="Cómo montar tu primer acuario" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <img src="../assets/img/articles/acuario.jpg" alt="Cómo montar tu primer acuario" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
@@ -106,7 +159,7 @@ tailwind.config = {
     </a>
 
     <a href="./agua-acuario-quimica.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
-      <img src="../assets/img/articles/agua-acuario.jpg" alt="La química del agua en tu acuario" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <img loading="lazy" src="../assets/img/articles/agua-acuario.jpg" alt="La química del agua en tu acuario" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
@@ -123,7 +176,7 @@ tailwind.config = {
     </a>
 
     <a href="./pez-betta-cuidados.html" class="group relative block h-screen snap-start rounded-none overflow-hidden bg-black">
-      <img src="../assets/img/cuidados/betta.jpg" alt="Pez Betta" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <img loading="lazy" src="../assets/img/cuidados/betta.jpg" alt="Pez Betta" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
@@ -140,7 +193,7 @@ tailwind.config = {
     </a>
 
     <a href="./canarios-canto-salud.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
-      <img src="../assets/img/cuidados/canario.jpg" alt="Canario" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <img loading="lazy" src="../assets/img/cuidados/canario.jpg" alt="Canario" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
@@ -157,7 +210,7 @@ tailwind.config = {
     </a>
 
     <a href="./cobaya-habitat-ideal.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
-      <img src="../assets/img/cuidados/cobaya.jpg" alt="Cobaya" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <img loading="lazy" src="../assets/img/cuidados/cobaya.jpg" alt="Cobaya" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
@@ -174,7 +227,7 @@ tailwind.config = {
     </a>
 
     <a href="./conejos-exoticos-cuidados-basicos.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
-      <img src="../assets/img/articles/conejos.jpg" alt="Conejos exóticos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <img loading="lazy" src="../assets/img/articles/conejos.jpg" alt="Conejos exóticos" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
@@ -191,7 +244,7 @@ tailwind.config = {
     </a>
 
     <a href="./guia-cuidado-periquitos.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
-      <img src="../assets/img/cuidados/periquito.jpg" alt="Periquito" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <img loading="lazy" src="../assets/img/cuidados/periquito.jpg" alt="Periquito" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
@@ -208,7 +261,7 @@ tailwind.config = {
     </a>
 
     <a href="./hamster-alimentacion-ejercicio.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
-      <img src="../assets/img/cuidados/hamster-wide.jpg" alt="Hámster" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <img loading="lazy" src="../assets/img/cuidados/hamster-wide.jpg" alt="Hámster" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
@@ -225,7 +278,7 @@ tailwind.config = {
     </a>
 
     <a href="./pinzones-alimentacion-perfecta.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
-      <img src="../assets/img/articles/pinzones.jpg" alt="Pinzones" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <img loading="lazy" src="../assets/img/articles/pinzones.jpg" alt="Pinzones" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
@@ -242,7 +295,7 @@ tailwind.config = {
     </a>
 
     <a href="./plantas-nativas-animales-exoticos.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
-      <img src="../assets/img/articles/plantas-nativas.jpg" alt="Plantas nativas y animales exóticos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <img loading="lazy" src="../assets/img/articles/plantas-nativas.jpg" alt="Plantas nativas y animales exóticos" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
@@ -259,7 +312,7 @@ tailwind.config = {
     </a>
 
     <a href="./suculentas-facil-cuidado.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
-      <img src="../assets/img/articles/suculentas.jpg" alt="Suculentas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <img loading="lazy" src="../assets/img/articles/suculentas.jpg" alt="Suculentas" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
@@ -276,7 +329,7 @@ tailwind.config = {
     </a>
 
     <a href="./terrario-plantas-reptiles.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
-      <img src="../assets/img/articles/terrario-plantas.jpg" alt="Terrarios con plantas para reptiles" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <img loading="lazy" src="../assets/img/articles/terrario-plantas.jpg" alt="Terrarios con plantas para reptiles" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
       <div class="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-2.5">
         <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
@@ -323,10 +376,39 @@ tailwind.config = {
 
 <!-- WhatsApp flotante -->
 <a href="https://wa.me/573245478625?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank"
-   class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition-all hover:scale-110"
+   class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition hover:scale-110"
    aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" class="w-7 h-7 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-8');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('main > section, main > div').forEach(block => {
+      if (reduceMotion) {
+        block.classList.add('transition-opacity', 'duration-200', 'ease-out', 'opacity-0');
+      } else {
+        block.classList.add('transition', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-8');
+      }
+      observer.observe(block);
+    });
+
+    setTimeout(() => {
+      const first = document.querySelector('main > section, main > div');
+      if (first) { first.classList.add('opacity-100', 'translate-y-0'); first.classList.remove('opacity-0', 'translate-y-8'); }
+    }, 100);
+  });
+</script>
 
 </body>
 </html>
