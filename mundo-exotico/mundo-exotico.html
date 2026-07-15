@@ -139,7 +139,7 @@ tailwind.config = {
   </section>
 
   <!-- Todos los artículos -->
-  <section class="pb-0 w-screen relative left-1/2 -translate-x-1/2 px-0">
+  <section class="pb-0 w-screen relative left-1/2 -translate-x-1/2 px-0" data-no-reveal>
 
     <a href="./acuario-principiantes.html" class="group relative block h-screen snap-start rounded-none overflow-hidden">
       <img src="../assets/img/articles/acuario.jpg" alt="Cómo montar tu primer acuario" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
@@ -394,7 +394,7 @@ tailwind.config = {
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('main > section, main > div').forEach(block => {
+    document.querySelectorAll('main > section:not([data-no-reveal]), main > div:not([data-no-reveal])').forEach(block => {
       if (reduceMotion) {
         block.classList.add('transition-opacity', 'duration-200', 'ease-out', 'opacity-0');
       } else {
