@@ -147,19 +147,11 @@
 <section class="bg-surface overflow-hidden">
   <div class="relative w-full min-h-[440px] md:min-h-[600px] flex items-center">
     <img src="assets/img/nosotros-hero.png" alt="Conejo en un sendero de bosque iluminado por rayos de sol entre los árboles" class="absolute inset-0 w-full h-full object-cover">
-    <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent"></div>
-    <h1 class="absolute inset-x-0 top-1/2 -translate-y-1/2 w-full text-center font-display-lg text-white/60 text-[90px] sm:text-[130px] md:text-[170px] lg:text-[210px] leading-none tracking-tight pointer-events-none select-none z-0">Nosotros</h1>
-    <span aria-hidden="true" class="absolute top-24 left-8 md:left-16 z-10 font-headline-md text-lg text-white tracking-wide" style="letter-spacing:0.1em">EXOTIK ZOO<span class="text-primary-fixed">.</span></span>
-    <div class="absolute top-0 right-0 bottom-0 z-10 hidden md:flex flex-col items-center justify-between py-24 px-6 border-l border-white/10">
-      <div class="flex flex-col items-center gap-6">
-        <a href="https://wa.me/573332248448" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="text-white/70 hover:text-white transition-colors"><span class="material-symbols-outlined">chat</span></a>
-        <a href="https://www.instagram.com/exotikzoo.colombia" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-white/70 hover:text-white transition-colors"><span class="material-symbols-outlined">photo_camera</span></a>
-      </div>
-      <a href="#valores" aria-label="Ver nuestros valores" class="flex flex-col items-center gap-3 text-white/70 hover:text-white transition-colors">
-        <span aria-hidden="true" class="font-label-caps text-label-caps tracking-widest" style="writing-mode: vertical-rl;">02/05</span>
-        <span class="material-symbols-outlined">arrow_downward</span>
-      </a>
+    <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 w-full z-0 pl-8 md:pl-16 pr-[35%]">
+      <span class="block text-left font-label-caps text-label-caps text-primary-fixed mb-2 pointer-events-none select-none" style="letter-spacing:0.2em">SOBRE</span>
+      <h1 class="text-left font-display-lg text-white/60 text-[90px] sm:text-[130px] md:text-[170px] lg:text-[210px] leading-none tracking-tight pointer-events-none select-none">Nosotros</h1>
     </div>
+    <p class="hidden lg:block absolute top-24 right-24 z-10 font-body-lg text-body-lg text-white/90 text-right leading-snug">Con amor, respeto<br>y <strong class="text-white">responsabilidad</strong></p>
   </div>
 </section>
 
@@ -190,32 +182,41 @@
   </div>
 </section>
 
-<!-- Historia + Bento -->
+<!-- Banner de animales + cifras -->
+<section class="relative overflow-hidden bg-on-surface">
+  <div class="relative w-full min-h-[480px] md:min-h-[560px] flex items-end">
+    <img src="assets/img/nosotros-animales-banner.png" alt="Ratón, pez betta, agapornis y conejo, las especies que cuidamos en Exotik Zoo" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+    <div class="relative z-10 w-full px-8 md:px-16 pb-12">
+      <div class="grid grid-cols-3 gap-6 md:gap-12 mb-8 max-w-2xl">
+        <div>
+          <p class="font-display-lg text-white" style="font-size:40px;line-height:1">30+</p>
+          <p class="font-body-sm text-body-sm text-white/70 mt-1">Miembros satisfechos</p>
+        </div>
+        <div>
+          <p class="font-display-lg text-white" style="font-size:40px;line-height:1">100%</p>
+          <p class="font-body-sm text-body-sm text-white/70 mt-1">Ingredientes naturales</p>
+        </div>
+        <div>
+          <p class="font-display-lg text-white" style="font-size:40px;line-height:1">0</p>
+          <p class="font-body-sm text-body-sm text-white/70 mt-1">Aditivos artificiales</p>
+        </div>
+      </div>
+      <p class="font-body-lg text-body-lg text-white/90 max-w-md mb-6">Cada producto nace de la experiencia directa cuidando a nuestros propios animales exóticos — por eso confiamos en lo que ofrecemos.</p>
+      <a href="tienda.html" class="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-lg font-body-lg text-body-lg hover:bg-primary-container transition-colors">Ver productos</a>
+    </div>
+  </div>
+</section>
+
+<!-- Historia -->
 <section class="px-margin-desktop py-16 bg-on-surface">
-  <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-start">
-    <div class="flex flex-col gap-5 md:pr-8 md:py-8">
+  <div class="max-w-container-max mx-auto">
+    <div class="flex flex-col gap-5 max-w-2xl">
       <span class="font-label-caps text-label-caps text-primary-fixed">Cómo empezamos</span>
       <h2 class="font-headline-md text-headline-md text-white">Nuestra historia</h2>
       <p class="font-body-lg text-body-lg text-white/70">Todo comenzó con la necesidad de encontrar alimentos de calidad para nuestros propios animales exóticos. Al no encontrar opciones naturales en el mercado, decidimos crearlas nosotros mismos.</p>
       <p class="font-body-lg text-body-lg text-white/70">Así nacieron <strong class="text-white">Exotik Labs</strong> — nuestra línea de henos Vitaheno — y <strong class="text-white">Exotik Food</strong>, con mixturas orgánicas para aves y roedores.</p>
       <p class="font-body-lg text-body-lg text-white/70">Hoy, Exotik Zoo es más que una tienda. Es una comunidad para quienes creen que cada animal merece la mejor versión de su alimentación natural.</p>
-    </div>
-    <div class="grid grid-cols-2 gap-3">
-      <div class="col-span-2 rounded-lg overflow-hidden aspect-[16/10]">
-        <img src="assets/img/cuidados/agapornis.jpg" alt="Agapornis" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-      </div>
-      <div class="rounded-lg overflow-hidden aspect-square">
-        <img src="assets/img/cuidados/betta.jpg" alt="Pez Betta" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-      </div>
-      <div class="rounded-lg overflow-hidden aspect-square">
-        <img src="assets/img/cuidados/hamster.jpg" alt="Hámster" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-      </div>
-      <div class="rounded-lg overflow-hidden aspect-square">
-        <img src="assets/img/cuidados/pez-dorado.jpg" alt="Pez Dorado" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-      </div>
-      <div class="rounded-lg overflow-hidden aspect-square">
-        <img src="assets/img/cuidados/periquito.jpg" alt="Periquito" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-      </div>
     </div>
   </div>
 </section>
