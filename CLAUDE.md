@@ -141,8 +141,7 @@ git add cuidados/hamster.html
 git commit -m "redesign: cuidados/hamster.html"
 git push origin feature/luciana
 
-# Al terminar, crear PR en GitHub: feature/luciana → main
-# NO mergear hasta revisar juntos con Miguel
+# Al terminar, mergear a main cuando esté listo (no hace falta revisión cruzada entre Miguel y Luciana)
 ```
 
 ## Qué NO hacer
@@ -151,4 +150,3 @@ git push origin feature/luciana
 - No modificar archivos del branch de Miguel (`tienda/`, `nosotros.html`, `contacto.html`)
 - No instalar npm, webpack, ni ningún build tool — el proyecto es HTML puro
 - No cambiar el Tailwind config (los tokens de color y tipografía están fijos)
-- No mergear a main sin revisión conjunta
