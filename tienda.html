@@ -48,7 +48,7 @@ tailwind.config = {
     </nav>
     <div class="absolute right-margin-desktop flex items-center gap-4">
       <button class="hover:opacity-80 text-on-surface-variant flex items-center gap-1 font-body-sm text-body-sm"><span class="material-symbols-outlined" style="font-size:20px">language</span><span>ES</span></button>
-      <button class="hover:opacity-80 text-on-surface-variant"><span class="material-symbols-outlined">shopping_cart</span></button>
+      <button id="cart-btn" class="relative hover:opacity-80 text-on-surface-variant" aria-label="Ver bolsa"><span class="material-symbols-outlined">shopping_bag</span><span id="cart-count" class="hidden absolute -top-1.5 -right-1.5 bg-primary text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span></button>
       <button class="hover:opacity-80 text-on-surface-variant"><span class="material-symbols-outlined">person</span></button>
     </div>
   </div>
@@ -93,6 +93,14 @@ tailwind.config = {
 <section id="productos" class="px-margin-desktop py-10">
   <div class="max-w-container-max mx-auto space-y-12">
 
+    <!-- Filtro de categorías -->
+    <div class="flex flex-wrap gap-3">
+      <button type="button" data-filter="todos" class="filtro-btn inline-flex items-center gap-2 px-5 py-2 rounded-full font-body-sm text-body-sm font-semibold border border-outline-variant/40 bg-on-surface text-white transition-colors">Todos</button>
+      <button type="button" data-filter="aves" class="filtro-btn inline-flex items-center gap-2 px-5 py-2 rounded-full font-body-sm text-body-sm font-semibold border border-outline-variant/40 bg-white text-on-surface-variant hover:border-primary/50 transition-colors"><span class="material-symbols-outlined" style="font-size:18px">flutter_dash</span>Aves</button>
+      <button type="button" data-filter="peces" class="filtro-btn inline-flex items-center gap-2 px-5 py-2 rounded-full font-body-sm text-body-sm font-semibold border border-outline-variant/40 bg-white text-on-surface-variant hover:border-primary/50 transition-colors"><span class="material-symbols-outlined" style="font-size:18px">water</span>Peces</button>
+      <button type="button" data-filter="roedores" class="filtro-btn inline-flex items-center gap-2 px-5 py-2 rounded-full font-body-sm text-body-sm font-semibold border border-outline-variant/40 bg-white text-on-surface-variant hover:border-primary/50 transition-colors"><span class="material-symbols-outlined" style="font-size:18px">pets</span>Roedores</button>
+    </div>
+
     <!-- Sección Aves -->
     <div class="seccion" data-sec="aves">
       <h2 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-3">
@@ -100,19 +108,23 @@ tailwind.config = {
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
         <a href="tienda/alimento-aves-pico-grande.html" data-cat="aves" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
-          <div class="aspect-square bg-gradient-to-br from-primary/5 to-primary/15 flex items-center justify-center"><div class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:32px">flutter_dash</span></div></div>
+          <div class="aspect-square bg-white overflow-hidden"><img src="assets/img/products/alimento-aves-pico-grande.png" alt="Alimento Aves Pico Grande" class="w-full h-full object-contain p-3"></div>
           <div class="p-5">
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Alimento Aves Pico Grande</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mixtura nutritiva orgánica especialmente formulada para aves de pico grande. Rica en nutrientes esenciales para plumaje y vitalidad.</p>
             <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="alimento-aves-pico-grande" data-nombre="Alimento Aves Pico Grande" data-imagen="assets/img/products/alimento-aves-pico-grande.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
           </div>
         </a>
         <a href="tienda/alimento-aves-pico-pequeno.html" data-cat="aves" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
-          <div class="aspect-square bg-gradient-to-br from-primary/5 to-primary/15 flex items-center justify-center"><div class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:32px">flutter_dash</span></div></div>
+          <div class="aspect-square bg-white overflow-hidden"><img src="assets/img/products/alimento-aves-pico-pequeno.png" alt="Alimento Aves Pico Pequeño" class="w-full h-full object-contain p-3"></div>
           <div class="p-5">
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Alimento Aves Pico Pequeño</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mixtura nutritiva orgánica para aves de pico pequeño. Combinación perfecta de semillas y cereales para canarios y periquitos.</p>
             <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="alimento-aves-pico-pequeno" data-nombre="Alimento Aves Pico Pequeño" data-imagen="assets/img/products/alimento-aves-pico-pequeno.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
           </div>
         </a>
         <a href="tienda/larvas-liofilizadas.html" data-cat="aves" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
@@ -121,6 +133,28 @@ tailwind.config = {
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Larvas Liofilizadas</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Larvas liofilizadas de alta calidad, fuente natural de proteína para aves insectívoras, reptiles y animales exóticos.</p>
             <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="larvas-liofilizadas" data-nombre="Larvas Liofilizadas" data-imagen="assets/img/products/larvas-liofilizadas.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
+          </div>
+        </a>
+        <a href="tienda/alimento-aves-pico-grande-tarro.html" data-cat="aves" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
+          <div class="aspect-square bg-white overflow-hidden"><img src="assets/img/products/alimento-aves-pico-grande-tarro.png" alt="Alimento Aves Pico Grande Tarro" class="w-full h-full object-contain p-3"></div>
+          <div class="p-5">
+            <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Alimento Aves Pico Grande Tarro</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mixtura nutritiva orgánica especialmente formulada para aves de pico grande. Rica en nutrientes esenciales para plumaje y vitalidad.</p>
+            <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="alimento-aves-pico-grande-tarro" data-nombre="Alimento Aves Pico Grande Tarro" data-imagen="assets/img/products/alimento-aves-pico-grande-tarro.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
+          </div>
+        </a>
+        <a href="tienda/alimento-aves-pico-pequeno-tarro.html" data-cat="aves" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
+          <div class="aspect-square bg-white overflow-hidden"><img src="assets/img/products/alimento-aves-pico-pequeno-tarro.png" alt="Alimento Aves Pico Pequeño Tarro" class="w-full h-full object-contain p-3"></div>
+          <div class="p-5">
+            <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Alimento Aves Pico Pequeño Tarro</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mixtura nutritiva orgánica para aves de pico pequeño. Combinación perfecta de semillas y cereales para canarios y periquitos.</p>
+            <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="alimento-aves-pico-pequeno-tarro" data-nombre="Alimento Aves Pico Pequeño Tarro" data-imagen="assets/img/products/alimento-aves-pico-pequeno-tarro.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
           </div>
         </a>
       </div>
@@ -138,6 +172,8 @@ tailwind.config = {
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Veggie Espirulina Micro Rounds</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Micro rounds vegetales con espirulina ideales para peces de boca pequeña como tetras, guppies y peces de arrecife.</p>
             <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="veggie-espirulina-micro-rounds" data-nombre="Veggie Espirulina Micro Rounds" data-imagen="assets/img/products/veggie-espirulina-micro-rounds.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
           </div>
         </a>
         <a href="tienda/veggies-espirulina-rounds.html" data-cat="peces" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
@@ -146,6 +182,8 @@ tailwind.config = {
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Veggies Espirulina Rounds</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Rounds vegetales enriquecidos con espirulina para peces herbívoros y omnívoros. Promueven colores vibrantes y vitalidad diaria.</p>
             <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="veggies-espirulina-rounds" data-nombre="Veggies Espirulina Rounds" data-imagen="assets/img/products/veggies-espirulina-rounds.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
           </div>
         </a>
         <a href="tienda/fish-flakes.html" data-cat="peces" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
@@ -154,6 +192,8 @@ tailwind.config = {
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Hojuelas para Peces</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Hojuelas nutritivas de fácil digestión para peces tropicales y de agua fría. Fórmula balanceada con vitaminas esenciales.</p>
             <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="fish-flakes" data-nombre="Hojuelas para Peces" data-imagen="assets/img/products/fish-flakes.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
           </div>
         </a>
         <a href="tienda/tropical-food.html" data-cat="peces" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
@@ -162,6 +202,8 @@ tailwind.config = {
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Alimento Tropical</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Alimento premium para peces tropicales. Realza los colores naturales y promueve la vitalidad en bettas, cíclidos y más.</p>
             <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="tropical-food" data-nombre="Alimento Tropical" data-imagen="assets/img/products/tropical-food.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
           </div>
         </a>
         <a href="tienda/carnivorous-shrimp.html" data-cat="peces" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
@@ -170,6 +212,8 @@ tailwind.config = {
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Camarón Carnívoro</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Camarón liofilizado 100% natural. Snack proteico para peces carnívoros, tortugas y animales acuáticos exóticos.</p>
             <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="carnivorous-shrimp" data-nombre="Camarón Carnívoro" data-imagen="assets/img/products/carnivorous-shrimp.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
           </div>
         </a>
         <a href="tienda/comida-flotante-multi-food.html" data-cat="peces" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
@@ -178,6 +222,8 @@ tailwind.config = {
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Comida Flotante Multi Food</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Pellets flotantes multiespecie de alta digestibilidad. No enturbian el agua y aportan nutrición completa para diversas especies.</p>
             <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="comida-flotante-multi-food" data-nombre="Comida Flotante Multi Food" data-imagen="assets/img/products/comida-flotante-multi-food.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
           </div>
         </a>
       </div>
@@ -190,11 +236,23 @@ tailwind.config = {
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
         <a href="tienda/alimento-roedores.html" data-cat="roedores" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
-          <div class="aspect-square bg-gradient-to-br from-primary/5 to-primary/15 flex items-center justify-center"><div class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:32px">pets</span></div></div>
+          <div class="aspect-square bg-white overflow-hidden"><img src="assets/img/products/alimento-roedores.png" alt="Alimento Roedores" class="w-full h-full object-contain p-3"></div>
           <div class="p-5">
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Alimento Roedores</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Alimento orgánico formulado para roedores exóticos. Mixtura nutritiva balanceada con ingredientes de alta calidad.</p>
             <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="alimento-roedores" data-nombre="Alimento Roedores" data-imagen="assets/img/products/alimento-roedores.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
+          </div>
+        </a>
+        <a href="tienda/alimento-roedores-bolsa.html" data-cat="roedores" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
+          <div class="aspect-square bg-white overflow-hidden"><img src="assets/img/products/alimento-roedores-bolsa.png" alt="Alimento Roedores Bolsa" class="w-full h-full object-contain p-3"></div>
+          <div class="p-5">
+            <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Alimento Roedores Bolsa</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Alimento orgánico formulado para roedores exóticos. Mixtura nutritiva balanceada con ingredientes de alta calidad.</p>
+            <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="alimento-roedores-bolsa" data-nombre="Alimento Roedores Bolsa" data-imagen="assets/img/products/alimento-roedores-bolsa.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
           </div>
         </a>
         <a href="tienda/vitaheno-calendula.html" data-cat="roedores" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
@@ -203,6 +261,8 @@ tailwind.config = {
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Vitaheno Caléndula</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mezcla de gramíneas con enriquecimiento de caléndula. 100% natural, suministro regular recomendado para conejos y cobayas.</p>
             <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="vitaheno-calendula" data-nombre="Vitaheno Caléndula" data-imagen="assets/img/products/vitaheno-calendula.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
           </div>
         </a>
         <a href="tienda/vitaheno-manzanilla.html" data-cat="roedores" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
@@ -211,6 +271,8 @@ tailwind.config = {
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Vitaheno Manzanilla</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mezcla de gramíneas con enriquecimiento de manzanilla. 100% natural, suministro regular recomendado para conejos y cobayas.</p>
             <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="vitaheno-manzanilla" data-nombre="Vitaheno Manzanilla" data-imagen="assets/img/products/vitaheno-manzanilla.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
           </div>
         </a>
         <a href="tienda/vitaheno-romero.html" data-cat="roedores" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
@@ -219,6 +281,8 @@ tailwind.config = {
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Vitaheno Romero</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mezcla de gramíneas con enriquecimiento de romero. 100% natural, suministro regular recomendado para conejos y cobayas.</p>
             <div class="mt-4 flex items-center gap-2 text-primary font-body-sm text-body-sm font-semibold">Ver producto <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></div>
+          
+            <button type="button" data-add-to-cart data-id="vitaheno-romero" data-nombre="Vitaheno Romero" data-imagen="assets/img/products/vitaheno-romero.png" class="mt-3 w-full flex items-center justify-center gap-2 border border-primary text-primary font-body-sm text-body-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors"><span class="material-symbols-outlined" style="font-size:16px">shopping_bag</span>Añadir a la bolsa</button>
           </div>
         </a>
       </div>
@@ -262,4 +326,27 @@ tailwind.config = {
   </div>
   <div class="border-t border-outline-variant/40 py-4 text-center font-label-caps text-label-caps text-on-surface-variant opacity-50">© 2026 Exotik Zoo</div>
 </footer>
+<script>
+  (function() {
+    var botones = document.querySelectorAll('.filtro-btn');
+    var secciones = document.querySelectorAll('.seccion');
+    botones.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        botones.forEach(function(b) {
+          b.classList.remove('bg-on-surface', 'text-white');
+          b.classList.add('bg-white', 'text-on-surface-variant');
+        });
+        btn.classList.add('bg-on-surface', 'text-white');
+        btn.classList.remove('bg-white', 'text-on-surface-variant');
+
+        var filtro = btn.getAttribute('data-filter');
+        secciones.forEach(function(sec) {
+          sec.style.display = (filtro === 'todos' || sec.getAttribute('data-sec') === filtro) ? '' : 'none';
+        });
+      });
+    });
+  })();
+</script>
+<script src="assets/js/carrito.js"></script>
+<script src="assets/js/lead-popup.js"></script>
 </body></html>

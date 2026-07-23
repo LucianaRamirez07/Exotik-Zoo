@@ -48,7 +48,7 @@ tailwind.config = {
     </nav>
     <div class="absolute right-12 flex items-center gap-4">
       <button class="hover:opacity-80 text-on-surface-variant flex items-center gap-1 text-sm"><span class="material-symbols-outlined" style="font-size:20px">language</span><span>ES</span></button>
-      <button class="hover:opacity-80 text-on-surface-variant"><span class="material-symbols-outlined">shopping_cart</span></button>
+      <button id="cart-btn" class="relative hover:opacity-80 text-on-surface-variant" aria-label="Ver bolsa"><span class="material-symbols-outlined">shopping_bag</span><span id="cart-count" class="hidden absolute -top-1.5 -right-1.5 bg-primary text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span></button>
       <button class="hover:opacity-80 text-on-surface-variant"><span class="material-symbols-outlined">person</span></button>
     </div>
   </div>
@@ -65,18 +65,27 @@ tailwind.config = {
   </nav>
 
   <!-- Producto -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-16 items-start">
 
     <!-- Imagen -->
-    <div class="aspect-square bg-surface-container-low rounded-lg overflow-hidden border border-outline-variant/40">
-      <div class="flex items-center justify-center w-full h-full"><span class="material-symbols-outlined text-primary" style="font-size:120px">pets</span></div>
+    <div class="md:col-span-3 aspect-square bg-surface-container-low rounded-lg overflow-hidden border border-outline-variant/40">
+      <img src="../assets/img/products/alimento-roedores.png" alt="Alimento Roedores" class="w-full h-full object-contain p-4">
     </div>
 
     <!-- Info -->
-    <div class="pt-2">
+    <div class="md:col-span-2 pt-2">
       <h1 class="font-display-lg text-display-lg text-on-surface mt-2 mb-4" style="font-size:48px;line-height:1.1">Alimento Roedores</h1>
       <p class="font-body-lg text-body-lg text-on-surface-variant mb-4">Alimento orgánico formulado para roedores exóticos. Mixtura nutritiva balanceada con ingredientes de alta calidad.</p>
-      <p class="font-body-sm text-body-sm text-on-surface-variant mb-8">Presentación: <strong class="text-on-surface">500g</strong></p>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mb-8">Presentación: <strong class="text-on-surface">700g</strong></p>
+
+      <h2 class="font-headline-md text-headline-md text-on-surface mb-4" style="font-size:20px">Beneficios</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary flex-shrink-0" style="font-size:18px">check_circle</span><div><p class="font-body-sm text-body-sm font-semibold text-on-surface">Nutrición balanceada</p><p class="font-body-sm text-body-sm text-on-surface-variant">Semillas y granos seleccionados que aportan energía, vitalidad y bienestar.</p></div></div>
+        <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary flex-shrink-0" style="font-size:18px">check_circle</span><div><p class="font-body-sm text-body-sm font-semibold text-on-surface">Fortalece el sistema inmunológico</p><p class="font-body-sm text-body-sm text-on-surface-variant">Enriquecido con vitaminas y minerales esenciales.</p></div></div>
+        <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary flex-shrink-0" style="font-size:18px">check_circle</span><div><p class="font-body-sm text-body-sm font-semibold text-on-surface">Óptima digestión y salud dental</p><p class="font-body-sm text-body-sm text-on-surface-variant">Fibra natural que favorece la digestión y el desgaste dental saludable.</p></div></div>
+        <div class="flex items-start gap-2"><span class="material-symbols-outlined text-primary flex-shrink-0" style="font-size:18px">check_circle</span><div><p class="font-body-sm text-body-sm font-semibold text-on-surface">Piel y pelaje saludable</p><p class="font-body-sm text-body-sm text-on-surface-variant">Omega 3 y 6 que contribuyen a una piel sana y un pelaje brillante.</p></div></div>
+      </div>
+      <p class="font-body-sm text-body-sm text-on-surface-variant mb-8">Ingredientes de calidad · Energía y vitalidad diaria · Ideal para hámsters, cobayos, ratones y otros roedores.</p>
 
       <h2 class="font-headline-md text-headline-md text-on-surface mb-4" style="font-size:20px">Ingredientes</h2>
       <ul class="flex flex-col gap-2 mb-10">
@@ -88,10 +97,13 @@ tailwind.config = {
           <li class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-primary" style="font-size:16px">check_circle</span>Arveja</li>
       </ul>
 
+      <div class="flex flex-col sm:flex-row gap-3 mb-4">
+        <button type="button" data-add-to-cart data-id="alimento-roedores" data-nombre="Alimento Roedores" data-imagen="../assets/img/products/alimento-roedores.png" class="flex items-center justify-center gap-2 border border-primary text-primary px-6 py-4 rounded-lg font-body-lg text-body-lg hover:bg-primary hover:text-white transition-colors w-full md:w-auto"><span class="material-symbols-outlined">shopping_bag</span>Añadir a la bolsa</button>
       <a href="https://wa.me/573332248448?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%3A%20Alimento%20Roedores" target="_blank"
          class="flex items-center justify-center gap-2 bg-primary text-on-primary px-6 py-4 rounded-lg font-body-lg text-body-lg hover:bg-primary-container transition-colors w-full md:w-auto">
         <span class="material-symbols-outlined">chat</span>Pedir por WhatsApp
       </a>
+      </div>
     </div>
 
   </div>
@@ -124,4 +136,6 @@ tailwind.config = {
   </div>
   <div class="border-t border-outline-variant/40 py-4 text-center font-label-caps text-label-caps text-on-surface-variant opacity-50">© 2026 Exotik Zoo</div>
 </footer>
+<script src="../assets/js/carrito.js"></script>
+<script src="../assets/js/lead-popup.js"></script>
 </body></html>
