@@ -56,66 +56,41 @@ tailwind.config = {
 <main>
 
 <!-- Hero -->
-<section class="relative bg-primary/10 px-margin-desktop pt-8 pb-0 z-10 overflow-x-clip">
-  <div class="relative max-w-container-max mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-    <div class="max-w-lg pb-16 md:pb-20">
-      <span class="font-label-caps text-label-caps text-on-surface-variant">Productos naturales</span>
-      <h1 class="font-headline-md text-headline-md text-on-surface mt-2 text-5xl md:text-6xl leading-none">Tu mascota,<br>nuestra prioridad</h1>
-      <p class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-md">Alimentos y suplementos 100% naturales para tus compañeros exóticos.</p>
-      <div class="flex gap-4 mt-8">
-        <a href="#categorias" class="bg-on-surface text-white font-bold px-6 py-3 rounded-full text-sm hover:opacity-90 transition-colors">Ver productos</a>
-        <a href="contacto.html" class="bg-secondary text-white font-bold px-6 py-3 rounded-full text-sm hover:bg-secondary/90 transition-colors">Contáctanos</a>
+<section class="relative bg-surface-container-lowest px-margin-desktop pt-16 md:pt-24 pb-0 z-10 overflow-x-clip">
+  <img src="assets/img/tienda-hero-leaves-top.png" alt="" aria-hidden="true" class="hidden md:block absolute top-0 right-0 w-[38vw] max-w-[700px] h-auto pointer-events-none select-none z-0">
+  <div class="relative z-10 max-w-container-max mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-12">
+    <div class="max-w-xl pb-16 md:pb-24">
+      <h1 class="font-headline-md text-on-surface leading-[0.95] text-4xl sm:text-5xl md:text-[56px]">
+        <span class="text-primary inline-flex items-center gap-2">Cada especie<span class="material-symbols-outlined" style="font-size:32px">eco</span></span><br>
+        Merece un cuidado<br>extraordinario.
+      </h1>
+      <div class="w-16 h-1 bg-primary rounded-full mt-6 mb-6"></div>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">Alimentos y suplementos <strong class="text-on-surface">100% naturales</strong> para el bienestar de tus compañeros exóticos.</p>
+      <div class="flex flex-wrap gap-4 mt-8">
+        <a href="#productos" class="inline-flex items-center gap-2 bg-on-surface text-white font-bold px-6 py-3 rounded-full text-sm hover:opacity-90 transition-colors"><span class="material-symbols-outlined" style="font-size:18px">eco</span>Explorar productos</a>
+        <a href="https://wa.me/573332248448?text=Hola%20Exotik%20Zoo%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20especialista." target="_blank" class="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-full text-sm hover:bg-primary-container transition-colors"><span class="material-symbols-outlined" style="font-size:18px">chat</span>Habla con un especialista</a>
+      </div>
+      <div class="flex flex-col gap-y-5 mt-12 pt-8 border-t border-outline-variant/40">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full ring-2 ring-primary/30 bg-primary/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-primary" style="font-size:20px">eco</span></div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Más de <strong class="text-on-surface">300</strong><br>productos especializados</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full ring-2 ring-primary/30 bg-primary/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-primary" style="font-size:20px">grass</span></div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Alimentación diseñada<br>para <strong class="text-on-surface">múltiples especies</strong></p>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full ring-2 ring-primary/30 bg-primary/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-primary" style="font-size:20px">favorite</span></div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Comprometidos con<br><strong class="text-on-surface">el bienestar animal</strong></p>
+        </div>
       </div>
     </div>
-    <img src="assets/img/tienda-hero-animales.png" alt="Hámster, cobaya, conejo y agapornis" class="absolute bottom-0 right-0 translate-y-[15%] w-[38vw] min-w-[380px] max-w-[650px] pointer-events-none select-none z-20 drop-shadow-[0_10px_7px_rgba(0,0,0,0.22)]">
-  </div>
-</section>
-
-<!-- Categorías -->
-<section id="categorias" class="px-margin-desktop pt-14 pb-4">
-  <div class="max-w-container-max mx-auto">
-    <h2 class="font-headline-md text-headline-md text-on-surface text-center mb-10">Compra por tipo de mascota</h2>
-    <div class="flex items-center justify-center gap-4 md:gap-8">
-      <button aria-label="Anterior" onclick="desplazarCategorias(-1)" class="w-9 h-9 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-colors flex-shrink-0 text-on-surface-variant">
-        <span class="material-symbols-outlined text-xl">chevron_left</span>
-      </button>
-
-      <div class="flex gap-8 md:gap-16 overflow-x-auto no-scrollbar scroll-smooth min-w-0" id="categorias-circulos">
-        <button onclick="filtrar('todos')" data-cat="todos" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
-          <div class="categoria-circle w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 ring-primary flex items-center justify-center bg-primary/10 transition-all">
-            <span class="material-symbols-outlined text-3xl text-primary">apps</span>
-          </div>
-          <span class="categoria-label font-label-caps text-label-caps text-primary font-bold transition-colors">Todos</span>
-        </button>
-        <button onclick="filtrar('aves')" data-cat="aves" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
-          <div class="categoria-circle w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 ring-transparent transition-all">
-            <img src="assets/img/categorias/aves.jpg" alt="Aves" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
-          </div>
-          <span class="categoria-label font-label-caps text-label-caps text-on-surface-variant transition-colors">Aves</span>
-        </button>
-        <button onclick="filtrar('peces')" data-cat="peces" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
-          <div class="categoria-circle w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 ring-transparent transition-all">
-            <img src="assets/img/categorias/peces.jpg" alt="Peces" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
-          </div>
-          <span class="categoria-label font-label-caps text-label-caps text-on-surface-variant transition-colors">Peces</span>
-        </button>
-        <button onclick="filtrar('roedores')" data-cat="roedores" class="categoria-circle-wrap flex flex-col items-center gap-3 flex-shrink-0 group">
-          <div class="categoria-circle w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 ring-transparent transition-all">
-            <img src="assets/img/categorias/roedores.jpg" alt="Roedores" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
-          </div>
-          <span class="categoria-label font-label-caps text-label-caps text-on-surface-variant transition-colors">Roedores</span>
-        </button>
-      </div>
-
-      <button aria-label="Siguiente" onclick="desplazarCategorias(1)" class="w-9 h-9 rounded-full border border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-colors flex-shrink-0 text-on-surface-variant">
-        <span class="material-symbols-outlined text-xl">chevron_right</span>
-      </button>
-    </div>
+    <img src="assets/img/tienda-hero-animales.png" alt="Hámster, cobaya, conejo y agapornis" class="w-full max-w-sm mx-auto md:absolute md:mx-0 md:bottom-0 md:right-0 md:translate-y-[15%] md:w-[42vw] md:min-w-[420px] md:max-w-[700px] pointer-events-none select-none md:z-20 drop-shadow-[0_10px_7px_rgba(0,0,0,0.22)]">
   </div>
 </section>
 
 <!-- Productos -->
-<section class="px-margin-desktop py-10">
+<section id="productos" class="px-margin-desktop py-10">
   <div class="max-w-container-max mx-auto space-y-12">
 
     <!-- Sección Aves -->
@@ -141,7 +116,7 @@ tailwind.config = {
           </div>
         </a>
         <a href="tienda/larvas-liofilizadas.html" data-cat="aves" class="prod-item group bg-surface-container-lowest rounded-lg border border-outline-variant/40 overflow-hidden hover:shadow-md hover:border-primary/30 transition-all">
-          <div class="aspect-square bg-gradient-to-br from-primary/5 to-primary/15 flex items-center justify-center"><div class="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center"><span class="material-symbols-outlined text-primary" style="font-size:32px">bug_report</span></div></div>
+          <div class="aspect-square bg-white overflow-hidden"><img src="assets/img/products/larvas-liofilizadas.png" alt="Larvas Liofilizadas" class="w-full h-full object-contain p-3"></div>
           <div class="p-5">
             <h3 class="font-title-lg text-title-lg text-on-surface mb-1 group-hover:text-primary transition-colors">Larvas Liofilizadas</h3>
             <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Larvas liofilizadas de alta calidad, fuente natural de proteína para aves insectívoras, reptiles y animales exóticos.</p>
@@ -251,34 +226,6 @@ tailwind.config = {
 
   </div>
 </section>
-<script>
-function filtrar(cat) {
-  document.querySelectorAll('.seccion').forEach(sec => {
-    sec.style.display = (cat === 'todos' || sec.dataset.sec === cat) ? '' : 'none';
-  });
-  document.querySelectorAll('.categoria-circle').forEach(c => {
-    c.classList.remove('ring-primary');
-    c.classList.add('ring-transparent');
-  });
-  document.querySelectorAll('.categoria-label').forEach(l => {
-    l.classList.remove('text-primary','font-bold');
-    l.classList.add('text-on-surface-variant');
-  });
-  const activeWrap = document.querySelector('.categoria-circle-wrap[data-cat="' + cat + '"]');
-  if (activeWrap) {
-    activeWrap.querySelector('.categoria-circle').classList.remove('ring-transparent');
-    activeWrap.querySelector('.categoria-circle').classList.add('ring-primary');
-    activeWrap.querySelector('.categoria-label').classList.remove('text-on-surface-variant');
-    activeWrap.querySelector('.categoria-label').classList.add('text-primary','font-bold');
-  }
-}
-
-function desplazarCategorias(direccion) {
-  const contenedor = document.getElementById('categorias-circulos');
-  contenedor.scrollBy({ left: direccion * 200, behavior: 'smooth' });
-}
-</script>
-
 <!-- CTA WA -->
 <section class="px-margin-desktop py-16 max-w-container-max mx-auto text-center">
   <h2 class="font-headline-md text-headline-md text-on-surface mb-4">¿No encuentras lo que buscas?</h2>
