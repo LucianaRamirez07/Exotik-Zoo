@@ -1,8 +1,8 @@
 <!DOCTYPE html><html class="scroll-smooth" lang="es"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Exotik Zoo | Tienda de Mascotas Exóticas en Colombia</title>
-<meta name="description" content="Exotik Zoo — tienda boutique de mascotas exóticas en Colombia. Alimentos naturales, suministros y guías de cuidado para aves, peces y roedores.">
+<title>Exotik Zoo | Tienda de Alimento para Mascotas No Convencionales</title>
+<meta name="description" content="Exotik Zoo — tienda boutique de alimento para mascotas no convencionales en Colombia. Alimentos naturales, suministros y guías de cuidado para aves, peces y roedores.">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -127,6 +127,11 @@
         #site-nav.nav-solid .nav-link:hover { color: #006b34; }
         #site-nav.nav-solid .nav-logo { color: #1a1c1a; }
         #site-nav.nav-solid .nav-icon { color: #3f493f; }
+        #mobile-menu { display: none; background-color: rgba(26,28,26,0.97); }
+        #mobile-menu.open { display: block; }
+        @media (min-width: 1280px) {
+          #mobile-menu { display: none !important; }
+        }
         @keyframes marquee {
             0%   { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -150,8 +155,9 @@
 
 <!-- Nav -->
 <header id="site-nav" class="fixed top-0 left-0 right-0 z-50 bg-transparent">
-  <div class="flex items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto relative">
-    <nav class="flex items-center justify-center w-full gap-8">
+  <div class="flex items-center justify-between xl:justify-center w-full px-4 xl:px-margin-desktop py-4 max-w-container-max mx-auto relative">
+    <a class="nav-logo xl:hidden font-headline-md text-lg tracking-tight" href="index.html">Exotik Zoo</a>
+    <nav class="hidden xl:flex items-center justify-center w-full gap-8">
       <a class="nav-link font-body-lg text-body-lg" href="tienda.html">Tienda</a>
       <a class="nav-link font-body-lg text-body-lg" href="cuidados/cuidados.html">Cuidados</a>
       <a class="nav-link font-body-lg text-body-lg" href="mundo-exotico/mundo-exotico.html">El Mundo Exótico</a>
@@ -161,7 +167,7 @@
       <a class="nav-link font-body-lg text-body-lg" href="nosotros.html">Nosotros</a>
       <a class="nav-link font-body-lg text-body-lg" href="contacto.html">Contacto</a>
     </nav>
-    <div class="absolute right-margin-desktop flex items-center gap-6">
+    <div class="hidden xl:flex absolute right-margin-desktop items-center gap-6">
       <div class="flex gap-4">
         <button class="nav-icon hover:opacity-80 transition-opacity flex items-center gap-1 font-body-sm text-body-sm">
           <span class="material-symbols-outlined" style="font-size: 20px;">language</span><span>ES</span>
@@ -169,6 +175,23 @@
         <button class="nav-icon hover:opacity-80 transition-opacity"><span class="material-symbols-outlined">shopping_cart</span></button>
         <button class="nav-icon hover:opacity-80 transition-opacity"><span class="material-symbols-outlined">person</span></button>
       </div>
+    </div>
+    <button id="mobile-menu-btn" type="button" class="nav-icon xl:hidden" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="xl:hidden px-4 pb-4">
+    <a class="block py-2 nav-link" href="tienda.html">Tienda</a>
+    <a class="block py-2 nav-link" href="cuidados/cuidados.html">Cuidados</a>
+    <a class="block py-2 nav-link" href="mundo-exotico/mundo-exotico.html">El Mundo Exótico</a>
+    <a class="block py-2 nav-link" href="nosotros.html">Nosotros</a>
+    <a class="block py-2 nav-link" href="contacto.html">Contacto</a>
+    <div class="flex items-center gap-4 pt-3 mt-2 border-t border-white/10">
+      <button class="nav-icon hover:opacity-80 transition-opacity flex items-center gap-1 font-body-sm text-body-sm">
+        <span class="material-symbols-outlined" style="font-size: 20px;">language</span><span>ES</span>
+      </button>
+      <button class="nav-icon hover:opacity-80 transition-opacity"><span class="material-symbols-outlined">shopping_cart</span></button>
+      <button class="nav-icon hover:opacity-80 transition-opacity"><span class="material-symbols-outlined">person</span></button>
     </div>
   </div>
 </header>
@@ -199,23 +222,32 @@
   </section>
 
   <!-- Editorial + Betta -->
-  <section style="position:relative;background:#faf9f6;overflow:hidden;height:100vh;min-height:680px">
-    <span style="position:absolute;top:3rem;right:4rem;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;color:#6f7a6f;text-transform:uppercase;z-index:2">Nuestra misión</span>
-    <div style="position:absolute;top:3.5rem;left:4rem;right:14rem;z-index:2">
+  <section class="editorial-betta" style="position:relative;background:#faf9f6;overflow:hidden;height:100vh;min-height:680px">
+    <span class="eb-label" style="position:absolute;top:3rem;right:4rem;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;color:#6f7a6f;text-transform:uppercase;z-index:2">Nuestra misión</span>
+    <div class="eb-heading" style="position:absolute;top:3.5rem;left:4rem;right:14rem;z-index:2">
       <p style="font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(2.2rem,4.5vw,3.8rem);line-height:1.15;letter-spacing:0.02em;color:#1a1c1a;margin:0">
         donde el bienestar de cada especie es nuestra prioridad, con productos seleccionados y asesoría especializada.
       </p>
     </div>
-    <video autoplay loop muted playsinline style="position:absolute;bottom:6%;right:3%;height:60%;width:auto;z-index:1">
+    <video autoplay loop muted playsinline class="eb-video" style="position:absolute;bottom:6%;right:3%;height:60%;width:auto;z-index:1">
       <source src="assets/img/betta-anim.webm" type="video/webm">
       <source src="assets/img/betta-anim.mp4" type="video/mp4">
     </video>
-    <div style="position:absolute;bottom:3.5rem;left:4rem;max-width:270px;z-index:2">
+    <div class="eb-caption" style="position:absolute;bottom:3.5rem;left:4rem;max-width:270px;z-index:2">
       <span style="display:block;font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.08em;color:#1a1c1a;margin-bottom:0.8rem">• Pez Betta</span>
       <p style="font-family:'Inter',sans-serif;font-size:14px;color:#3f493f;line-height:1.65;margin:0 0 1.25rem">El guerrero del agua. Majestuoso y solitario, perfecto para quien busca algo verdaderamente extraordinario.</p>
       <a href="cuidados/cuidados.html" style="display:inline-block;border:1.5px solid #1a1c1a;color:#1a1c1a;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;padding:0.6rem 1.4rem;border-radius:4rem;text-decoration:none" onmouseover="this.style.background='#1a1c1a';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#1a1c1a'">Ver guía de cuidado</a>
     </div>
   </section>
+  <style>
+    @media (max-width: 767px) {
+      .editorial-betta { height:auto !important; min-height:0 !important; display:flex; flex-direction:column; padding:3rem 1.5rem 2.5rem; gap:1.5rem; }
+      .editorial-betta .eb-label { position:static !important; }
+      .editorial-betta .eb-heading { position:static !important; right:auto !important; left:auto !important; top:auto !important; }
+      .editorial-betta .eb-video { position:static !important; width:70% !important; max-width:220px; height:auto !important; margin:0 auto; order:2; }
+      .editorial-betta .eb-caption { position:static !important; max-width:none !important; left:auto !important; bottom:auto !important; order:3; }
+    }
+  </style>
 
   <!-- Carousel Productos -->
   <section class="carousel-section py-16 bg-white border-t border-b border-outline-variant/30">
@@ -410,6 +442,19 @@
       }
       lastY = y;
     }, { passive: true });
+  })();
+</script>
+<script>
+  (function() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const icon = btn.querySelector('.material-symbols-outlined');
+    btn.addEventListener('click', function() {
+      const willOpen = !menu.classList.contains('open');
+      menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(willOpen));
+      icon.textContent = willOpen ? 'close' : 'menu';
+    });
   })();
 </script>
 <script>
