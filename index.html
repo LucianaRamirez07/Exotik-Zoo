@@ -9,15 +9,17 @@
 <meta property="og:title" content="Exotik Zoo | Tienda de Alimento para Mascotas No Convencionales">
 <meta property="og:description" content="Exotik Zoo — tienda boutique de alimento para mascotas no convencionales en Colombia. Alimentos naturales, suministros y guías de cuidado para aves, peces y roedores.">
 <meta property="og:url" content="https://exotikzoo.co/">
-<meta property="og:image" content="https://exotikzoo.co/assets/img/hero-header.jpg">
+<meta property="og:image" content="https://exotikzoo.co/assets/img/hero-header.webp">
 <meta property="og:locale" content="es_CO">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Exotik Zoo | Tienda de Alimento para Mascotas No Convencionales">
 <meta name="twitter:description" content="Exotik Zoo — tienda boutique de alimento para mascotas no convencionales en Colombia. Alimentos naturales, suministros y guías de cuidado para aves, peces y roedores.">
-<meta name="twitter:image" content="https://exotikzoo.co/assets/img/hero-header.jpg">
+<meta name="twitter:image" content="https://exotikzoo.co/assets/img/hero-header.webp">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <style>
@@ -78,8 +80,8 @@
   "@type": "PetStore",
   "name": "Exotik Zoo",
   "url": "https://exotikzoo.co/",
-  "logo": "https://exotikzoo.co/assets/img/logo.png",
-  "image": "https://exotikzoo.co/assets/img/hero-header.jpg",
+  "logo": "https://exotikzoo.co/assets/img/logo.webp",
+  "image": "https://exotikzoo.co/assets/img/hero-header.webp",
   "description": "Tienda boutique de alimento para mascotas no convencionales en Colombia. Alimentos naturales, suministros y guías de cuidado para aves, peces y roedores.",
   "telephone": "+573332248448",
   "address": {
@@ -91,7 +93,8 @@
   ]
 }
 </script>
-  <link rel="stylesheet" href="assets/css/tailwind.css">
+  <link rel="preload" href="assets/img/hero-header.webp" as="image" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/tailwind.css">
 </head>
 <body class="font-body-lg text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
 
@@ -139,7 +142,7 @@
 <main>
   <!-- Hero Section -->
   <section style="position:relative;height:100vh;min-height:600px;overflow:hidden">
-    <img class="hero-bg-img" src="assets/img/hero-header.jpg" alt="Dos agapornis en una rama en la selva junto a flores de heliconia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0">
+    <img class="hero-bg-img" fetchpriority="high" src="assets/img/hero-header.webp" alt="Dos agapornis en una rama en la selva junto a flores de heliconia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0">
     <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.18) 0%,rgba(0,0,0,0.05) 40%,rgba(0,0,0,0.45) 100%);z-index:1"></div>
     <div class="hero-caption" style="position:absolute;top:5.5rem;left:4rem;z-index:3;font-family:'Inter',sans-serif;font-size:11px;line-height:1.6;color:rgba(255,255,255,0.7)">Tu tienda de<br>mascotas exóticas</div>
     <div class="hero-caption" style="position:absolute;top:5.5rem;left:50%;transform:translateX(-50%);z-index:3;font-family:'Inter',sans-serif;font-size:11px;line-height:1.6;color:rgba(255,255,255,0.7);text-align:center;white-space:nowrap">Alimentos · Suministros · Cuidados</div>
@@ -184,7 +187,7 @@
       <source src="assets/img/betta-anim.webm" type="video/webm">
       <source src="assets/img/betta-anim.mp4" type="video/mp4">
     </video>
-    <img src="assets/img/cuidados/betta-cutout.png" alt="Pez Betta" class="eb-video eb-video-still" style="position:absolute;bottom:6%;right:3%;height:60%;width:auto;z-index:1;display:none">
+    <img src="assets/img/cuidados/betta-cutout.webp" alt="Pez Betta" class="eb-video eb-video-still" style="position:absolute;bottom:6%;right:3%;height:60%;width:auto;z-index:1;display:none">
     <div class="eb-caption" style="position:absolute;bottom:3.5rem;left:4rem;max-width:270px;z-index:2">
       <span style="display:block;font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.08em;color:#1a1c1a;margin-bottom:0.8rem">• Pez Betta</span>
       <p style="font-family:'Inter',sans-serif;font-size:14px;color:#3f493f;line-height:1.65;margin:0 0 1.25rem">El guerrero del agua. Majestuoso y solitario, perfecto para quien busca algo verdaderamente extraordinario.</p>
@@ -211,25 +214,25 @@
     <div class="overflow-hidden">
       <div class="carousel-track">
         <!-- Set 1 -->
-        <a href="tienda/veggie-espirulina-micro-rounds.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/veggie-espirulina-micro-rounds.png" alt="Veggie Espirulina Micro Rounds" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Veggie Espirulina Micro Rounds</p></a>
-        <a href="tienda/veggies-espirulina-rounds.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/veggies-espirulina-rounds.png" alt="Veggies Espirulina Rounds" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Veggies Espirulina Rounds</p></a>
-        <a href="tienda/fish-flakes.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/fish-flakes.png" alt="Hojuelas para Peces" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Hojuelas para Peces</p></a>
-        <a href="tienda/tropical-food.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/tropical-food.png" alt="Alimento Tropical" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Alimento Tropical</p></a>
-        <a href="tienda/carnivorous-shrimp.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/carnivorous-shrimp.png" alt="Camarón Carnívoro" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Camarón Carnívoro</p></a>
-        <a href="tienda/comida-flotante-multi-food.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/comida-flotante-multi-food.png" alt="Comida Flotante Multi Food" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Comida Flotante Multi Food</p></a>
-        <a href="tienda/vitaheno-calendula.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-calendula.png" alt="Vitaheno Caléndula" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Vitaheno Caléndula</p></a>
-        <a href="tienda/vitaheno-manzanilla.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-manzanilla.png" alt="Vitaheno Manzanilla" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Vitaheno Manzanilla</p></a>
-        <a href="tienda/vitaheno-romero.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-romero.png" alt="Vitaheno Romero" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Vitaheno Romero</p></a>
+        <a href="tienda/veggie-espirulina-micro-rounds.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/veggie-espirulina-micro-rounds.webp" alt="Veggie Espirulina Micro Rounds" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Veggie Espirulina Micro Rounds</p></a>
+        <a href="tienda/veggies-espirulina-rounds.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/veggies-espirulina-rounds.webp" alt="Veggies Espirulina Rounds" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Veggies Espirulina Rounds</p></a>
+        <a href="tienda/fish-flakes.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/fish-flakes.webp" alt="Hojuelas para Peces" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Hojuelas para Peces</p></a>
+        <a href="tienda/tropical-food.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/tropical-food.webp" alt="Alimento Tropical" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Alimento Tropical</p></a>
+        <a href="tienda/carnivorous-shrimp.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/carnivorous-shrimp.webp" alt="Camarón Carnívoro" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Camarón Carnívoro</p></a>
+        <a href="tienda/comida-flotante-multi-food.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/comida-flotante-multi-food.webp" alt="Comida Flotante Multi Food" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Comida Flotante Multi Food</p></a>
+        <a href="tienda/vitaheno-calendula.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-calendula.webp" alt="Vitaheno Caléndula" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Vitaheno Caléndula</p></a>
+        <a href="tienda/vitaheno-manzanilla.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-manzanilla.webp" alt="Vitaheno Manzanilla" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Vitaheno Manzanilla</p></a>
+        <a href="tienda/vitaheno-romero.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-romero.webp" alt="Vitaheno Romero" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Vitaheno Romero</p></a>
         <!-- Set 2 — duplicado para loop seamless -->
-        <a href="tienda/veggie-espirulina-micro-rounds.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/veggie-espirulina-micro-rounds.png" alt="Veggie Espirulina Micro Rounds" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Veggie Espirulina Micro Rounds</p></a>
-        <a href="tienda/veggies-espirulina-rounds.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/veggies-espirulina-rounds.png" alt="Veggies Espirulina Rounds" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Veggies Espirulina Rounds</p></a>
-        <a href="tienda/fish-flakes.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/fish-flakes.png" alt="Hojuelas para Peces" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Hojuelas para Peces</p></a>
-        <a href="tienda/tropical-food.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/tropical-food.png" alt="Alimento Tropical" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Alimento Tropical</p></a>
-        <a href="tienda/carnivorous-shrimp.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/carnivorous-shrimp.png" alt="Camarón Carnívoro" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Camarón Carnívoro</p></a>
-        <a href="tienda/comida-flotante-multi-food.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/comida-flotante-multi-food.png" alt="Comida Flotante Multi Food" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Comida Flotante Multi Food</p></a>
-        <a href="tienda/vitaheno-calendula.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-calendula.png" alt="Vitaheno Caléndula" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Vitaheno Caléndula</p></a>
-        <a href="tienda/vitaheno-manzanilla.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-manzanilla.png" alt="Vitaheno Manzanilla" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Vitaheno Manzanilla</p></a>
-        <a href="tienda/vitaheno-romero.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-romero.png" alt="Vitaheno Romero" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Vitaheno Romero</p></a>
+        <a href="tienda/veggie-espirulina-micro-rounds.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/veggie-espirulina-micro-rounds.webp" alt="Veggie Espirulina Micro Rounds" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Veggie Espirulina Micro Rounds</p></a>
+        <a href="tienda/veggies-espirulina-rounds.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/veggies-espirulina-rounds.webp" alt="Veggies Espirulina Rounds" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Veggies Espirulina Rounds</p></a>
+        <a href="tienda/fish-flakes.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/fish-flakes.webp" alt="Hojuelas para Peces" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Hojuelas para Peces</p></a>
+        <a href="tienda/tropical-food.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/tropical-food.webp" alt="Alimento Tropical" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Alimento Tropical</p></a>
+        <a href="tienda/carnivorous-shrimp.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/carnivorous-shrimp.webp" alt="Camarón Carnívoro" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Camarón Carnívoro</p></a>
+        <a href="tienda/comida-flotante-multi-food.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/comida-flotante-multi-food.webp" alt="Comida Flotante Multi Food" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Comida Flotante Multi Food</p></a>
+        <a href="tienda/vitaheno-calendula.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-calendula.webp" alt="Vitaheno Caléndula" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Vitaheno Caléndula</p></a>
+        <a href="tienda/vitaheno-manzanilla.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-manzanilla.webp" alt="Vitaheno Manzanilla" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Vitaheno Manzanilla</p></a>
+        <a href="tienda/vitaheno-romero.html" class="flex-shrink-0 w-44 text-center block group"><div class="w-44 h-44 bg-white rounded-lg overflow-hidden border border-outline-variant/40 mb-3"><img src="assets/img/products/vitaheno-romero.webp" alt="Vitaheno Romero" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300" loading="lazy"></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-tight group-hover:text-primary transition-colors">Vitaheno Romero</p></a>
       </div>
     </div>
   </section>
@@ -249,10 +252,10 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
         <a href="mundo-exotico/mundo-exotico.html" class="group block rounded-2xl overflow-hidden" style="aspect-ratio:3/4">
-          <img src="assets/img/cuidados/periquito.jpg" alt="Periquito" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <img src="assets/img/cuidados/periquito.webp" alt="Periquito" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
         </a>
         <a href="mundo-exotico/mundo-exotico.html" class="group block rounded-2xl overflow-hidden" style="aspect-ratio:3/4">
-          <img src="assets/img/pets/roedores.jpg" alt="Hámster" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <img src="assets/img/pets/roedores.webp" alt="Hámster" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
         </a>
         <a href="mundo-exotico/mundo-exotico.html" class="group block rounded-2xl overflow-hidden" style="aspect-ratio:3/4">
           <img src="assets/img/pets/peces.jpg" alt="Pez dorado" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
@@ -276,7 +279,7 @@
         <a href="cuidados/hamster.html" class="group relative rounded-full overflow-hidden aspect-square"
            onmouseenter="this.querySelector('video').play()"
            onmouseleave="const v=this.querySelector('video'); v.pause(); v.currentTime=0">
-          <video loop muted playsinline preload="auto" poster="assets/img/cuidados/hamster.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <video loop muted playsinline preload="none" poster="assets/img/cuidados/hamster.webp" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <source src="assets/img/cuidados/hamster-anim.mp4" type="video/mp4">
           </video>
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -285,7 +288,7 @@
         <a href="cuidados/agapornis.html" class="group relative rounded-full overflow-hidden aspect-square"
            onmouseenter="this.querySelector('video').play()"
            onmouseleave="const v=this.querySelector('video'); v.pause(); v.currentTime=0">
-          <video loop muted playsinline preload="auto" poster="assets/img/cuidados/agapornis.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <video loop muted playsinline preload="none" poster="assets/img/cuidados/agapornis.webp" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <source src="assets/img/cuidados/agapornis-anim.mp4" type="video/mp4">
           </video>
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -295,7 +298,7 @@
            onmouseenter="const v=this.querySelector('video'); v.style.opacity=1; this.querySelector('img').style.opacity=0; v.play()"
            onmouseleave="const v=this.querySelector('video'); v.pause(); v.style.opacity=0; this.querySelector('img').style.opacity=1">
           <img src="assets/img/cuidados/pez-dorado-poster.jpg" alt="Pez Dorado" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 group-hover:scale-105" loading="lazy">
-          <video loop muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:scale-105">
+          <video loop muted playsinline preload="none" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:scale-105">
             <source src="assets/img/cuidados/pez-dorado-anim.mp4" type="video/mp4">
           </video>
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -304,7 +307,7 @@
         <a href="cuidados/conejo.html" class="group relative rounded-full overflow-hidden aspect-square"
            onmouseenter="this.querySelector('video').play()"
            onmouseleave="const v=this.querySelector('video'); v.pause(); v.currentTime=0">
-          <video loop muted playsinline preload="auto" poster="assets/img/cuidados/conejo.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <video loop muted playsinline preload="none" poster="assets/img/cuidados/conejo.webp" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <source src="assets/img/cuidados/conejo-anim.mp4" type="video/mp4">
           </video>
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
