@@ -1,0 +1,11 @@
+# Archivos del sistema
+.DS_Store
+
+# Configuración de Obsidian
+.obsidian/
+
+# Cotizaciones de clientes: datos privados, este repositorio es público
+Cotizacion-*.pdf
+
+# Notas sin título
+Sin título*.md
